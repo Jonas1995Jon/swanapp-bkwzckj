@@ -1,0 +1,13 @@
+/* pages/find/monthExam/monthExam.css */
+@import "../unitExam/unitExam.css";  
+.loseactive{
+  color: #888;
+}
+.examCon_questionnumber{
+  margin-top:10rpx;
+  line-height: 30rpx;
+  font-size: 20rpx;
+}
+.examCon_questionnumber view{
+  font-size: 24rpx;
+}

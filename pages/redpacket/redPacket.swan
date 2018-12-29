@@ -1,0 +1,66 @@
+<!--pages/redPacket/redPacket.wxml-->
+<!-- <import src="../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<import src="../nav/nav.swan" />
+<template is="nav" data="{{{nav}}}"></template>
+<!-- 轮播图 -->
+<view class='lunbo_view'>
+	<swiper class='swiper' bindchange="swiperChange" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}"
+	 duration="{{duration}}">
+		<block s-for="lunboitem, index in lunbolist" s-key="lunbo">
+			<swiper-item class="swiper_item">
+				<block s-if="{{mobileOS == 'ios'}}">
+					<image src="{{lunboitem.imglink}}" class="slide-image" />
+				</block>
+				<block s-else>
+					<image src="{{lunboitem.imglink}}" bindtap='buycourse' class="slide-image" />
+				</block>
+			</swiper-item>
+		</block>
+	</swiper>
+	<view class="dots">
+		<block s-for="item, index in lunbolist" s-key="unique">
+			<view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+		</block>
+	</view>
+	<view class='cell_top_list'>
+		<block s-for="bigmoduleitem, bigmoduleindex in bigmodule" s-key="bigmodule">
+			<view class='list_item' bindtap='bigmoduleTap' data-index='{{bigmoduleindex}}'>
+				<view class='list_item_img'>
+					<image src='{{bigmoduleitem.icon}}'></image>
+				</view>
+				<view class='list_item_number'>
+					{{bigmoduleitem.type}}
+				</view>
+			</view>
+		</block>
+	</view>
+</view>
+<view class="cell-container" style='height:50%;'>
+
+	<view class='cell_line'></view>
+	<view class="cells cells_after_title" bindtap="recordClick" data-index="0" data-id="14">
+		<view class="cell cell_access">
+			<view class="left_border cell_bott"></view>
+			<view class="cell_bd cell_bott">{{showmoduletohome[1].title}}</view>
+			<view class="cell_ft cell_ft_in_access cell_bott">全部</view>
+		</view>
+		<view class='cell_img'>
+			<image src='{{showmoduletohome[1].cover}}' style='border-radius: 20rpx;'></image>
+		</view>
+	</view>
+</view>
+<!-- 拼团 -->
+<!-- <block s-if="templateList.length > 0 && redpacketHidden == true">
+  <view class="red_packet1" bindtap="redPacketClick" style="{{touchStart == 0 ? 'right:20rpx;' : 'right:-60rpx;'}}">  
+    <image src="../../image/fightgroups/share_redpacket.png"></image> 
+  </view>
+</block>
+<view class="modal-box1" hidden='{{redpacketHidden}}'>
+  <view class="modal-body1" animation="{{animationData}}">
+    <view class="modal-content1">
+      <image bindtap="redPacketClick" class='bg' src="../../image/fightgroups/redpacket_bg.png"></image>
+      <image bindtap='redpacketCloseClick' class='close' src="../../image/fightgroups/redpacket_bg_close.png"></image>
+    </view>
+  </view>
+ </view> -->

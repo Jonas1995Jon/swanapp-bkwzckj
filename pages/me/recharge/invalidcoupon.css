@@ -1,0 +1,6 @@
+@import '../recharge/coupon.css';
+.coupon_pic_left,
+.coupon_pic_title,
+.coupon_pic_time{
+  color: #b3b3b3;
+}

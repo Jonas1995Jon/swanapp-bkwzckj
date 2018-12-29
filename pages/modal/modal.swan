@@ -1,0 +1,90 @@
+<!--pages/modal/modal.wxml-->
+<template name="modal">
+<block s-if="modal.modalType == 0">
+<view class="modal-message" hidden='{{modal.authorizationHidden}}'>
+  <view class="modal-message-body">
+    <view class="modal-message-content">
+      <view class="modal-message-contenttitle">
+        <text>{{modal.modalTitle}}</text>
+      </view>
+      <view class='modal-message-des'>
+        <view class="modal-message-destitle">
+          <text>{{modal.modalDes}}</text>
+        </view>
+      </view>
+      <view class='modal-message-button'>
+        <button open-type="{{modal.modalBtnType == 0 ? 'getUserInfo' : 'getPhoneNumber'}}" class='modal-message-buttonyes' lang="zh_CN" bindgetuserinfo="onGetUserInfo" bindgetphonenumber='onGetPhonenumber'>
+          <text>{{modal.modalBtnTitle}}</text>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
+</block>
+
+<block s-if="modal.modalType == 1">
+<view class="modal-message" hidden='{{modal.authorizationHidden}}'>
+  <view class="modal-message-body">
+    <view class="modal-message-content">
+      <view class="modal-message-contenttitle">
+        <text>{{modal.modalTitle}}</text>
+      </view>
+      <view class='modal-message-des'>
+        <view class="modal-message-destitle">
+          <text>{{modal.modalDes}}</text>
+        </view>
+      </view>
+      <view class='modal-message-button'>
+        <button class="modal_sure" bindtap="modalSureClick">拒绝</button>
+        <button open-type="getPhoneNumber" class='modal-message-buttonyes' style='width:50%;' lang="zh_CN" bindgetphonenumber='onGetPhonenumber'>
+          <text>{{modal.modalBtnTitle}}</text>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
+</block>
+<block s-if="modal.modalType == 3">
+<view class="modal-message" hidden='{{modal.authorizationHidden}}'>
+  <view class="modal-message-body newmodel">
+    <view class="modal-message-content" style="height:100%;">
+      <image src='{{modal.image}}' style="width:100%;height:100%;"></image>
+      <view class='modal-message-button modal-3'>
+        <button open-type="{{modal.modalBtnType == 0 ? 'getUserInfo' : 'getPhoneNumber'}}" class='modal-message-buttonyes' lang="zh_CN" bindgetuserinfo="onGetUserInfo" bindgetphonenumber='onGetPhonenumber'>
+          <text>{{modal.modalBtnTitle}}</text>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
+</block>
+
+<!-- <block wx:if="{{modal.modalType == 1}}">
+<view class="modal-box" hidden='{{modal.authorizationHidden}}'>
+  <view class="modal-body">
+    <view class="modal-content">
+      <view class="title_one">
+        <text>微信授权</text>
+      </view>
+      <view class='modal-center'>
+        <view class='modal-appicon'>
+          <image class='appicon' src="../../../image/me/app_icon.png"></image>
+        </view>
+        <view class="title_two">
+          <text>帮考注册消防工程师申请获得以下权限</text>
+        </view>
+        <view class="title_three">
+          <text>·获得你的公开信息（昵称、头像等）</text>
+        </view>
+      </view>
+      <view class='modal_button'>
+        <button class="modal_sure" class='modal_sure' bindtap="modalSureClick">拒绝</button>
+        <button open-type="getUserInfo" class='modal_cancle' lang="zh_CN" bindgetuserinfo="onGetUserInfo">
+          <text>允许</text>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
+</block> -->
+</template>

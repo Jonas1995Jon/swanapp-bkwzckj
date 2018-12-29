@@ -1,0 +1,16 @@
+<view class="cell-container">
+	<block s-key="video" s-for="videoItem, videoindex in videomodulelist">
+		<block s-if='videoItem.show'>
+			<view class="cells cells_after_title">
+				<view class='cell_img' bindtap="recordClick" data-index="{{videoindex}}" data-id="{{videoItem.module}}">
+					<image src='{{videoItem.cover}}'></image>
+				</view>
+				<view class="cell cell_access">
+					<view class="cell_bd cell_bott">{{videoItem.title}}</view>
+					<view class="cell_ft cell_bott"><text>{{videoItem.videocount}}</text>个视频</view>
+				</view>
+			</view>
+		</block>
+	</block>
+	<view style='padding-bottom:13rpx;'></view>
+</view>

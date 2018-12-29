@@ -1,0 +1,11 @@
+<!--pages/course/myCourse/myCourse.wxml-->
+<!-- <import src="../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class="cells cells_after_title" style="margin-bottom:20rpx;">
+  <block s-key="mycourseList" s-for="cell, groupindex in mycourseList">
+    <view data-hi="{{groupindex}}" bindtap="mycourseClick" class="cell cell_access" hover-class="cell_active">
+      <view class="cell_sd {{groupindex != 0 ? 'cell_border_top' : ''}} {{groupindex == mycourseList.length-1 ? 'cell_border_bottom' : ''}}">{{cell.coursename}}</view>
+      <view class="cell_ft cell_ft_in_access">{{cell.coursetype}}</view>
+    </view>
+  </block>
+</view>

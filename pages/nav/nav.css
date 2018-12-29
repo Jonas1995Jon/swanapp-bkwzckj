@@ -1,0 +1,38 @@
+/* pages/nav/nav.css */
+
+/* 头部滑动导航 */
+
+.top-news {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  line-height: 60rpx;
+  overflow: hidden;
+  padding: 5rpx 0;
+}
+.scroll-view_H {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  margin-left: 50rpx;
+}
+.nav-view{
+  /* width: 230rpx; */
+  margin: 0 auto;
+  display:inline-block;
+  text-align: center;
+  flex: 1;
+  margin-right: 60rpx;
+}
+.nav-name{
+  display:inline-block;
+  font-size:28rpx;
+  color:#A5D7FC;
+}
+.nav-hover {
+  color: #fff;
+  border-bottom: 5rpx solid #fff;
+}

@@ -1,0 +1,139 @@
+<!--pages/course/paper/report.wxml-->
+<!-- <import src="../../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<!-- <view style="margin-top: 120px;"></view> -->
+<!--渲染圆环-->
+<view class='circlewrap'>
+  <view class='circle_big'>
+    <view class='circle_big_tit'>{{learnType == 5 || learnType == 6 || learnType == 46 ? '分数' : '正确率'}}</view>
+    <view class='circle_big_text'>
+      <text>{{currentaccuracy}}</text>
+      <text>{{learnType == 5 || learnType == 6 || learnType == 46 ? '分' : '%'}}</text>
+    </view>
+  </view>
+  <view class='circlewrap_in left'>
+    <view animation="{{arc_lData}}" class='arc arc_l'></view>
+  </view>
+  <view class='circlewrap_in right'>
+    <view animation="{{arc_rData}}" class='arc arc_r'></view>
+  </view>
+</view>
+<view class='report_tool'>
+  <view class='report_tool_in'>
+    <image mode='widthFix' src='/image/study/clock_fenxi.png'></image>
+    <text>{{wastetime}}</text>
+  </view>
+  <view class='report_tool_in'>
+    <image mode='widthFix' src='/image/study/zhengquelv_fenxi.png'></image>
+    <text>{{rightNum}}道</text>
+  </view>
+</view>
+<!--答案分析列表-->
+<view class='report_list'>
+  <block s-key="answerItem" s-for="answerItem, answerItemIndex in paperHistory.list">
+    <!--答对绿色-->
+    <block s-if="answerItem.parentqid < 1">
+      <block s-if="answerItem.isright == 1">
+        <view class='report_list_green'>
+          <text>{{answerItemIndex + 1}}</text>
+        </view>
+      </block>
+      <block s-if="answerItem.isright == 0 || answerItem.isright == 2">
+        <view class='report_list_red'>
+          <text>{{answerItemIndex + 1}}</text>
+        </view>
+      </block>
+    </block>
+    <!-- <view class='report_list_white'>
+    <text>3</text>
+  </view> -->
+    <!-- 已答主观题 -->
+    <block s-if="answerItem.isright == 3">
+      <view class='report_list_orange'>
+        <text>4</text>
+      </view>
+    </block>
+    <!--组合题为紫色,显示分数-->
+    <!-- <view bindtap="openLayer" class='report_list_violet'>
+    <view>1分</view>
+    <text>5</text>
+  </view>
+  <view bindtap="openLayer" class='report_list_violet'>
+    <view>10分</view>
+    <text>5</text>
+  </view> -->
+  </block>
+</view>
+<block s-if="learnType != 46">
+<!--学习内容-->
+<view class='report_titlist'>学习内容</view>
+<view class='learning'>
+  <view class='learning_tit'>
+    <text decode='true'>{{paperHistory.unitname}}</text>
+  </view>
+  <view class='learning_info'>
+    <image mode='widthFix' src='/image/study/clock_small.png'></image>
+    <text>{{handintime}}</text>
+    <!-- <text>周日</text>
+    <text>10:00-10:55</text>
+    <text>(55分钟)</text> -->
+  </view>
+</view>
+<navigator url hover-class='jump'>
+  <view class='report_info' bindtap='errorParsing'>
+    <view class='report_info_l'>
+      <text>答对{{rightNum}}道</text>
+      <text>错误{{wrongNum}}道</text>
+    </view>
+    <text style='color: #388ef2;'>查看错题</text>
+    <image mode='widthFix' class='arrow_r_big' src='/image/study/arrow_r_big.png'></image>
+  </view>
+</navigator>
+<block s-if="showLearn == true">
+<view class='report_titlist'>练习推荐</view>
+<view class='recommend'>
+  <block data-hi="{{groupindex}}" bindtap="load_newpaper" s-key="unitItem" s-for="unitItem, groupindex in unitlist">
+    <view class='report_info recommend_info' data-index='{{groupindex}}' data-unitid='{{unitItem.unitid}}' bindtap='learnContinue'>
+      <view class='report_info_l'>
+        <text>{{unitItem.title}}</text>
+      </view>
+      <text class='study_goon'>继续学习</text>
+      <image mode='widthFix' class='arrow_r_big' src='/image/study/arrow_r_big.png'></image>
+    </view>
+  </block>
+</view>
+</block>
+</block>
+<view class='fixb_report'>
+  <view bindtap='errorParsing' class='fixb_report_item' hover-class='report_item_hover'>错题解析</view>
+  <view bindtap='allParsing' class='fixb_report_item' hover-class='report_item_hover'>全部解析</view>
+  <view class='fixb_line'></view>
+</view>
+<view animation="{{shadeimation}}" bindtap='closeLayer' hidden="{{modal}}" class='shade'>
+  <view animation="{{layeranimation}}" catchtap='showLyaer' class='layer_content'>
+    <view bindtap='closeLayer' class='layer_close'>
+      <image mode='widthFix' src='/image/study/close.png'></image>
+    </view>
+    <view class='layer_tit'>请选择小题</view>
+    <view class='report_alertList'>
+      <view hover-class='alertList_hover'>
+        <text>1</text>
+      </view>
+      <view hover-class='alertList_hover'>
+        <text>2</text>
+      </view>
+      <view hover-class='alertList_hover'>
+        <text>3</text>
+      </view>
+      <view hover-class='alertList_hover'>
+        <text>4</text>
+      </view>
+      <view hover-class='alertList_hover'>
+        <text>5</text>
+      </view>
+      <view hover-class='alertList_hover'>
+        <text>6</text>
+      </view>
+    </view>
+  </view>
+</view>

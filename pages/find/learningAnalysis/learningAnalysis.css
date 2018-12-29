@@ -1,0 +1,89 @@
+/* pages/find/learningRecord/learningRecord.css */
+@import "../../../pages/course/paper/report/report.css";
+
+.circle_big_text text:first-child {
+  color: #279df7;
+}
+
+.report_tool_in text {
+  color: #279df7;
+}
+
+.report_tool_in {
+  padding: 0;
+  text-align: center !important;
+}
+
+.report_tool {
+  margin: 30rpx 0;
+}
+
+.fenxi_tab {
+  display: flex;
+  height: 50px;
+  line-height: 50px;
+  box-sizing: border-box;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.fenxi_tab view {
+  flex: 1;
+  text-align: center;
+  margin: 0 10rpx;
+}
+
+.fenxi_tab view text {
+  display: block;
+  font-size: 24rpx;
+}
+
+.fenxi_tab_avtion {
+  border-bottom: 1px solid #279df7;
+  box-sizing: border-box;
+  color: #279df7;
+}
+
+.fenxi_name {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.fenxi_tip {
+  font-size:26rpx;
+  color: #666;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+canvas {
+  width: 100%;
+  height: 210px;
+  margin: 20px auto 20px auto;
+}
+/*提示*/
+.report_tool_tip{
+  position: relative; 
+  margin-left:68rpx;
+  margin-top:-50rpx;
+  width: 230rpx;
+  z-index: 9;
+  font-size: 28rpx;
+  color: #279df7;
+  background: #fff;
+  box-shadow: 6rpx 6rpx 12rpx #8A8A8A;
+  padding: 5rpx;
+  border-radius: 4rpx;
+}
+.icon_arrow_down{
+  position: absolute;
+  left:50%;
+  bottom: -24rpx;
+  margin-left:-7rpx;
+  z-index: 12;
+  border: 14rpx solid transparent;
+  width: 0;
+  height: 0;
+  border-top: 14rpx solid #fff;
+}

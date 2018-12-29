@@ -1,0 +1,22 @@
+/* pages/course/myCourse/myCourse.css */
+page{
+  background: #f0f0f0;
+}
+.cell {
+  height:60px;
+  line-height:60px;
+  border-bottom:1rpx solid #e3e3e3;
+}
+.cell_sd {
+  color:#333;
+  font-size: 30rpx;
+  margin-left:30rpx;
+}
+.cell_border_top {
+  border: none;
+}
+
+.cell_ft {
+  font-size: 24rpx;
+  color: #b3b3b3;
+}

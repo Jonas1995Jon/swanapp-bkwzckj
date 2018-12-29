@@ -1,0 +1,77 @@
+<!--pages/live/liveNew.wxml-->
+<view class='live_top'>
+  <view class='live_cover'>
+    <image src='{{formalCourse.cover}}'></image>
+  </view>
+  <block s-if="livestate == '即将开始' || livestate == '未开始'">
+  <view class='live_time'>
+    <view class='title'>距直播开始还有</view>
+    <view class='time_con'>
+      <view class='time'>{{liveDay}}<text>天</text></view>
+      <view class='time'>{{liveHover}}<text>时</text></view>
+      <view class='time'>{{liveMinute}}<text>分</text></view>
+      <view class='time'>{{liveSecond}}<text>秒</text></view>
+    </view>
+  </view>
+  </block>
+  <block s-if="livestate == '直播中'">
+    <view class='live_time'>
+      <view class='live_room' bindtap='joinLiveNowRoom'>进入教室</view>
+    </view>
+  </block>
+  
+</view>
+<view class='live_nav'>
+  <view bindtap='navBtnClick' data-index='0' class="{{currentindex == 0 ? 'live_tab live_tab_action' : 'live_tab'}}">
+    <text>直播课堂</text>
+  </view>
+  <view bindtap='navBtnClick' data-index='1' class="{{currentindex == 1 ? 'live_tab live_tab_action' : 'live_tab'}}">
+    <text>讲师介绍</text>
+  </view>
+</view>
+<view class='live_wrap'>
+  <swiper class='swiper' bindchange="swiperChange" current="{{currentindex}}">
+    <swiper-item>
+      <block s-key="second" s-for="second, secondindex in formalCourse.list[liveindex].second">
+      <view class='cell_br'></view>
+      <view class='live_con' bindtap='joinClassRoom' data-index='{{secondindex}}'>
+        <view class='live_list'>
+          <view class='list_left'>
+            <image src="{{formalCourse.list[liveindex].cover == '' ? formalCourse.cover : formalCourse.list[liveindex].cover }}"></image>
+          </view>
+          <view class='list_main'>
+            <view class='title_con'>{{second.title}}</view>
+            <view class='list_right'>
+              <block s-if="second.state == '即将开始' || second.state == '直播中'">
+                <view class="active">
+                  {{second.state}}
+                </view>
+              </block>
+              <block s-else>
+                {{second.state}}
+              </block>
+            </view>
+            <view class='time'>{{second.year}}/{{second.month}}/{{second.day}} {{second.starttime}} </view>
+            <!-- <block wx:if="{{second.isfree_replay == 1}}">
+              <view class='learning'>试听</view>
+            </block> -->
+          </view>
+          
+        </view>
+      </view>
+      </block>
+    </swiper-item>
+    <swiper-item>
+      <view class='live_teacher'>
+        <view class='teacher_con'>
+          <view class='teacher_main'>
+            <view class='img'><image src='{{formalCourse.teacher.icon}}'></image></view>
+            <view class='name'>{{formalCourse.teacher.truename}}</view>
+          </view>
+          <view class='desc'>{{formalCourse.teacher.jieshao}}</view>
+        </view>
+      </view>
+      
+    </swiper-item>
+  </swiper>
+</view>

@@ -1,0 +1,260 @@
+/* @import "pages/navigation/navigation.css"; */
+@import "pages/nav/nav.css";
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 200rpx 0;
+    box-sizing: border-box;
+}
+
+text {
+    font-family: "Microsoft Yahei";
+    font-size: 28rpx;
+}
+
+.inline_view {
+    display: inline-block;
+}
+
+.inline_view_middle {
+    vertical-align: middle;
+}
+
+.font_hover {
+    color: #279df7;
+}
+
+.font_blue {
+    color: #279df7;
+}
+
+.content {
+    padding: 40rpx;
+}
+
+.input_place {
+    color: #c3c3c3;
+    font-size: 28rpx;
+}
+
+.bg_blue {
+    background-color: #279df7;
+}
+
+.bg_blue_hover {
+    background-color: #178ae1;
+}
+
+/*cell公共样式*/
+
+.cell {
+    position: relative;
+    background-color: #fff;
+    font-size: 17px;
+}
+
+.cells {
+    position: relative;
+    margin-top: 1.17647059em;
+    background-color: #fff;
+    line-height: 1.41176471;
+    font-size: 17px;
+}
+
+.cells:before {
+    top: 0;
+}
+
+.cells:after, .cells:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    color: #d9d9d9;
+}
+
+.cells:after {
+    bottom: 0;
+}
+
+.cells_title {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #999;
+    font-size: 14px;
+}
+
+.cells_after_title {
+    margin-top: 0;
+}
+
+.cells_tips {
+    margin-top: 0.3em;
+    color: #999;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 14px;
+}
+
+.cell {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 50px;
+    line-height: 50px;
+}
+
+.cell:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 1px;
+    color: #d9d9d9;
+    left: 5%;
+    width: 90%;
+}
+
+.cell_border_top {
+    border-top: 1rpx solid #e3e3e3;
+}
+
+.cell_border_bottom {
+    border-bottom: 1rpx solid #e3e3e3;
+}
+
+.cell_border_unittop {
+  margin-left:20px;
+  margin-right: 20px;
+  width: 100%;
+  height:50px;
+  line-height:50px;
+  border-top: 1rpx solid #e3e3e3;
+}
+
+.cell:first_child:before {
+    display: none;
+}
+
+.cell_active {
+    background-color: #ececec;
+}
+
+.cell_primary {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+
+.cell_sd {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    color: #323c47;
+    margin-left: 20px;
+}
+
+.cell_unit {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    color: #323c47;
+    /* margin-left: 20px;
+    margin-right: 20px; */
+    height:50px;
+    width: 70%;
+    overflow: hidden;
+    float:left;
+}
+
+.cell_bd {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    color: #5f5e66;
+    padding-left: 60rpx;
+}
+
+.cell_hd image {
+    position: relative;
+    left: 20px;
+    top:-5rpx;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+}
+
+.cell_ft {
+    text-align: left;
+    color: #a5a5a5;
+    font-size: 14px;
+    position: relative;
+    right: 15px;
+}
+
+.cell_access {
+    color: inherit;
+}
+
+.cell_ft_in_access {
+    padding-right: 0px;
+}
+
+.cell_ft_in_access:after {
+    content: " ";
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-width: 2px 2px 0 0;
+    border-color: #c8c8cd;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+}
+
+.cell_br {
+    clear: both;
+    width: 100%;
+    height: 10px;
+    background: #f0eff4;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50rpx 0;
+    box-sizing: border-box;
+}
+
+text {
+    font-family: Microsoft Yahei;
+}
+
+.inline_view {
+    display: inline-block;
+}
+
+.inline_view_middle {
+    vertical-align: middle;
+}
+
+.font_hover {
+    color: #279df7;
+}
+
+.content {
+    padding: 40rpx;
+}

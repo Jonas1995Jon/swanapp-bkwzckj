@@ -1,0 +1,190 @@
+/* pages/course/buyCourse/buyCourse.css */
+Page {
+  background: #f0eff4;
+}
+.buyCourse{
+  width: 100%;
+  overflow: hidden;
+}
+.buyCourse_wrap{
+  background-color: #fff;
+  padding: 0 30rpx;
+  overflow: hidden;
+  height: 180rpx;
+  line-height: 180rpx;
+  border-bottom: 1rpx #efefef solid;
+  display: flex;
+}
+.buyCourse_img{
+  margin-top:30rpx;
+  width: 214rpx;
+  height: 120rpx;
+}
+.buyCourse_detail_view{
+   margin-left:20rpx;
+   margin-top:30rpx;
+}
+.buyCourse_cell_order{
+  float: left;
+  width: 90%;
+  color: #b3b3b3;
+  font-size: 24rpx;
+}
+.buyCourse_cell_title{
+  color: #333333;
+  font-size: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-bottom: 20rpx;
+}
+.buyCourse_cell_type1{
+  color: #388ef2;
+  font-size: 24rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  margin-bottom: 20rpx;
+}
+.buyCourse_cell_type{
+  float: left;
+  color: #b3b3b3;
+  font-size: 24rpx;
+  text-align: left;
+  height: 24rpx;
+  line-height: 24rpx;
+}
+.buyCourse_cell_price{
+  float: right;
+  color: #ff7700;
+  font-size: 26rpx;
+  text-align: right;
+  position:absolute;
+  left:562rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+}
+.buyCourse_submit{
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0;
+}
+.buyCourse_button_price{
+  width: 65%;
+  padding-left: 5%;
+  float: left;
+  background-color: #fff;
+  color:#ff7e00;
+  font-size: 48rpx;
+}
+.buyCourse_button_price text{
+  font-size: 30rpx;
+}
+.buyCourse_button_sure{
+  width: 30%;
+  float: left;
+  background-color: #ff7e00;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+}
+.balance{
+  overflow: hidden;
+  padding: 46rpx 30rpx;
+  background: #fff;
+  border-bottom: 1rpx #efefef solid;
+}
+.balance_left{
+  float: left;
+  width: 300rpx;
+  font-size: 30rpx;
+  color: #333333;
+}
+.balance_left image{
+  float: left;
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: -4rpx;
+}
+.balance_left view{
+  padding-left: 32px;
+  /* float: left;
+  margin-left: 22rpx; */
+}
+.balance_right{
+  float: right;
+  width: 300rpx;
+  font-size: 24rpx;
+  color: #b3b3b3;
+}
+.balance_right view{
+  float: right;
+  margin-right: 20rpx;
+}
+.balance_right switch{
+  float: right;
+}
+.wx-switch-input{
+  width:80rpx !important;
+  height:40rpx !important;
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+  width:80rpx !important;
+  height: 40rpx !important;
+}
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+  width: 40rpx !important;
+  height: 40rpx !important;
+}
+.choiceCourse{
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+  position: fixed;
+  bottom: 0rpx;
+  opacity: 1;
+}
+.choiceCourse .title{
+  width: 750rpx;
+  color: #797979;
+  font-size: 32rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+.courseList{
+  width: 710rpx;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.courseItem{
+  width: 710rpx;
+  border-bottom: 1rpx solid #dcdcdc;
+  display: flex;
+  color: #797979;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.courseTitle{
+  width: 650rpx;
+  color: #797979;
+}
+.courseItem image{
+  margin-top:25rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+.sureChoice{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 32rpx;
+  background: #279df7;
+}

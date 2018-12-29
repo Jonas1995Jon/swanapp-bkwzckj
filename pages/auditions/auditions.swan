@@ -1,0 +1,76 @@
+<!--pages/live/liveNew.wxml-->
+<view class='live_top'>
+	<view class='live_cover'>
+		<video id="home_video" src="{{videoUrl}}" bindplay='startPlay' bindpause="pausePlay" bindended='endPlay' objectFit='fill'
+		 binderror="listenerVideo" autoplay='false' custom-cache='{{false}}' controls="true">
+    <!-- <cover-view bindtap='play' class='cover-view' s-if="isShowCoverView && cover !=''">
+      <cover-image class='cover-view' style='width: 100%; height: 210px; z-index:1;' src="{{cover}}" mode="aspectFill" />
+      <cover-image style='position:absolute; top:160rpx; left:324rpx; width:101rpx; height:101rpx;z-index:10000;' src="/image/video/icon_playbutton.png" />
+    </cover-view> -->
+  </video>
+	</view>
+</view>
+<view class='live_nav'>
+	<view bindtap='auditionsBtnClick' data-index='0' class="{{currentindex == 0 ? 'live_tab live_tab_action' : 'live_tab'}}">
+		<text>录播试听</text>
+	</view>
+	<view bindtap='auditionsBtnClick' data-index='1' class="{{currentindex == 1 ? 'live_tab live_tab_action' : 'live_tab'}}">
+		<text>直播试听</text>
+	</view>
+</view>
+<view class='live_wrap'>
+	<swiper class='swiper' bindchange="swiperChange" current="{{currentindex}}">
+		<swiper-item>
+			<view class='video_content_wrap'>
+				<view class='video_listwrap'>
+					<block s-key="auditionlist" s-for="auditionlistItem, auditionlistindex in auditionlist">
+						<view class='video_list'>
+							<!--章名字-->
+							<view class='video_tit' bindtap='firstNodeClick' data-index='{{auditionlistindex}}'>
+								<text>{{auditionlistItem.coursename}}</text>
+								<image mode='widthFix' src='{{auditionlistItem.show == true?arrow_down:arrow_up}}'></image>
+							</view>
+						</view>
+						<block s-key="audition" s-for="auditionItem, auditionindex in auditionlistItem.list">
+							<view class='video_list' hidden='{{auditionlistItem.show}}'>
+								<!--前言-->
+								<view class='video_tit video_qy'>
+									<image mode='widthFix' style='width:30rpx;height:30rpx;margin-right:18rpx;' src='{{auditionItem.firstactionid?playActionIcon:playIcon}}'></image>
+									<text id="{{auditionItem.id}}" data-type='{{auditionItem.type}}' data-bindex='{{auditionlistindex}}' data-index='{{auditionindex}}'
+									 bindtap='thirdNodeClick' style='color:{{auditionItem.firstactionid?"#388ef2":"#b3b3b3"}};'>{{auditionItem.title}}</text>
+									<image mode='widthFix' bindtap='buycourseclick' style='width:120rpx;height:38rpx;' src='/image/video/buycourse.png'></image>
+								</view>
+							</view>
+						</block>
+					</block>
+				</view>
+			</view>
+		</swiper-item>
+		<swiper-item>
+			<view class='video_content_wrap'>
+				<view class='video_listwrap'>
+					<block s-key="liveauditionlist" s-for="liveauditionlistItem, liveauditionlistindex in liveauditionlist">
+						<view class='video_list'>
+							<!--章名字-->
+							<view class='video_tit' bindtap='firstNodeClick' data-index='{{liveauditionlistindex}}'>
+								<text>{{liveauditionlistItem.coursename}}</text>
+								<image mode='widthFix' src='{{liveauditionlistItem.show == true?arrow_down:arrow_up}}'></image>
+							</view>
+						</view>
+						<block s-key="liveaudition" s-for="liveauditionItem, liveauditionindex in liveauditionlistItem.list">
+							<view class='video_list' hidden='{{liveauditionlistItem.show}}'>
+								<!--前言-->
+								<view class='video_tit video_qy'>
+									<image mode='widthFix' style='width:30rpx;height:30rpx;margin-right:18rpx;' src='{{liveauditionItem.firstactionid?playActionIcon:playIcon}}'></image>
+									<text id="{{liveauditionItem.id}}" data-type='{{liveauditionItem.type}}' data-bindex='{{liveauditionlistindex}}' data-index='{{liveauditionindex}}'
+									 bindtap='thirdNodeClick' style='color:{{liveauditionItem.firstactionid?"#388ef2":"#b3b3b3"}};'>{{liveauditionItem.title}}</text>
+									<image mode='widthFix' bindtap='buycourseclick' style='width:120rpx;height:38rpx;' src='/image/video/buycourse.png'></image>
+								</view>
+							</view>
+						</block>
+					</block>
+				</view>
+			</view>
+		</swiper-item>
+	</swiper>
+</view>

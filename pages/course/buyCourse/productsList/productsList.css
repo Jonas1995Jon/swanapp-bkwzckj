@@ -1,0 +1,90 @@
+/* pages/course/buyCourse/productsList/productsList.css */
+
+Page {
+  background: #f0eff4;
+  color: #323c47;
+  font-size: 30rpx;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.products_wrap {
+  width: 90%;
+  margin: 0 5%;
+  overflow: hidden;
+}
+
+.products_cell_title {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #999;
+  font-size: 36rpx;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: #fff;
+}
+
+.active {
+  background: #279df7;
+  color: #fff;
+}
+
+.products_cell {
+  width: 100%;
+  overflow: hidden;
+}
+
+.products_cell_items {
+  width: 90%;
+  padding: 0 5%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+}
+
+.products_cell_item {
+  width: 100%;
+  margin: 0 auto;
+  color: #999;
+  text-align: left;
+}
+
+.cell_border_top {
+  border-top: 1rpx solid #e3e3e3;
+}
+
+.products_cell_shadow {
+  width: 100%;
+  height: 10rpx;
+  background-color: #e3e3e3;
+  /* box-shadow:0 0rpx 40rpx 0 #000 inset; */
+}
+
+.products_btn{
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.products_price{
+  width: 65%;
+  padding-left: 5%;
+  color: #279df7;
+  background-color: #fff;
+  font-size: 36rpx;
+  float: left;
+}
+
+.products_surebtn{
+  width: 30%;
+  background-color: #279df7;
+  color: #fff;
+  font-size: 36rpx;
+  float: right;
+  text-align: center;
+}

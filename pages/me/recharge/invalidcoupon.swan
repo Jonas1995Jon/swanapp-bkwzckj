@@ -1,0 +1,19 @@
+<block s-key="couponList" s-for="couponList, couponListindex in couponList">
+  <view class='coupon' style='top:0'>
+    <block s-if="couponList.coupontype == 'allcategorydiscount'">
+      <image class='bjimg' src='../../../image/me/gqcoupon.png'></image>
+    </block>
+    <block s-else>
+      <image class='bjimg' src='../../../image/me/ysycoupon.png'></image>
+    </block>
+    <view class='coupon_view'>
+      <view class='coupon_pic_left'>{{couponList.price}}
+        <text>{{couponList.coupontype == 'allcategorydiscount'?'折':'元'}}</text>
+      </view>
+      <view class='coupon_pic_right'>
+        <view class='coupon_pic_title'>{{couponList.title}}</view>
+        <view class='coupon_pic_time'>有效期至{{couponList.validtime}}</view>
+      </view>
+    </view>
+  </view>
+</block>

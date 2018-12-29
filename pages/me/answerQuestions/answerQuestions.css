@@ -1,0 +1,124 @@
+/* pages/me/answerQuestions/answerQuestions.css */
+
+page {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.learningRecord_wrap {
+  width: 100%;
+  position: absolute;
+  top: 80rpx;
+  left: 0;
+  bottom: 0rpx;
+  overflow: hidden;
+}
+.swiper{
+  height: 100%;
+}
+.swiper swiper-item{
+  height: 100%;
+  overflow-y: auto !important;
+}
+/*切换tab*/
+
+.answer_nav {
+  display: flex;
+  background:#141c23;
+}
+
+.answer_nav .answer_tab {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  /* border-bottom: 1px solid #279df7; */
+  /* box-sizing: border-box; */
+}
+
+.answer_tab text {
+  display: block;
+  line-height: 40rpx;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+
+}
+
+.answer_tab_action {
+  /* color: #279df7 !important; */
+  border-bottom: 2px solid #279df7 !important; 
+  /* background: #279df7; */
+  color: #279df7 !important;
+}
+.all_answer{
+  width: 100%;
+  margin: 0 auto;
+  height: 130rpx;
+  border-bottom: 1px solid #dcdcdc !important;
+}
+.all_answer_content{
+  width: 670rpx;
+  margin:40rpx auto;
+}
+.all_answer_title{
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  color: #000;
+  text-align: left;
+}
+.all_answer_state{
+  float: left;
+  width: 100rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color: #686868;
+  text-align: left;
+}
+.all_answer_line{
+  float: left;
+  margin-left: 0rpx;
+  margin-right: 30rpx;
+  width: 1rpx;
+  color: #686868;
+  
+}
+.all_answer_time{
+  float: left;
+  width: 500rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color: #bbbbbb;
+  text-align: left;
+}
+.add_question{
+  width: 60rpx;
+  height: 60rpx;
+  margin-top:-5rpx;
+  line-height: 55rpx;
+  text-align: center;
+  border-radius: 60rpx;
+  font-size: 40rpx;
+  background: #279df7;
+  color: #fff;
+  position: fixed;
+  bottom: 80rpx;
+  right: 50rpx;
+
+}
+.no_question{
+  width: 750rpx;
+  margin: 0 auto;
+  text-align: center;
+}
+.no_question image{
+  width: 381rpx;
+  height: 405rpx;
+  margin-top: 300rpx;
+}

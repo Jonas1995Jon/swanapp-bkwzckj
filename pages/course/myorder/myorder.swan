@@ -1,0 +1,80 @@
+<!--pages/course/myorder/myorder.wxml-->
+<view class='video_nav'>
+  <view bindtap='myOrderBtnClick' data-index='0' class="{{currentindex == 0 ? 'video_tab action' : 'video_tab'}}">
+    <text>已完成</text>
+  </view>
+  <view bindtap='myOrderBtnClick' data-index='1' class="{{currentindex == 1 ? 'video_tab action' : 'video_tab'}}">
+    <text>未完成</text>
+  </view>
+</view>
+<swiper class='swiper' bindchange="swiperChange" current="{{currentindex}}">
+  <swiper-item>
+    <scroll-view scroll-y bindscrolltolower="scrolltolower" style='height:100%;'>
+      <block s-key="myorderYes" s-for="myorderYesItem, myorderYesIndex in myorderYes">
+      <view class='topline'></view>
+      <view class='myorder_con' bindtap='orderYesClick' data-orderguid='{{myorderYesItem.orderguid}}'>
+        <view class='order_no'>订单号：{{myorderYesItem.orderid}}</view>
+        <block s-key="courselist" s-for="courselistItem, courselistIndex in myorderYesItem.courselist">
+          <view class="buyCourse_wrap cell_border_top">
+            <image class='buyCourse_img' src='{{courselistItem.commodity_cover}}'></image>
+            <view class='buyCourse_detail_view'>
+              <view class="buyCourse_cell_title">{{courselistItem.coursename}}</view>
+              <view class="buyCourse_cell_type1">{{courselistItem.commodity_title}}</view>
+              <view class="buyCourse_cell_detail">
+                <view class="buyCourse_cell_type">{{myorderYesItem.createtime}}</view>
+                <!-- <view class="buyCourse_cell_type">{{courselistItem.package[1].title}}</view> -->
+                <view class="buyCourse_cell_price">¥{{courselistItem.commodity_costprice}}元</view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      </block>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y bindscrolltolower="scrolltolower" style='height:100%';>
+      <block s-key="myorderNo" s-for="myorderNoItem, myorderNoIndex in myorderNo">
+      <view class='topline'></view>
+      <view class='myorder_con' bindtap='payBtnClick' data-orderguid='{{myorderNoItem.orderguid}}'>
+        <view class='order_no'>订单号：{{myorderNoItem.orderid}}</view>
+        <block s-key="courselist" s-for="courselistItem, courselistIndex in myorderNoItem.courselist">
+          <view class="buyCourse_wrap cell_border_top">
+            <image class='buyCourse_img' src='{{courselistItem.commodity_cover}}'></image>
+            <view class='buyCourse_detail_view'>
+              <view class="buyCourse_cell_title">{{courselistItem.coursename}}</view>
+              <view class="buyCourse_cell_type1">{{courselistItem.commodity_title}}</view>
+              <view class="buyCourse_cell_detail">
+                <view class="buyCourse_cell_type">{{myorderNoItem.createtime}}</view>
+                <!-- <view class="buyCourse_cell_type">{{courselistItem.package[1].title}}</view> -->
+                <view class="buyCourse_cell_price">¥{{courselistItem.commodity_costprice}}元</view>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class='order_cell'>
+          <view class='order_left' catchtap='cancelBtnClick' data-orderguid='{{myorderNoItem.orderguid}}'>取消</view>
+          <view class='order_right' catchtap='payBtnClick' data-orderguid='{{myorderNoItem.orderguid}}'>付款</view>
+        </view>
+      </view>
+      </block>
+      <view class='bottomline'></view>
+      <!-- <block wx:if="{{orderlist}}">
+
+      <view class='myorder_con'>
+        <view class='order_no'>订单号：{{orderlist[0].orderid}}</view>
+        <block wx:key="courselist" wx:for-index="courselistIndex" wx:for="{{orderlist.courselist}}" wx:for-item="courselistItem">
+        <view class='order_cell'>
+          <view class='order_left'>订单金额：{{courselistItem.commodity_costprice}}元</view>
+          <view class='order_right' bindtap='payBtnClick' data-orderguid='{{myorderNoItem.orderguid}}'>付款</view>
+        </view>
+        </block>
+        <view class='order_cell'>
+          <view class='order_left'>订单状态：</view>
+          <view class='order_right' bindtap='cancelBtnClick' data-orderguid='{{myorderNoItem.orderguid}}'>取消订单</view>
+        </view>
+      </view>
+      </block> -->
+    </scroll-view>
+  </swiper-item>
+</swiper>

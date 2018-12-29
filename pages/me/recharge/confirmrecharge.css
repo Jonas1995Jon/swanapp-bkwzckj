@@ -1,0 +1,73 @@
+page{
+  background: #f0eff4;
+  height: 100%;
+}
+.recharge{
+  height: 550rpx;
+  background: #fff;
+  margin: 34rpx 30rpx 0 30rpx;
+}
+.recharge_view{
+  padding: 0 30rpx;
+}
+.bottom_line{
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.left,.right{
+  width: 140rpx;
+  font-size: 30rpx;
+  color: #b3b3b3;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.left{
+  float: left;
+  text-align: left
+}
+.right{
+  float: right;
+  text-align: right
+}
+.lefttitle{
+  width: 100%;
+  color: #333333;
+}
+.recharge_input{
+  border-bottom: 1px solid #f0f0f0;
+  height: 250rpx;
+}
+.recharge_input_view{
+  width: 100%;
+  clear: both;
+}
+.recharge_input_view view{
+  font-size: 60rpx;
+  color: #333333;
+  height: 43rpx;
+  line-height: 43rpx;
+  position: relative;
+  bottom: -50rpx;
+}
+.recharge_input_view input{
+  width: 90%;
+  font-size: 90rpx;
+  color: #333333;
+  height: 134rpx;
+  line-height: 134rpx;
+  position: relative;
+  left: 65rpx;
+  bottom: 36rpx;
+}
+.recharge_btn{
+  height: 88rpx;
+  line-height: 88rpx;
+  margin: 50rpx 15rpx 58rpx 15rpx;
+  background: #388ef2;
+  border-radius: 10rpx;
+  font-size: 36rpx;
+  color: #ffffff;
+  text-align: center
+}

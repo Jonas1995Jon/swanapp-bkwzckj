@@ -1,0 +1,47 @@
+<!--pages/learn/updateExamTime/updateExamTime.wxml-->
+<view class='updateExamTime'>
+  <view class="account_cell" bindtap='signUpClick'>
+    <view class="account_cell_bd">是否在官网报名考试</view>
+    <view class="account_cell_ft cell_ft_in_access">{{signUpTitle}}</view>
+  </view>
+  <view class="account_cell" bindtap='kqTimeClick'>
+    <view class="account_cell_bd">选择考试时间</view>
+    <view class="account_cell_ft cell_ft_in_access">{{kqTimeTitle}}</view>
+  </view>
+</view>
+<view class='sureUpdateChoice' bindtap='sureChoiceTap'>确认</view>
+<view class='tipMsg'>
+  <text style='font-size:30rpx;padding-bottom:20rpx;'>温馨提示 \n</text>
+  <text>1、考试时间只能修改一次\n</text>
+  <text>2、考试时间的设定将影响重学和退款保障，请不要随意修改</text>
+</view>
+<action-sheet hidden="{{signUpHidden}}" bindchange="actionSheetbindchange1">
+<view class='choiceCourse'>
+  <!-- <view class='title'>是否在官网报名</view> -->
+  <view class='courseList'>
+    <block s-key="signUpItem" s-for="signUpItem, signUpIndex in signUpList">
+    <view class='courseItem' bindtap='signUpChoiceTap' data-index='{{signUpIndex}}'>
+      <view class='courseTitle'>{{signUpItem.title}}</view>
+      <image src='{{signUpItem.selected == 0 ? "../../../../image/other/buycourse_select_unchecked.png" : "../../../../image/other/buycourse_select_checked.png"}}'></image>
+    </view>
+    </block>
+  </view>
+  <view class='sureChoice' bindtap='sureChoiceSignUpTap'>确认</view>
+</view>
+</action-sheet>
+<action-sheet hidden="{{kqTimeHidden}}" bindchange="actionSheetbindchange2">
+<view class='choiceCourse'>
+  <!-- <view class='title'>选择考试时间</view> -->
+  <view class='courseList'>
+    <block s-key="kqTimeItem" s-for="kqTimeItem, kqTimeIndex in kqTimeList">
+    <block s-if="kqTimeList.length - 1 != kqTimeIndex">
+    <view class='courseItem' bindtap='kqTimeChoiceTap' data-index='{{kqTimeIndex}}'>
+      <view class='courseTitle'>{{kqTimeItem.starttime}}</view>
+      <image src='{{kqTimeItem.selected == 0 ? "../../../../image/other/buycourse_select_unchecked.png" : "../../../../image/other/buycourse_select_checked.png"}}'></image>
+    </view>
+    </block>
+    </block>
+  </view>
+  <view class='sureChoice' bindtap='sureChoiceKqTimeTap'>确定</view>
+</view>
+</action-sheet>

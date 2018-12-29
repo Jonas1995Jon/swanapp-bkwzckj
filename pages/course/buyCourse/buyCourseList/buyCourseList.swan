@@ -1,0 +1,9 @@
+<!--pages/course/buyCourse/buyCourseList/buyCourseList.wxml-->
+<!-- <import src="../../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class="change_wrap">
+  <text class="grayTip">{{titleMsg}}</text>
+  <view data-hi="{{groupindex}}" bindtap="courseListClick" s-key="changeExamination" s-for="courselist, groupindex in courselist" class="course_list">
+    <text class="course_tit">{{courselist.title}}</text>
+  </view>
+</view>

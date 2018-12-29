@@ -1,0 +1,21 @@
+<!--changeSubject.wxml-->
+<!-- <view class="change_course_wrap">
+  <text class="change_course_grayTip">当前考试：{{smallclassItem.title}}</text>
+  <image class="change_course_grayTipIcon" src="../../../image/other/change_icon.png"></image>
+  <view  data-hi="{{groupindex}}" bindtap="jump_choice_subject" wx:key="changeSubject" wx:for="{{courselist}}" wx:for-item="courselist"  wx:for-index="groupindex"  class="change_course_list">
+    <text class="change_course_tit">{{courselist.title}}</text>
+  </view>
+</view> -->
+<!-- <import src="../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class="change_course_wrap" bindtap="jump_choice_examination">
+  <text class="grayTip1">当前考试</text>
+  <text class="grayTip2">{{smallclassItem.title}} ></text>
+  <!-- <image class="change_course_grayTipIcon" src="../../../image/other/change_icon.png"></image> -->
+</view>
+<view class="cell_br"></view>
+<view class="change_wrap" style="padding:0 5% 0 5%;">
+  <view data-hi="{{groupindex}}" bindtap="jump_choice_subject" s-key="changeSubject" s-for="courselist, groupindex in courselist" class="course_list">
+    <text class="course_tit">{{courselist.title}}</text>
+  </view>
+</view>

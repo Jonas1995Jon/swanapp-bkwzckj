@@ -1,0 +1,33 @@
+<!--pages/course/myCourse/detail/detail.wxml-->
+<!-- <import src="../../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class="account_cell cell_border_top">
+  <view class="account_cell_bd">课程名称</view>
+  <view class="account_cell_ft">{{mycourseItem.coursename}}</view>
+</view>
+<view class="account_cell">
+  <view class="account_cell_bd">学习类型</view>
+  <view class="account_cell_ft">{{mycourseItem.curstate}}</view>
+</view>
+<view class="account_cell">
+  <view class="account_cell_bd">考试时间</view>
+  <view class="account_cell_ft">{{mycourseItem.endtime}}</view>
+</view>
+<view class="account_cell">
+  <view class="account_cell_bd">有\t效\t期</view>
+  <view class="account_cell_ft">{{mycourseItem.validity}}</view>
+</view>
+<view class="account_cell">
+  <view class="account_cell_bd">商品名称</view>
+  <view class="account_cell_ft">{{mycourseItem.coursetype}}</view>
+</view>
+<view class="account_cell">
+  <view class="account_cell_bd">学习时间</view>
+  <view class="account_cell_ft">{{mycourseItem.shuati_timelength}}</view>
+</view>
+<view class="account_cell">
+  <view class="account_cell_bd">剩余时间</view>
+  <view class="account_cell_ft">{{mycourseItem.remaindertime}}</view>
+</view>
+<view class="cell_br"></view>
+<button data-categoryid='{{mycourseItem.categoryid}}' data-courseid='{{mycourseItem.courseid}}' data-coursename='{{mycourseItem.coursename}}' bindtap='learnBtnClick' class='submit_btn' hover-class="submit_btn_hover" form-type='submit'>进入学习</button>

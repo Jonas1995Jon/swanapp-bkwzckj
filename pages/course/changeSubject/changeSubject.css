@@ -1,0 +1,31 @@
+/* changeSubject.css */
+@import "../changeCategory/changeCategory.css";
+.change_course_wrap{
+  width: 90%;
+  margin: 10rpx 5%;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.change_course_grayTipIcon{
+  width: 30rpx;
+  height: 30rpx;
+  position: relative;
+  top:5rpx;
+  left:5rpx;
+}
+.grayTip1 {
+  font-size:28rpx;
+  color: #000;
+  margin-bottom: 10rpx;
+  text-align: left;
+  float: left;
+}
+.grayTip2 {
+  
+  float: right;
+  font-size:28rpx;
+  color: #999999;
+  margin-bottom: 10rpx;
+  text-align: right;
+
+}

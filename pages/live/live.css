@@ -1,0 +1,125 @@
+/* pages/live/live.css */
+/* video.css */
+Page {
+  background: #f0eff4;
+  color: #323c47;
+  font-size: 30rpx;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.video_content_wrap{
+  width: 100%;
+  position: absolute;
+  left:0;
+  bottom: 0;
+  overflow: auto;
+} 
+.video_wrap{
+   width: 100%;
+   position: relative;
+  height: 422rpx;
+}
+.video_wrap video{
+  width: 100%;
+  height: 100%;
+}
+.classroom_tit{
+  padding: 25rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dcdcdc;
+  background: #fff;
+}
+.classroom_tit_l_top{
+  padding-bottom: 6rpx;
+}
+.classroom_tit_l_top text{
+  max-width: 380rpx;
+  display: inline-block;
+  font-size: 32rpx;
+  color: #797979;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.liveAction{
+  max-width:560rpx !important;
+}
+.classroom_tit_l_top text:first-child{
+  color: #279df7;
+  padding-right: 15rpx;
+}
+.classroom_tit_l_bottom{
+   font-size:30rpx;
+  color: #797979;
+}
+.classroom_tit_btn{
+  margin-left: 20rpx;
+  padding: 15rpx 20rpx;
+  background: #279DF7;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 8rpx;
+  display: inline-block;
+}
+.class_list_tit{
+  display: flex;
+  font-size: 32rpx;
+  color: #797979;
+  padding-left: 25rpx;
+  padding-right: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #f9f9f9;
+  align-items: center;
+  border-bottom: 1px solid #dcdcdc;
+}
+.gray_item_hover{
+  background: #e0e0e0;
+}
+.class_list_tit text{
+  flex: 1;
+  font-size: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.class_list_tit image{
+  width: 22rpx;
+}
+.video_course{
+  padding: 15rpx 25rpx;
+  display: flex;
+  border-bottom: 1px solid #dcdcdc;
+  align-items: center;
+  background: #fff;
+}
+.video_course_l{
+  flex: 1;
+}
+.video_course_l_tit{
+  font-size: 30rpx;
+  color: #303030;
+  padding-bottom: 5rpx;
+}
+.video_course_info text{
+  font-size: 28rpx;
+  color: #797979;
+}
+.video_course_info text:first-child{
+  padding-right: 50rpx;
+}
+.video_course_btn{
+  font-size: 28rpx;
+  margin-right: 20rpx;
+  color: #656565;
+}
+.course_btn_hover{
+  color: #279df7 !important;
+}
+.active{
+  color: #279df7;
+}

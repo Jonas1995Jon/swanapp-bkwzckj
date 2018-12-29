@@ -1,0 +1,86 @@
+<!--pages/me/answerQuestions/questionDetail.wxml-->
+<!-- <import src="../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class="question_detail">
+  <block s-key="questionDetailList" s-for="question, questionindex in questionList">
+    <view class="question_detail_list" style='clear:both;'>
+      <view class='question_detail_headimg'>
+        <block s-if="questionindex == 0">
+          <image src='../../../image/answerquestion/img_me_icon.png'></image>
+        </block>
+        <block s-else>
+          <image src='{{(question.workerid == 0) ? "../../../image/answerquestion/img_me_icon.png" : "../../../image/answerquestion/img_teacher_icon.png"}}'></image>
+        </block>
+      </view>
+      <view class='question_detail_content'>
+        <view class='question_detail_title'>
+          <block s-if="questionindex == 0">
+            <rich-text nodes="{{question.problem_description}}"></rich-text>
+            <!-- {{question.problem_description}} -->
+          </block>
+          <block s-else>
+            {{question.reply_content}}
+          </block>
+        </view>
+        <view class='question_detail_imglist'>
+          <block s-if="questionindex == 0">
+            <block s-key="problem_attachment" s-for="problem, problemindex in question.problem_attachmentArr">
+              <block s-if="problem != ''">
+                <image style='{{question.problem_attachmentArr.length <=3 ? "margin-bottom:0rpx;" : "margin-bottom:20rpx;"}}' mode='aspectFit' bindtap='imgPreview' data-list='{{question.problem_attachmentArr}}' data-src='{{problem}}' src='{{problem}}'></image>
+              </block>
+            </block>
+          </block>
+          <block s-else>
+            <block s-key="reply_attachment" s-for="reply, reply_attachmentindex in question.reply_attachmentArr">
+              <block s-if="reply != ''">
+                <image style='{{question.reply_attachmentArr.length <=3 ? "margin-bottom:0rpx;" : "margin-bottom:20rpx;"}}' mode='aspectFit' bindtap='imgPreview' data-list='{{question.reply_attachmentArr}}' data-src='{{reply}}' src='{{reply}}'></image>
+              </block>
+            </block>
+          </block>
+        </view>
+        <view class='question_detail_time'>
+          <image src='../../../image/live/time_cicle.png'></image>
+          {{question.addtime}}
+        </view>
+      </view>
+      <block s-if="questionindex != questionList.length-1">
+        <view style="padding-top: {{question.lineheight}}rpx;width:10rpx;border-left:1px solid #dcdcdc;position:relative;left:40rpx;top:80rpx;z-index:-999;"></view>
+      </block>
+      <block s-else>
+        <view style></view>
+      </block>
+
+    </view>
+  </block>
+</view>
+<view style='width:100%;height:150rpx;'></view>
+<block s-if="state == 0 || state == 1 || state == 2">
+  <view class='fixb_report'>
+    <view bindtap='sureComplateTap' class='fixb_report_item' hover-class='report_item_hover'>确认完成</view>
+    <view bindtap='continueMessagetap' class='fixb_report_item' hover-class='report_item_hover'>继续留言</view>
+    <view class='fixb_line'></view>
+  </view>
+</block>
+<block s-if="state == 3">
+  <view class='question_score'>
+      <view class="question_score_left"><image src='../../../image/answerquestion/img_witescore_icon.png'></image></view>
+      <view class="question_score_right">
+        <block s-key="scoreiconList" s-for="score, scoreiconindex in 5">
+        <image bindtap='starTap' data-index='{{scoreiconindex}}' src='../../../image/answerquestion/img_starno_icon.png'></image>
+        </block>
+      </view>
+  </view>
+</block>
+<block s-if="state == 4">
+  <view class='question_score'>
+      <view class="question_score_left"><image src='../../../image/answerquestion/img_finishscore_icon.png'></image></view>
+      <view class="question_score_right">
+        <block s-key="scoreYesiconList" s-for="item, index in starSelectIndex">
+          <image src='../../../image/answerquestion/img_staryes_icon.png'></image>
+        </block>
+        <block s-key="scoreNoiconList" s-for="item, scoreiconindex in starSelectNoIndex">
+          <image src='../../../image/answerquestion/img_starno_icon.png'></image>
+        </block>
+      </view>
+  </view>
+</block>

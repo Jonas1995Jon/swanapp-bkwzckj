@@ -1,0 +1,40 @@
+<!--pages/find/unitExam/unitExam.wxml-->
+<!-- <import src="../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<block s-if="learnType == 5 || learnType == 6"> 
+  <view class='examCon'>
+    <view class='examCon_list'>
+      <block s-key="exam" s-for="exam, groupindex in unitList">
+      <view class='examCon_item' data-hi="{{groupindex}}" bindtap="unitListClick">
+        <view class='examCon_coursename' style='{{coursename.length > 9 ? "height:70rpx;" : "40rpx;"}}'>{{exam.title}}</view>
+        <view class='examCon_title'><view>{{exam.score}}</view></view>
+        <view class='examCon_score'><view>{{exam.questionnumber}}</view></view>
+        <view class='examCon_bg'><image src='../../../image/find/unit_listbg.png'></image></view>
+      </view>
+      </block>
+    </view>
+  </view>
+</block>
+<block s-else>
+  <view class="cells cells_after_title">
+  <!-- <view class="cell_br"></view> -->
+  <block s-key="unitList" s-for="unitList, groupindex in unitList">
+    <view data-hi="{{groupindex}}" bindtap="unitListClick" class="cell cell_access" hover-class="cell_active">
+      <!-- <view class="cell_hd">
+                    <image src="{{cell.icon}}"></image>
+                </view> -->
+      <!-- <block wx:if="{{groupindex != 0 }}"> -->
+        <view class="cell_border_unittop" style="{{groupindex == 0 ? 'border-top:0px;' : ''}}">
+        <view class="cell_unit">{{unitList.title}}</view>
+        <view class="cell_ft cell_ft_in_access" style="float:right;right: 5px;">{{learnType == 7 ? unitList.quecount+ '道' : ''}}</view>
+        </view>
+      <!-- </block>
+      <block wx:else> -->
+        <!-- <view class="cell_unit">{{unitList.title}}</view>
+        <view class="cell_ft cell_ft_in_access">12312</view> -->
+      <!-- </block> -->
+
+    </view>
+  </block>
+</view>
+</block>

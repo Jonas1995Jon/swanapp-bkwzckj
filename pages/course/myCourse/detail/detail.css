@@ -1,0 +1,51 @@
+/* pages/course/myCourse/detail/detail.css */
+Page {
+  background-color: #fff;
+}
+.account_cell {
+  background-color: #fff;
+  width: 90%;
+  padding: 0 5%;
+  overflow: hidden;
+  float: left;
+  border-bottom: 1px solid #e3e3e3;
+}
+.account_cell_bd {
+  color: #b3b3b3;
+  font-size: 30rpx;
+  text-align: left;
+  width: 30%;
+  float: left;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.account_cell_ft {
+  color: #333;
+  text-align: right;
+  font-size: 30rpx;
+  width: 70%;
+  float: left;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.account_cell_ft image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  margin-top: 10rpx;
+}
+.cell_br{
+  height:60rpx;
+  background:#fff;
+}
+.submit_btn{
+  width: 90%;
+  margin: 0 auto;
+  color: #fff;
+  border-radius:5px;
+  background: #279df7;
+  font-size: 18px;
+}
+.submit_btn_hover{
+  background: #0b85e1;
+}

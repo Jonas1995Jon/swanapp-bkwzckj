@@ -1,0 +1,24 @@
+<!-- <import src="../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class="cell-container">
+    <view class="cell_br"></view>
+    <view class="cells cells_after_title" style="magin-top:10px;">
+        <block s-key="common" s-for="cell, groupindex in common">
+            <block s-if="groupindex == 3">
+                <view class="cell_br"></view>
+            </block>
+            <view data-hi="{{groupindex}}" bindtap="commonClick" class="cell cell_access" hover-class="cell_active">
+                <view class="cell_hd">
+                    <image src="{{cell.icon}}"></image>
+                </view>
+                <block s-if="groupindex != 0 && groupindex != 3">
+                    <view class="cell_bd cell_border_top">{{cell.title}}</view>
+                </block>
+                <block s-else>
+                    <view class="cell_bd">{{cell.title}}</view>
+                </block>
+                <view class="cell_ft cell_ft_in_access"></view>
+            </view>
+        </block>
+    </view>
+</view>

@@ -1,0 +1,9 @@
+<!--changeExamination.wxml-->
+<!-- <import src="../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class="change_wrap">
+  <text class="grayTip">{{titleMsg}}</text>
+  <view data-hi="{{groupindex}}" bindtap="jump_choice_subject" s-key="changeExamination" s-for="smallclass, groupindex in smallclass" class="course_list">
+    <text class="course_tit">{{smallclass.title}}</text>
+  </view>
+</view>

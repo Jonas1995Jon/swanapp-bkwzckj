@@ -1,0 +1,382 @@
+/* pages/course/paper/report.css */
+
+.circlewrap {
+  margin: 60rpx auto;
+  width: 400rpx;
+  height: 400rpx;
+  position: relative;
+}
+
+.circle_big {
+  width: 400rpx;
+  height: 400rpx;
+  position: relative;
+  border: 5rpx solid #e4e4e4;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle_big_tit {
+  font-size: 36rpx;
+  color: #cdcdcd;
+  /* margin-left: -10rpx */
+}
+
+.circle_big_text {
+  margin-left: 64rpx;
+}
+
+.circle_big_text text:first-child {
+  font-size: 120rpx;
+  color: #388ef2;
+}
+
+.circle_big_text text:last-child {
+  font-size: 36rpx;
+  color: #388ef2;
+}
+
+.circlewrap_in {
+  width: 206rpx;
+  height: 420rpx;
+  line-height: 420rpx;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
+.right {
+  right: -8rpx;
+}
+
+.left {
+  left: 1rpx;
+}
+
+.arc {
+  width: 400rpx;
+  height: 400rpx;
+  border: 5rpx solid transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  -webkit-transform: rotate(-135deg);
+}
+
+.arc_l {
+  border-bottom: 5rpx solid #279df7;
+  border-left: 5rpx solid #279df7;
+  left: 0rpx;
+}
+
+.arc_r {
+  border-top: 5rpx solid #279df7;
+  border-right: 5rpx solid #279df7;
+  right: 0rpx;
+}
+
+/*分析报告状态栏*/
+
+.report_tool {
+  margin: 60rpx 0;
+  display: flex;
+  align-items: center;
+}
+
+.report_tool_in {
+  flex: 1;
+  padding: 0 15%;
+}
+
+.report_tool_in:first-child {
+  border-right: 1px solid #e6e6e6;
+  text-align: right;
+}
+
+.report_tool_in:last-child {
+  text-align: left;
+}
+
+.report_tool_in image {
+  width: 30rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.report_tool_in text {
+  margin-left: 20rpx;
+  color: #388ef2;
+  font-size: 30rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*答案分析列表*/
+
+.report_list {
+  padding: 0 20rpx;
+  padding-bottom: 10rpx;
+}
+
+.report_list view {
+  display: inline-block;
+  width: 20%;
+  color: #fff;
+  margin-bottom: 40rpx;
+}
+
+.report_list view text {
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 36rpx;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid transparent;
+}
+
+.report_list_green text {
+  background-color: #3cde6a;
+}
+
+.report_list_red text {
+  background-color: #e85368;
+}
+
+.report_list_white text {
+  background-color: transparent;
+  border: 1px solid #808080 !important;
+  color: #808080;
+}
+
+.report_list_orange text {
+  background-color: #ff6415;
+}
+
+.report_list_violet {
+  position: relative;
+}
+
+.report_list_violet text:last-child {
+  background-color: #e773ee;
+}
+
+.report_list_violet view {
+  display: block;
+  width: auto;
+  height: auto;
+  color: #fff;
+  padding: 2rpx 8rpx;
+  margin-bottom: 0;
+  position: absolute;
+  white-space: nowrap;
+  font-size: 18rpx;
+  left: 50%;
+  margin-left: 20rpx;
+  top: 5rpx;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 6rpx;
+}
+
+.report_titlist {
+  font-size: 24rpx;
+  background: #f5f5f5;
+  padding: 0 30rpx;
+  color: #b3b3b3;
+  height: 64rpx;
+  line-height: 64rpx;
+}
+
+.learning {
+  padding: 30rpx;
+  padding-bottom: 0;
+}
+
+.learning_tit {
+  font-size: 30rpx;
+  color: #333333;
+  padding-bottom: 20rpx;
+}
+
+.learning_info {
+  color: #b3b3b3;
+  font-size: 24rpx;
+  border-bottom: 1px solid #f0eff4;
+  padding-bottom: 30rpx;
+}
+
+.learning_info text {
+  display: inline-block;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+
+.learning_info image:first-child {
+  width: 30rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.report_info {
+  display: flex;
+  align-items: center;
+  padding: 46rpx 30rpx;
+  color: #b3b3b3;
+  font-size: 28rpx;
+}
+
+.report_info_l {
+  flex: 1;
+}
+
+.report_info_l text {
+  padding-right: 20rpx;
+  font-size: 30rpx;
+  color: #333333;
+}
+
+.arrow_r_big {
+  width: 20rpx;
+  margin-left: 20rpx;
+}
+
+.jump {
+  background-color: #ececec;
+}
+
+.recommend {
+  padding-bottom: 100rpx;
+}
+
+.recommend_info .report_info_l {
+  color: #717171;
+  flex: 1;
+}
+
+.recommend_info .report_info_l text {
+  font-size: 30rpx;
+}
+
+.recommend_info .study_goon {
+  color: #388ef2;
+}
+
+.fixb_report {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100rpx;
+  background: #388ef2;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.fixb_report .fixb_report_item {
+  flex: 1;
+  text-align: center;
+  line-height: 94rpx;
+  font-size: 30rpx;
+  color: #ffffff;
+}
+
+.fixb_line {
+  position: absolute;
+  left: 50%;
+  height: 40rpx;
+  top: 30rpx;
+  width: 1px;
+  background-color: #fff;
+}
+
+.report_item_hover {
+  background-color: #0589e8;
+}
+
+.tankuang {
+  width: 50rpx;
+  height: 50rpx;
+  border: 1px solid #dcdcdc;
+}
+
+/*遮罩层*/
+
+.shade {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  left: 0;
+  top: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.layer_content {
+  width: 90%;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding-top: 25rpx;
+  opacity: 0;
+  transform: rotateX(-120deg);
+}
+
+.layer_tit {
+  padding: 30rpx 0;
+  text-align: center;
+  color: #666;
+  font-size: 34rpx;
+}
+
+.report_alertList {
+  padding: 30rpx 20rpx 20rpx 20rpx;
+}
+
+.report_alertList view {
+  display: inline-block;
+  width: 20%;
+  margin-bottom: 30rpx;
+}
+
+.report_alertList view text {
+  width: 70rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 28rpx;
+  border-radius: 50%;
+  color: #279df7;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #279df7;
+}
+
+.alertList_hover text {
+  background-color: #279df7;
+  color: #fff !important;
+}
+
+.layer_close {
+  position: absolute;
+  right: 15rpx;
+  top: 10rpx;
+  padding: 10rpx;
+}
+
+.layer_close image {
+  width: 30rpx;
+}

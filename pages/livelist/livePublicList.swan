@@ -1,0 +1,82 @@
+<scroll-view scroll-y="true" scroll-top="{=scrollTop=}" bindscroll="scrollclick" style='height:100%' scroll-into-view="jumptoview">
+  <view class="live_container">
+    <view class="topTab">
+      <view class="{{publicshow == true ? 'topTab_left active' : 'topTab_left'}}" bindtap='publicClick'>
+        按时间
+      </view>
+      <view class='topTab_line'>|</view>
+      <view class="{{vipshow == true ? 'topTab_right active' : 'topTab_right'}}" bindtap='vipClick'>
+        按模块
+      </view>
+    </view>
+    <block s-if="publicshow == true">
+    <block s-key="ymPublicCategory" s-for="ym, ymindex in ymPublicCategory">
+        <block s-key="publiclist" s-for="public, publicindex in public_list">
+            <block s-if="(ym.year+''+ym.month) == (public.year+''+public.month)">
+      <view class='public_time_list' bindtap='publicCellClick' data-index='{{publicindex}}'>
+        <view class='public_time_list_top'>
+          <view class='time_ymd'>
+            <view class="time_md">
+              {{ym.month}}月{{public.day}}日
+            </view>
+            <view class="time_strat_end">
+              <image src='../../image/live/time_cicle.png'></image>
+              {{public.startTimeHour}}-{{public.endTimeHour}}
+            </view>
+          </view>
+          <view class='zhibotype' style='color:#{{public.state=="3"?"388ef2":""}}'>
+            <block s-if="public.state == '0'">
+              未开始
+            </block>
+            <block s-if="public.state == '1'">
+              直播中
+            </block>
+            <block s-if="public.state == '2'">
+              回放中
+            </block>
+            <block s-if="public.state == '3'">
+              即将开始
+            </block>
+          </view>
+        </view>
+        <view class="cells cells_after_title">
+          <view class="teacher_img" style='width:120rpx;heigth:160rpx;'>
+            <image src="{{public.teachericon}}" style="width:96rpx;height:96rpx;border-radius:50rpx;"></image>
+          </view>
+          <view class="linkman">{{public.title}}</view>
+          <view class="username">{{public.teacher}}</view>
+          <block s-if="public.state == 0 || public.state == 3">
+            <block s-if="public.state == 0">
+              <view class="cell_ft type">倒计时{{public.countDownTime}}</view>
+            </block>
+            <block s-if="public.state == 3">
+              <view class="cell_ft type" style='color:#388ef2;'>倒计时{{public.countDownTime}}</view>
+            </block>
+          </block>
+        </view>
+      </view>
+    </block>
+  </block>
+  </block>
+  </block>
+    <block s-if="vipshow == true">
+      <block s-key="live_module" s-for="live_module, live_moduleindex in live_module">
+        <block s-if="live_module.show == true">
+        <view class="cells cells_after_title livelist" bindtap="live_moduleClick" data-index="{{live_moduleindex}}" style='display:flex;'>
+          <view class="cell_hd" style='width:100rpx;heigth:120rpx;line-height:120rpx;'>
+            <image src="{{live_module.icon}}" style="width:60rpx;height:60rpx;border-radius:25rpx;"></image>
+          </view>
+            <view class="linkman" style='top:44rpx;left:112rpx;'>{{live_module.shorttitle}}</view>
+            <view class="cell_ft cell_ft_in_access type" style='top:48rpx;right:30rpx;'></view>
+          </view>
+        </block>
+      </block>
+    </block>
+  </view>
+</scroll-view>
+<view class="widget-goTop" bindtap="goTop" s-if=" floorstatus ">
+  <view class="gotop-wrap">
+    <view class="icon icon-top"></view>
+    <view>顶部</view>
+  </view>
+</view>

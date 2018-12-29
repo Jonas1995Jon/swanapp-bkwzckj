@@ -1,0 +1,78 @@
+/* pages/livelist/livePublicList.css */
+@import "liveListNew.css";
+page{
+  background-color:#f3f4f6;
+}
+.topTab{
+  background-color:#fff;
+}
+.public_time_list{
+  margin: 30rpx;
+  border-radius: 20rpx;
+  background-color:#fff;
+}
+.public_time_list_top{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #e5e5e5;
+  padding: 30rpx 0;
+  margin: 0 30rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+.time_md,.time_strat_end{
+  float: left;
+  padding-right: 30rpx;
+}
+.time_strat_end image{
+  width: 24rpx;
+  height: 24rpx;
+  padding-right: 10rpx;
+}
+.zhibotype{
+  color: #b3b3b3;
+}
+.cells{
+  margin: 30rpx 30rpx 0 30rpx;
+  padding-bottom: 30rpx;
+}
+.linkman {
+  position: absolute;
+  left: 120rpx;
+  top: 0;
+  font-size: 32rpx;
+  color: #333333;
+  height: 32rpx;
+  line-height: 32rpx;
+  text-align: left;
+  word-break: break-all;/*允许在单词内换行*/
+  text-overflow: -o-ellipsis-lastline;/*css3中webkit内核提供的一个方法类似ellipsis*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;/*自适应盒子*/
+  -webkit-line-clamp: 1;/*此处为1行,如果是两行就改成2*/
+  -webkit-box-orient: vertical;
+}
+.username {
+  position: absolute;
+  left: 120rpx;
+  top: 60rpx;
+  font-size: 24rpx;
+  color: #b3b3b3;
+  height: 24rpx;
+  text-align: left;
+}
+.type {
+  position: absolute;
+  top: 60rpx;
+  right: 0;
+  color: #388ef2;
+}
+.livelist{
+  margin: 10rpx 0;
+  padding: 0;
+}
+.cell_hd image{
+  top: 0;
+  left: 30rpx;
+}

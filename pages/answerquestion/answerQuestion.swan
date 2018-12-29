@@ -1,0 +1,22 @@
+<!--pages/answerquestion/answerQuestion.wxml-->
+<view class='answer_question'>
+  <block s-key="answerQuestionList" s-for="answerquestionItem, answerQuestionindex in answerQuestionList">
+  <view class='answer_question_con' bindtap='answerQuestionTap' data-index='{{answerQuestionindex}}'>
+    <view class='answer_question_left'>
+      <image src='{{answerquestionItem.courseIcon}}'></image>
+      <block s-if="answerquestionItem.isreadnum != 0">
+        <view class='icon'>{{answerquestionItem.isreadnum}}</view>
+      </block>
+    </view>
+    <view class='answer_question_right'>
+      <view class='answer_question_right_top'>
+        <view class='title'>{{answerquestionItem.courseName}}</view>
+        <view class='time'>{{answerquestionItem.replytime}}</view>
+      </view>
+      <!-- <view class='answer_question_right_bottom'>
+        <view class='replay'>回复{{answerquestionItem.isreadnum}}</view>
+      </view> -->
+    </view>
+  </view>
+  </block>
+</view>

@@ -1,0 +1,41 @@
+<!--pages/agreement/agreement.wxml-->
+<!-- <import src="../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class="agreement_wrap">
+  <view class="agreement_cell">
+    <view class=" agreement_cell_items ">
+      <view class="agreement_cell_item ">姓　　名：</view>
+      <input value='{=agreementList.linkman=}' data-index='0' bindinput="bindKeyInput" placeholder-class='input_place' type='text' confirm-type='done' placeholder="请输入姓名" focus='true' maxlength='20' />
+    </view>
+    <view class="agreement_cell_items ">
+      <view class="agreement_cell_item ">手 机 号 ：</view>
+      <input value='{=agreementList.mobile=}' data-index='1' bindinput="bindKeyInput" placeholder-class='input_place' type='text' confirm-type='done' placeholder="请输入手机号" focus='true' maxlength='20' />
+    </view>
+    <view class="agreement_cell_items ">
+      <view class="agreement_cell_item ">邮　　编：</view>
+      <input value='{=agreementList.zip=}' data-index='2' bindinput="bindKeyInput" placeholder-class='input_place' type='text' confirm-type='done' placeholder="请输入邮编" focus='true' maxlength='20' />
+    </view>
+    <view class="agreement_cell_items ">
+      <view class="agreement_cell_item ">地　　址：</view>
+      <input value='{=agreementList.address=}' data-index='3' bindinput="bindKeyInput" placeholder-class='input_place' type='text' confirm-type='done' placeholder="请输入地址" focus='true' maxlength='20' />
+    </view>
+    <view class="agreement_cell_items ">
+      <view class="agreement_cell_item ">邮    箱：</view>
+      <input value='{=agreementList.email=}' data-index='4' bindinput="bindKeyInput" placeholder-class='input_place' type='text' confirm-type='done' placeholder="请输入邮箱" focus='true' maxlength='20' />
+    </view>
+    <view class="agreement_cell_items ">
+      <view class="agreement_cell_item ">身份证号：</view>
+      <input value='{=agreementList.idcard=}' data-index='5' bindinput="bindKeyInput" placeholder-class='input_place' type='text' confirm-type='done' placeholder="请输入身份证号" focus='true' maxlength='20' />
+    </view>
+  </view>
+
+  <view class="agreement_btn">
+    <view class="agreement_detail">
+      <image data-click="{{checkboxClick}}" bindtap="checkboxClick" mode="widthFix" src="{{checkboxClick == true ? checkboxSel : checkboxDefault}}"></image>
+      <text>同意签署</text>
+      <text bindtap="agreementDetailClick" style="color:#279df7;">{{agreementList.courselist[0].coursename}}保过协议</text>
+    </view>
+    <view class="agreement_surebtn" data-click="{{checkboxClick}}" bindtap="sureOrderClick">提交</view>
+    <!-- <view class="agreement_skip"  bindtap="skipClick">跳过</view> -->
+  </view>
+</view>

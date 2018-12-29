@@ -1,0 +1,87 @@
+/* pages/course/myorder/myorderDetail.css */
+page{
+  height: 100%;
+}
+.myorder_con{
+  height: 100%;
+  font-size: 30rpx;
+  margin-bottom:136rpx;
+}
+.order_cell{
+  width: 100%;
+  margin: 0 auto;
+  float: left;
+  border-bottom: 1rpx #efefef solid;
+}
+.order_left{
+  width: 20%;
+  float: left;
+  height: 120rpx;
+  line-height: 120rpx;
+  margin-left: 30rpx;
+  color: #b3b3b3;
+}
+.order_right{
+  width: 60%;
+  float: right;
+  text-align: right;
+  height: 120rpx;
+  line-height: 120rpx;
+  color: #333;
+  margin-right: 30rpx;
+}
+.order_money{
+  color: orangered;
+}
+.ordercourse{
+  background:#f0f0f0;
+}
+.ordercourse_left{
+  color:#279df7;
+  font-size:14px;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 30rpx;
+}
+.order_course{
+  width: 70%;
+  float: left;
+  text-align: left;
+  height: 120rpx;
+  line-height: 120rpx;
+  margin-left: 30rpx;
+  color: #b3b3b3;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.order_bxje{
+  width: 20%;
+  float: right;
+  text-align: right;
+  height: 120rpx;
+  line-height: 120rpx;
+  margin-right: 30rpx;
+  color: #ff7700;
+}
+.submit_btn{
+  width:100%;
+  margin: 0 auto; 
+  display:block;
+  box-sizing:border-box;
+  font-size:30rpx;
+  color: #fff;
+  text-align:center;
+  text-decoration:none;
+  height: 98rpx;
+  line-height: 98rpx;
+  -webkit-tap-highlight-color:transparent;
+  overflow:hidden;
+  background: #ff7700;
+  position: fixed;
+  bottom: 0;
+}
+.submit_btn_hover{
+  background: #ff7700;
+}

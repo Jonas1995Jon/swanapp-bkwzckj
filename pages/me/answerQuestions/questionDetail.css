@@ -1,0 +1,142 @@
+/* pages/me/answerQuestions/questionDetail.css */
+Page {
+  background: #f1f1f1;
+  color: #323c47;
+  font-size: 30rpx;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.question_detail{
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  /* background: #efefef; */
+}
+.question_detail_list{
+  width: 670rpx;
+  margin: 40rpx;
+  cursor: pointer;
+}
+.question_detail_headimg{
+  width: 100rpx;
+  height: 100rpx;
+  float: left;
+}
+.question_detail_headimg image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.question_detail_content{
+  width: 570rpx;
+  float: right;
+  margin-top:10rpx;
+}
+.question_detail_title{
+  float: left;
+  width: 570rpx;
+  font-size: 28rpx;
+  color:#000;
+  line-height: 40rpx;
+}
+.question_detail_imglist{
+  float: left;
+  width: 570rpx;
+  overflow: hidden;
+  vertical-align: auto;
+}
+.question_detail_imglist image{
+  float: left;
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  /* border: 1rpx #dcdcdc solid; */
+}
+.question_detail_time image{
+  width: 25rpx;
+  height: 25rpx;
+  position: relative;
+  top:2rpx;
+}
+.question_detail_time{
+  float: left;
+  width: 570rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  color:#dcdcdc;
+}
+
+.vertical-timeline {
+  color: #fff;
+  text-align: left;
+}
+.vertical-timemonth-block{
+  clear: both;
+  padding-left: 10rpx;
+  width: 750rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #f3f4f6;
+  color: #656565;
+}
+.vertical-timeline-block {
+  width: 10rpx;border-left: 1px solid #f1f1f1;position: relative;left:40rpx;top:80rpx;z-index: -999;
+}
+
+.fixb_report{
+  position: fixed;
+  left: 0;
+  right:0;
+  bottom: 0;
+  height: 100rpx;
+  background: #179cfb;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 32rpx;
+}
+.fixb_report .fixb_report_item{
+  flex: 1;
+  text-align: center;
+  line-height: 100rpx;
+}
+.fixb_line{
+  position:absolute;
+  left:50%;
+  height:40rpx;
+  top: 30rpx;
+  width: 1px;
+  background-color: #fff;
+}
+.question_score{
+  width: 750rpx;
+  position: fixed;
+  bottom: 0rpx;
+  background: #fff;
+}
+.question_score_left{
+  width: 160rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  margin: 0 auto;
+  text-align: center;
+  float: left;
+}
+.question_score_left image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-top:10rpx;
+}
+.question_score_right{
+  width: 550rpx;
+  margin: 0 auto;
+  text-align: center;
+  float: left;
+}
+.question_score_right image{
+  width: 70rpx;
+  height: 70rpx;
+  margin: 22.5rpx 20rpx 0rpx 20rpx; 
+}

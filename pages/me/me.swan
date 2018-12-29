@@ -1,0 +1,91 @@
+<!-- <import src="../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class="cell-container">
+  <view class="cells cells_after_title">
+    <button class="cell cell_access" hover-class="cell_active" style="height:190rpx;" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGetUserInfo">
+      <!-- <navigator url="account/account" class="cell cell_access" hover-class="cell_active" style="height: 80px;line-height: 80px;"> -->
+      <view class="cell_hd" style='width:100rpx;heigth:100rpx;'>
+        <image src="{{headPortrait}}" style="width:100rpx;height:100rpx;border-radius:50%;margin-left:-80rpx;"></image>
+      </view>
+      <block s-if="account == '' || account == null">
+        <view style='top:40rpx;' class="linkman">{{username}}</view>
+        <view class="cell_ft cell_ft_in_access type"></view>
+      </block>
+      <block s-else>
+        <view style='top:40rpx;' class="linkman">{{account.nickname}}</view>
+        <!-- <view class="username">用户名：{{userinfo.username}}</view> -->
+        <view class="cell_ft cell_ft_in_access type"></view>
+      </block>
+      <!-- <block wx:if="{{userinfo == '' || userinfo.linkman == undefined}}">
+        <view style='top:40rpx;' class="linkman">{{username}}</view>
+        <view class="cell_ft cell_ft_in_access type"></view>
+      </block>
+      <block wx:else>
+        <view class="linkman">{{userinfo.linkman}}</view>
+        <view class="username">用户名：{{userinfo.username}}</view>
+        <view class="cell_ft cell_ft_in_access type">{{mymembertype}}</view>
+      </block> -->
+
+      <!-- </navigator> -->
+    </button>
+    <block s-if="bk_userinfo_tell == '' || bk_userinfo_tell == undefined || bk_userinfo_tell == null">
+      <block s-if="username != '登录/注册'">
+        <view class="cell_ft type cell_right" catchtap='loginbind'>登录/注册</view>
+      </block>
+    </block>
+    <block s-else>
+      <view class="cell_ft type cell_right" catchtap='loginaccount'>{{bk_userinfo_tell}}</view>
+    </block>
+  </view>
+
+
+  <view class="cells_title"></view>
+  <view class="cells cells_after_title">
+    <block s-key="course" s-for="cell, groupindex in course">
+      <!-- <view data-hi="{{groupindex}}" bindtap="courseClick" class="cell cell_access" hover-class="cell_active" hidden="{{mobileOS == 'ios' && (groupindex == 0 || groupindex == 1 || groupindex == 3) ? true : false}}"> -->
+      <view data-hi="{{groupindex}}" bindtap="courseClick" class="cell cell_access" hover-class="cell_active">
+        <view class="cell_hd">
+          <image src="{{cell.icon}}"></image>
+        </view>
+        <block s-if="groupindex != 0 && gropindex != course.length">
+          <view class="cell_bd cell_border_top">{{cell.title}}</view>
+        </block>
+        <block s-else>
+          <view class="cell_bd">{{cell.title}}</view>
+        </block>
+        <view class="cell_ft cell_ft_in_access"></view>
+      </view>
+    </block>
+  </view>
+  
+  <view class="cells_title"></view>
+  <view class="cells cells_after_title">
+    <block s-key="common" s-for="cell, groupindex in common">
+      <view data-hi="{{groupindex}}" bindtap="commonClick" class="cell cell_access" hover-class="cell_active">
+        <!-- <button open-type="contact">xxx</button> -->
+        <view class="cell_hd">
+          <image src="{{cell.icon}}"></image>
+        </view>
+        <block s-if="groupindex != 0 || groupindex == common.length">
+          <view class="cell_bd cell_border_top">
+            {{cell.title}}
+            <block s-if="groupindex == 1">
+              <!-- <button class="cs_button" open-type="contact" session-from="weapp">
+                <image class="cs_image" src="../images/cs.png"></image>
+              </button>  -->
+            </block>
+          </view>
+        </block>
+        <block s-else>
+          <!-- <view class="cell_bd">{{cell.title}}</view> -->
+          <view class="cell_bd">{{cell.title}}
+            <button class="cs_button" open-type="contact" session-from='weixinapp'></button>
+          </view>
+        </block>
+        <view class="cell_ft cell_ft_in_access"></view>
+      </view>
+    </block>
+  </view>
+  <import src="../modal/modal.swan" />
+  <template is="modal" data="{{{modal}}}"></template>
+</view>

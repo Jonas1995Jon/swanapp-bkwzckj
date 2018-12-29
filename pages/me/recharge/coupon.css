@@ -1,0 +1,66 @@
+page{
+  background: #f0f0f0;
+}
+.coupon{
+  margin: 30rpx;
+  height: 210rpx;
+}
+.coupon_view{
+  height: 210rpx;
+  position: absolute;
+  margin-top: -220rpx;
+}
+.bjimg{
+  width: 100%;
+  height: 210rpx;
+  position: a;
+  top: -220rpx;
+}
+.coupon_pic_left{
+  /* margin-left: 40rpx; */
+  padding-top: 52rpx;
+  font-size: 60rpx;
+  color: #fff;
+  width: 230rpx;
+  float: left;
+  text-align: center;
+  height:210rpx;
+  line-height:210rpx;
+}
+.coupon_pic_left text{
+  font-size: 24rpx;
+}
+.coupon_pic_right{
+  float: left;
+  width: 356rpx;
+  padding-top: 52rpx;
+  padding-left: 44rpx;
+}
+.coupon_pic_title{
+  font-size: 30rpx;
+  color: #fff;
+  margin-bottom: 30rpx;
+}
+.coupon_pic_time{
+  font-size: 22rpx;
+  color: #fff;
+}
+.coupon_img{
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+  margin-right: 20rpx;
+  margin-top: 84rpx;
+}
+.coupon_img image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.coupon_bottom{
+  font-size: 24rpx;
+  color: #388ef2;
+  text-align: center;
+  position: absolute;
+  left: 314rpx;
+  bottom: 48rpx;
+}

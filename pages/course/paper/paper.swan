@@ -1,0 +1,459 @@
+<!--pages/course/paper/studyPage.wxml-->
+<!-- <import src="../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<import src="../../../utils/wxParse/wxParse.swan" />
+<view class='paper_container'>
+  <block s-if="enginemode == 1">
+    <!--试题标题-->
+    <view class='title'>
+      <text>( {{quetypename}} )</text>
+      <block s-if="quetitle.length > 0">
+        {{quetitle}}
+      </block>
+      <block s-else>
+        <template is="wxParse" data="{{{wxParseData:paperTitle.nodes}}}" />
+      </block>
+
+      <!-- {{quetitle}} -->
+    </view>
+    <!--单选题-->
+    <view class='answer_wrap'>
+      <radio-group bindchange="radioChange" data-hi="{{questionindex}}">
+        <label s-key="singleOption" s-for="singleOption, singleOptionIndex in answerArr[questionindex].optionArr">
+          <view class='answer_list'>
+            <radio value="{{singleOptionIndex}}|{{singleOption.option}}|{{singleOption.optionId}}" />
+            <!-- <text class='radio check_this'>{{OptionArr.option}}</text> -->
+            <block s-if="singleOption.optionChecked == 1">
+              <text class="radio check_this">{{singleOption.option}}</text>
+            </block>
+            <block s-else>
+              <text class="radio">{{singleOption.option}}</text>
+            </block>
+            <view class='answer_list_text'>
+              <!-- {{singleOption.optionTitle}} -->
+              <block s-if="singleOptionIndex == 0">
+                <block s-if="paperTitleZero.length > 0">
+                  {{paperTitleZero}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle0.nodes}}}" />
+                </block>
+              </block>
+              <block s-if="singleOptionIndex == 1">
+                <block s-if="paperTitleOne.length > 0">
+                  {{paperTitleOne}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle1.nodes}}}" />
+                </block>
+              </block>
+              <block s-if="singleOptionIndex == 2">
+                <block s-if="paperTitleTwo.length > 0">
+                  {{paperTitleTwo}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle2.nodes}}}" />
+                </block>
+              </block>
+              <block s-if="singleOptionIndex == 3">
+                <block s-if="paperTitleThree.length > 0">
+                  {{paperTitleThree}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle3.nodes}}}" />
+                </block>
+              </block>
+              <block s-if="singleOptionIndex == 4">
+                <block s-if="paperTitleFour.length > 0">
+                  {{paperTitleFour}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle4.nodes}}}" />
+                </block>
+              </block>
+              <block s-if="singleOptionIndex == 5">
+                <block s-if="paperTitleFive.length > 0">
+                  {{paperTitleFive}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle5.nodes}}}" />
+                </block>
+              </block>
+              <block s-if="singleOptionIndex == 6">
+                <block s-if="paperTitleSex.length > 0">
+                  {{paperTitleSex}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle6.nodes}}}" />
+                </block>
+              </block>
+
+            </view>
+          </view>
+        </label>
+      </radio-group>
+    </view>
+  </block>
+
+  <block s-if="enginemode == 2">
+    <!--多选题-->
+    <view class='title'>
+      <text>( {{quetypename}} )</text>
+      <!-- {{quetitle}} -->
+      <block s-if="quetitle.length > 0">
+        {{quetitle}}
+      </block>
+      <block s-else>
+        <template is="wxParse" data="{{{wxParseData:paperTitle.nodes}}}" />
+      </block>
+    </view>
+    <view class='answer_wrap'>
+      <checkbox-group bindchange="checkboxChange" data-hi="{{questionindex}}">
+        <label s-key="singleOption" s-for="singleOption, singleOptionIndex in answerArr[paperindex].optionArr">
+          <view class='answer_list'>
+            <checkbox value="{{singleOptionIndex}}|{{singleOption.option}}|{{singleOption.optionId}}" checked='{{singleOption.optionChecked == 1 ? true : false}}' />
+            <block s-if="singleOption.optionChecked == 1">
+              <text class="checkbox check_this">{{singleOption.option}}</text>
+            </block>
+            <block s-else>
+              <text class="checkbox">{{singleOption.option}}</text>
+            </block>
+            <view class='answer_list_text'>
+              <block s-if="singleOptionIndex == 0">
+                <block s-if="paperTitleZero.length > 0">
+                  {{paperTitleZero}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle0.nodes}}}" />
+                </block>
+              </block>
+              <block s-if="singleOptionIndex == 1">
+                <block s-if="paperTitleOne.length > 0">
+                  {{paperTitleOne}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle1.nodes}}}" />
+                </block>
+              </block>
+              <block s-if="singleOptionIndex == 2">
+                <block s-if="paperTitleTwo.length > 0">
+                  {{paperTitleTwo}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle2.nodes}}}" />
+                </block>
+              </block>
+              <block s-if="singleOptionIndex == 3">
+                <block s-if="paperTitleThree.length > 0">
+                  {{paperTitleThree}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle3.nodes}}}" />
+                </block>
+              </block>
+              <block s-if="singleOptionIndex == 4">
+                <block s-if="paperTitleFour.length > 0">
+                  {{paperTitleFour}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle4.nodes}}}" />
+                </block>
+              </block>
+              <block s-if="singleOptionIndex == 5">
+                <block s-if="paperTitleFive.length > 0">
+                  {{paperTitleFive}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle5.nodes}}}" />
+                </block>
+              </block>
+              <block s-if="singleOptionIndex == 6">
+                <block s-if="paperTitleSex.length > 0">
+                  {{paperTitleSex}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle6.nodes}}}" />
+                </block>
+              </block>
+            </view>
+          </view>
+        </label>
+      </checkbox-group>
+      <view class='un_bound un_bound_checkbox' bindtap="checkboxSubmit" hidden='{{answerArr[paperindex].checkboxBtnShow == true ? true : false}}'>
+        <view class='un_bound_btn bg_blue' hover-class='bg_blue_hover'>
+          <text>提交答案</text>
+        </view>
+      </view>
+    </view>
+
+  </block>
+
+  <block s-if="enginemode == 3">
+    <!--判断题-->
+    <view class='title'>
+      <text>( {{quetypename}} )</text>
+      <block s-if="quetitle.length > 0">
+        {{quetitle}}
+      </block>
+      <block s-else>
+        <template is="wxParse" data="{{{wxParseData:paperTitle.nodes}}}" />
+      </block>
+    </view>
+    <view class='answer_wrap'>
+      <radio-group bindchange="radioChange" data-hi="{{questionindex}}">
+        <label s-key="singleOption" s-for="singleOption, singleOptionIndex in answerArr[questionindex].optionArr">
+          <view class='answer_list'>
+            <radio value="{{singleOptionIndex}}|{{singleOption.option}}|{{singleOption.optionId}}" />
+            <!-- <text class='radio check_this'>{{OptionArr.option}}</text> -->
+            <block s-if="singleOption.optionChecked == 1">
+              <text class="radio check_this">{{singleOption.option}}</text>
+            </block>
+            <block s-else>
+              <text class="radio">{{singleOption.option}}</text>
+            </block>
+            <view class='answer_list_text'>
+              <!-- {{singleOption.optionTitle}} -->
+              <block s-if="singleOptionIndex == 0">
+                <block s-if="paperTitleZero.length > 0">
+                  {{paperTitleZero}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle0.nodes}}}" />
+                </block>
+              </block>
+              <block s-if="singleOptionIndex == 1">
+                <block s-if="paperTitleOne.length > 0">
+                  {{paperTitleOne}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle1.nodes}}}" />
+                </block>
+              </block>
+              <block s-if="singleOptionIndex == 2">
+                <block s-if="paperTitleTwo.length > 0">
+                  {{paperTitleTwo}}
+                </block>
+                <block s-else>
+                  <template is="wxParse" data="{{{wxParseData:paperTitle2.nodes}}}" />
+                </block>
+              </block>
+            </view>
+          </view>
+        </label>
+      </radio-group>
+    </view>
+  </block>
+  <block s-if="enginemode == 4">
+
+    <!--智能刷题主观题不支持作答-->
+    <view class='title'>
+      <text>( {{quetypename}} )</text>
+      <block s-if="answerArr[questionindex].stem.length > 0 || paperStem.nodes.length > 0">
+        <block s-if="answerArr[questionindex].stem.length > 0">
+          {{answerArr[questionindex].stem}}
+        </block>
+        <block s-else>
+          <template is="wxParse" data="{{{wxParseData:paperStem.nodes}}}" />
+        </block>
+      </block>
+
+
+      <block s-if="quetitle.length > 0 || paperTitle.nodes.length > 0 ">
+        <block s-if="quetitle.length > 0">
+          {{quetitle}}
+        </block>
+        <block s-else>
+          <template is="wxParse" data="{{{wxParseData:paperTitle.nodes}}}" />
+        </block>
+      </block>
+    </view>
+
+    <!--组合题-->
+    <view class='type_zuhe'>
+      <view class='type_zuhe_nav'>
+        <!--打开的问题 type_zuhe_action 点击问题切换显示该问题-->
+        <block s-if="mainqueArr[questionindex].branchqueArr.length > 0">
+          <view class="{{branchqueIndex == -1 ? 'type_zuhe_list type_zuhe_action' : 'type_zuhe_list'}}" bindtap='branchqueClick' data-index='-1' data-paperindex='{{paperindex}}'>
+            <text>问题1</text>
+          </view>
+          <block s-key="branchque" s-for="branchque, branchqueItemIndex in mainqueArr[questionindex].branchqueArr">
+            <view class="{{branchqueItemIndex == branchqueIndex ? 'type_zuhe_list type_zuhe_action' : 'type_zuhe_list'}}" bindtap='branchqueClick' data-index='{{branchqueItemIndex}}' data-paperindex='{{paperindex}}'>
+              <text>问题{{branchqueItemIndex + 2}}</text>
+            </view>
+          </block>
+        </block>
+      </view>
+      <!-- <view class='title'>
+              <text decode='true'>(&nbsp;组合题&nbsp;)</text>
+              <text>下列关于送配股的股权登记方式的说法中，正确的是（）。这里有很长一段 的题目这里有很长一段的题目这里有很长一段的题目这里有很长一段的题目这里有很长一段的题 目这里有很长一段的题目这里有很长一段的题目
+            </text>
+            </view> -->
+      <!--组合题公共盒子 zuhe_content_wrap -->
+      <!-- <view class='zuhe_content_wrap'>
+              <view class='answer_wrap'>
+                <radio-group bindchange="radioChange">
+                  <label>
+                    <view class='answer_list'>
+                      <radio value="A" checked="false" />
+                      <text class='radio check_this'>A</text>
+                      <view class='answer_list_text'>
+                        送配股的股权登
+                      </view>
+                    </view>
+                  </label>
+                  <label>
+                    <view class='answer_list'>
+                      <radio value="B" checked="false" />
+                      <text class='radio'>B</text>
+                      <view class='answer_list_text'>
+                        送配股的股权登
+                      </view>
+                    </view>
+                  </label>
+                  <label>
+                    <view class='answer_list'>
+                      <radio value="C" checked="false" />
+                      <text class='radio'>C</text>
+                      <view class='answer_list_text'>送配股的股权配股的股
+                      </view>
+                    </view>
+                  </label>
+                  <label>
+                    <view class='answer_list'>
+                      <radio value="D" checked="false" />
+                      <text class='radio'>D</text>
+                      <view class='answer_list_text'>
+                        送配股的股权登
+                      </view>
+                    </view>
+                  </label>
+                </radio-group>
+              </view>
+            </view> -->
+    </view>
+    <block s-if="learnType == 31 && enginemode == 4">
+      <view class='answer_wrap'>
+        <view class='type_caozuo'>
+          本模块，主观题不支持作答，可查看解析核对答案
+        </view>
+      </view>
+    </block>
+    <block s-else>
+      <block s-if="branchqueIndex == -1 || mainqueArr[questionindex].branchqueArr[branchqueIndex].enginemode == 4">
+        <!--主观题-->
+        <view class='title'>
+          <text decode='true'><!--( 主观题 )--></text>
+          <block s-if="quetitle.length > 0">
+            {{quetitle}}
+          </block>
+          <block s-else>
+            <template is="wxParse" data="{{{wxParseData:paperTitle.nodes}}}" />
+          </block>
+        </view>
+        <block s-if="history == 0">
+          <view class='answer_wrap type_zhuguanwrap'>
+            <view class='type_zhuguan_tit'>(答题区域)</view>
+            <form bindsubmit="bindFormSubmit">
+              <textarea name="textarea" value='{=textareaStr=}' maxlength='200' class='zhuguan_text' placeholder-style='zhuguan_text_placeholder' placeholder="请输入答案..." />
+              <textarea value="{=branchqueIndex=}" name="subjectiveText" hidden='true'></textarea>
+              <!-- <view bindtap="subjectiveBtnSubmit" hidden='{{answerArr[paperindex].checkboxBtnShow == true ? true : false}}' class='submit bg_blue' hover-class='bg_blue_hover'> -->
+              <button class='subjectiveBtn' form-type="submit"> 提交 </button>
+              <!-- </view> -->
+            </form>
+          </view>
+        </block>
+      </block>
+    </block>
+  </block>
+  <block s-if="answerArr[questionindex].showExplanation == 1">
+    <!--答案解析-->
+    <block s-if="enginemode < 4">
+      <block s-if="answerArr[questionindex].isright == 2 || answerArr[questionindex].isright == 0">
+
+        <!--答错-->
+        <view class='answer_area'>
+          <block s-if="answerArr[questionindex].useranswer.length > 0 || answerArr[questionindex].useranswerArr.length > 0">
+            <view>很遗憾，这道题您答错了!</view>
+            <view class='your_answer'>
+              <view>您的答案是：
+                <block s-if="enginemode == 1 || enginemode == 3">
+                  <text>{{answerArr[questionindex].useranswer}}</text>
+                </block>
+                <block s-if="enginemode == 2">
+                  <text>{{answerArr[questionindex].useranswerArr}}</text>
+                </block>
+              </view>
+              <block s-if="extent.length > 0">
+                <view>难易度：
+                  <text>{{extent}}</text>
+                </view>
+              </block>
+            </view>
+          </block>
+          <block s-else>
+            <view>你没有回答这道题!</view>
+          </block>
+
+          <view>正确答案是：
+            <text class='font_red'>{{answerArr[questionindex].answer}}</text>
+          </view>
+        </view>
+      </block>
+
+      <block s-else>
+        <!--答对-->
+        <view class='answer_area'>
+          <view>恭喜您，答对了!</view>
+        </view>
+      </block>
+    </block>
+    <block s-if="showPerfectAccount == 1">
+      <!--未绑定显示绑定按钮，不显示解析以及其他信息-->
+      <view class='un_bound'>
+        <view bindtap='bindAccount' class='un_bound_btn bg_blue' hover-class='bg_blue_hover'>
+          <text>完善账户后查看答案解析</text>
+        </view>
+      </view>
+    </block>
+    <block s-else>
+      <block s-if="explanationStr != '' || Explanation != ''">
+        <view class='answer_area'>
+          <view class='answer_area_tit'>解析</view>
+          <view class='jiexi_content'>
+            <!-- {{explanationStr}} -->
+            <block s-if="explanationStr.length > 0">
+              {{explanationStr}}
+            </block>
+            <block s-else>
+              <template is="wxParse" data="{{{wxParseData:Explanation.nodes}}}" />
+            </block>
+
+          </view>
+        </view>
+      </block>
+      <block s-if="answerArr[questionindex].knowledgepoint[0].kpid.length > 0">
+        <view class='answer_area' bindtap='paperVideoPlay' data-index='{{questionindex}}'>
+          <view class='answer_area_tit'>视频讲解</view>
+          <image class='answer_video' mode='widthFix' src='../../../image/video/play_icon.png'></image>
+        </view>
+      </block>
+
+      <block s-if="answerArr[questionindex].knowledgepoint.knowpoint.length > 0">
+        <view class='answer_area'>
+          <view class='answer_area_tit'>考点</view>
+          <view class='kaodian_content'>{{answerArr[questionindex].knowledgepoint.knowpoint}}</view>
+        </view>
+      </block>
+
+      <view class='answer_area'>
+        <view class='answer_area_tit'>来源</view>
+        <view>帮考研究院</view>
+      </view>
+    </block>
+  </block>
+  <import src="../../modal/modal.swan" />
+  <template is="modal" data="{{{modal}}}"></template>
+  <view class="back_home" bindtap="backHomeClick" style="{{touchStart == 0 ? 'right:5%;' : 'right:-60rpx;'}}">  
+    <image src="../../../image/fightgroups/back_home.png"></image> 
+  </view>
+</view>

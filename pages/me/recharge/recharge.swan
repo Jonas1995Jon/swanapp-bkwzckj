@@ -1,0 +1,25 @@
+<!--pages/me/recharge/recharge.wxml-->
+<view class='video_nav'>
+	<view class='recharge_ye'>
+		<image src='../../../image/me/qianbi.png'></image>
+		<view style='font-size: 36rpx;color: #000000;'>我的余额</view>
+		<view class='recharge_ye_money'>￥{{balance.balance}}</view>
+		<view class='recharge_ye_btn' bindtap='rechargeClick'>充值</view>
+	</view>
+</view>
+<view class="cells cells_after_title">
+	<view bindtap="rechargeyhqClick" class="cell cell_access" hover-class="cell_active">
+		<view class="cell_hd">
+			<image src="../../../image/me/yhq.png"></image>
+		</view>
+		<view class="cell_bd">优惠券</view>
+		<view class="cell_ft cell_ft_in_access">{{couponList.length}}张</view>
+	</view>
+	<view class="cell cell_access" hover-class="cell_active">
+		<view class="cell_hd">
+			<image src="../../../image/me/bkb.png"></image>
+		</view>
+		<view class="cell_bd">帮考币</view>
+		<view class="cell_ft" style='color:#333;'>{{balance.bkgold}}个</view>
+	</view>
+</view>

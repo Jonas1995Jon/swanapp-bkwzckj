@@ -1,0 +1,38 @@
+/* pages/course/paper/note/note.css */
+Page {
+  background: #fff;
+  color: #efefef;
+  font-size: 30rpx;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.note{
+  margin: 20rpx;
+  overflow: hidden;
+}
+
+.note_text {
+  color: #666;
+  width: 96%;
+  padding: 10rpx;
+  height: 500rpx;
+  font-size: 32rpx;
+  line-height: 50rpx;
+  border: 1px solid #efefef;
+  border-radius: 10rpx;
+  box-shadow: 10rpx 10rpx 10rpx #efefef;
+}
+
+.note_text_placeholder {
+  color: #666;
+  font-size: 32rpx;
+}
+
+.noteBtn {
+  background: #279df7;
+  font-size: 32rpx;
+  color: #fff;
+  padding: 10rpx 0rpx;
+  margin: 70rpx 0rpx;
+}

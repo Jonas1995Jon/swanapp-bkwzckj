@@ -1,0 +1,38 @@
+<!--pages/me/answerQuestions/addQuestion.wxml-->
+<!-- <import src="../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class='add_question'>
+  <form bindsubmit="bindFormSubmit">
+    <view class="question_cell" bindtap='mycourseTap' hidden='{{orderid == undefined ? false : true}}'>
+      <view class="question_cell_content">
+        <view class="question_cell_bd">选择课程</view>
+        <view class="question_cell_ct">{{coursename}}</view>
+        <view class="question_cell_ft">></view>
+      </view>
+    </view>
+    <view class='answer_desc'>
+      <view class='answer_desc_content'>
+        <view class='answer_desc_title'>问题描述</view>
+        <textarea name="textarea" value='{=textareaStr=}' maxlength='200' class='desc_textarea' placeholder-style='desc_text_placeholder' />
+        <textarea value="{=branchqueIndex=}" name="subjectiveText" hidden='true'></textarea>
+      </view>
+    </view>
+    <view class='answer_image'>
+      <view class='answer_image_content'>
+        <view class='answer_image_title'>选填项</view>
+        <view class='answer_image_chioce'>
+          <view>图片</view>
+          <view class="image_list">
+            <block s-key="tempFilePaths" s-for="tempfileitem, tempfileindex in tempFilePaths">
+              <image class='img_view' bindtap='chooseImageTap' src='{{tempfileitem}}'></image>
+              <image class='img_del' bindtap='delImageTap' data-index='{{tempfileindex}}' mode='widthFix' src='../../../image/answerquestion/img_del_icon.png'></image>
+            </block>
+            <image class='img_view' bindtap='chooseImageTap' mode='widthFix' src='../../../image/answerquestion/img_chioce_icon.png'></image>
+          </view>
+
+        </view>
+      </view>
+    </view>
+    <button hidden='{{hiddenSubmit == 0 ? true : false}}' class='subjectiveBtn' form-type="submit"> 提交 </button>
+  </form>
+</view>

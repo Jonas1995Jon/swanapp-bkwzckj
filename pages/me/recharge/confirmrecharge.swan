@@ -1,0 +1,15 @@
+<view class='recharge'>
+  <view class='recharge_view'>
+    <!-- <view class='bottom_line'>
+      <view class='left'>充值方式</view>
+      <view class='right'>微信支付</view>
+    </view> -->
+    <view class='recharge_input'>
+      <view class='left lefttitle'>充值金额</view>
+      <view class='recharge_input_view'>
+        <view>￥</view><input bindinput="rechargeInput" type='digit' placeholder='0' value />
+      </view>
+    </view>
+    <view class='recharge_btn' bindtap='confirmClick'>确认充值</view>
+  </view>
+</view>

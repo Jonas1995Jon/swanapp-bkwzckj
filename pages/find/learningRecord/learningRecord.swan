@@ -1,0 +1,74 @@
+<!--pages/find/learningRecord/learningRecord.wxml-->
+<!-- <import src="../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class='video_nav'>
+  <view bindtap='learnBtnClick' data-index='0' class="{{currentindex == 0 ? 'video_tab video_tab_action' : 'video_tab'}}">
+    <text>已完成</text>
+  </view>
+  <view bindtap='learnBtnClick' data-index='1' class="{{currentindex == 1 ? 'video_tab video_tab_action' : 'video_tab'}}">
+    <text>未完成</text>
+  </view>
+</view>
+<view class='learningRecord_wrap'>
+  <swiper class='swiper' bindchange="swiperChange" current="{{currentindex}}">
+    <swiper-item>
+      <scroll-view scroll-y bindscrolltolower="scrolltolower" style='height:100%;'>
+        <block s-key="studyhistoryYes" s-for="studyhistoryYes, studyhistoryYesindex in studyhistoryYes.val">
+          <view class='learningRecord_list' hover-class='list_l_action' bindtap='studyhistoryYesListClick' data-index='{{studyhistoryYesindex}}'>
+            <view class='list_in'>
+              <view class='list_l'>
+                <view class='list_l_tit'>{{studyhistoryYes.title}}</view>
+                <view class='list_l_text'>
+                  <image style='width:20rpx;height:20rpx;margin-right:10rpx;' src='/image/study/clock_fenxi.png'></image>
+                  <text style='margin-right:30rpx;'>{{studyhistoryYes.wastetime}}</text>
+                  <image style='width:20rpx;height:20rpx;margin-right:10rpx;' src='/image/study/zhengquelv_fenxi.png'></image>
+                  <text style='margin-right:20rpx;'>{{studyhistoryYes.rightnum}}道</text>
+                  <text>共{{studyhistoryYes.total}}道</text>
+                </view>
+                <view class='list_l_text'><text style='color:#388ef2;margin-right:30rpx;'>{{studyhistoryYes.typename}}</text>{{studyhistoryYes.createtime}}</view>
+              </view>
+              <!-- <image mode='widthFix' src='/image/find/right_arrow.png' class='learningRecord_arrow'></image> -->
+              <!--渲染圆环-->
+              <view class='circlewrap'>
+                <view class='circle_big'>
+                  <view class='circle_big_tit'>{{learnType == 5 || learnType == 6 || learnType == 46 ? '分数' : '正确率'}}</view>
+                  <view class='circle_big_text'>
+                    <text>{{studyhistoryYes.accuracy}}</text>
+                    <text>{{learnType == 5 || learnType == 6 || learnType == 46 ? '分' : '%'}}</text>
+                  </view>
+                </view>
+                <view class='circlewrap_in left'>
+                  <view animation="{{arc_lData[studyhistoryYesindex]}}" class='arc arc_l'></view>
+                </view>
+                <view class='circlewrap_in right'>
+                  <view animation="{{arc_rData[studyhistoryYesindex]}}" class='arc arc_r'></view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y bindscrolltolower="scrolltolower" style='height:627px;'>
+        <block s-key="studyhistoryNo" s-for="studyhistoryNo, studyhistoryNoindex in studyhistoryNo.val">
+          <view class='learningRecord_list' hover-class='list_l_action' bindtap='studyhistoryNoListClick' data-index='{{studyhistoryNoindex}}'>
+            <view class='list_in'>
+              <view class='list_l'>
+                <view class='list_l_tit'>{{studyhistoryNo.title}}</view>
+                <!-- <view class='list_l_text'>学习类型：{{studyhistoryNo.typename}}</view> -->
+                <view class='list_l_text'>未完成</view>
+                <view class='list_l_text'><text style='color:#388ef2;margin-right:30rpx;'>{{studyhistoryNo.typename}}</text>{{studyhistoryNo.createtime}}</view>
+              </view>
+              <!-- <image mode='widthFix' src='/image/find/right_arrow.png' class='learningRecord_arrow'></image> -->
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore__tips">{{loadMoreMsg}}</view>
+</view>

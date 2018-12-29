@@ -1,0 +1,81 @@
+/* pages/learn/updateExamTime/updateExamTimeCheck.css */
+@import "updateExamTime.css";
+@import "../../me/bind/bind.css";
+.bind_tishi{
+  color: #b3b3b3;
+  font-size: 24rpx;
+  margin: 40rpx 38rpx 48rpx 38rpx;
+}
+.input_tell{
+  color: #333333;
+  font-size: 36rpx;
+  margin: 0 110rpx 40rpx 110rpx;
+}
+.input_code{
+  margin: 0 30rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+.code_inputlist{
+  border:none;
+  width:150rpx;
+  height:65rpx;
+  text-align:center;
+  font-size: 30rpx;
+  position: relative;
+  top: 26rpx;
+  left: 98rpx;
+}
+.line{
+  position: relative;
+  top: -66rpx;
+  left: 344rpx;
+  display: block;
+  width: 2rpx;
+  height: 40rpx;
+  color: #e6e6e6;
+}
+.set_code {
+  margin:0 auto;
+  line-height:2;
+  width: 224rpx;
+  text-align: center;
+}
+.submit_btn_hover {
+  background:#0b85e1;
+}
+.submit_btn {
+  display:block;
+  position: relative;
+  top: -80rpx;
+  left: 446rpx;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-left:0;
+  padding-right:0;
+  box-sizing:border-box;
+  font-size:30rpx;
+  color:#388ef2;
+  text-align:center;
+  text-decoration:none;
+  line-height:2.55555556;
+  border-radius:5px;
+  -webkit-tap-highlight-color:transparent;
+  overflow:hidden;
+  background:#fff;
+  border: 1px solid #fff;
+}
+.submit_btn::after{
+  background:#fff;
+  border: 1px solid #fff;
+  color: #e6e6e6;
+  width: auto;
+}
+.sureChoice{
+  margin: 40rpx 30rpx 50rpx 30rpx;
+  width: auto;
+  border-radius: 10rpx;
+}

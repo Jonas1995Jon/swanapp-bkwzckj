@@ -1,0 +1,31 @@
+<!--pages/learn/classCategory/classCategory.wxml-->
+<!-- <import src="../../navigation/navigation.wxml" />
+<template is="navigation" data="{{navigation}}"></template> -->
+<scroll-view class='classCategoryScoll' bindscroll="classScoll" scroll-y="true" scroll-into-view="{=toView=}">
+  <view class='class_category'>
+    <view class="class_category_leftNav">
+      <block s-key="bigclassNew" s-for="classItem, classindex in bigclass">
+        <block s-if="classindex == classSelectIndex">
+          <view class="class_name_active"></view>
+        </block>
+        <view class="class_name" style="{{classindex == classSelectIndex ? 'color:#279df7;' : ''}}" bindtap='classSwitch' data-index='{{classindex}}'>{{classItem.title}}</view>
+      </block>
+    </view>
+    <view class="class_category_rightCon">
+      <block s-key="bigclassNew1" s-for="classItem1, classindex1 in bigclass">
+        <view id='inToView{{bigclass[classindex1].id}}'></view>
+        <view class="class_name">{{bigclass[classindex1].title}}</view>
+        <view class="category_list">
+          <block s-key="smalllassNew" s-for="smallclassItem, smallclassindex in bigclass[classindex1].smallclass" data-index='{{smallclassindex}}'>
+            <view class="category_list_item" bindtap='categoryTap' data-smallindex='{{classindex1}}' data-index='{{smallclassindex}}'>
+              <view class='category_img'>
+                <image src='{{smallclassItem.image}}'></image>
+              </view>
+              <view class='category_name'>{{smallclassItem.title}}</view>
+            </view>
+          </block>
+        </view>
+      </block>
+    </view>
+  </view>
+</scroll-view>

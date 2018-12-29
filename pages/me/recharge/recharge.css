@@ -1,0 +1,60 @@
+/* pages/me/recharge/recharge.css */
+page {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #f0eff4;
+}
+.video_nav {
+  display: flex;
+  background: #fff;
+  margin-bottom: 30rpx;
+}
+.recharge_ye{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 30rpx;
+}
+.recharge_ye image{
+  width: 140rpx;
+  height: 140rpx;
+  margin: 70rpx 0 16rpx 0;
+}
+.recharge_ye_money{
+  font-size: 72rpx;
+  font-weight: bold;
+  margin-top: 30rpx;
+  color: #000000;
+}
+.recharge_ye_btn{
+  font-size: 36rpx;
+  color: #ffffff;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #388ef2;
+  margin: 60rpx 0;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.cell {
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.cell_access{
+  border-bottom: 1px solid #e3e3e3;
+}
+.cell_hd image{
+  width:50rpx;
+  height:50rpx;
+}
+.cell_bd{
+  font-size: 30rpx;
+  color: #333333;
+}
+.cell_ft{
+  font-size: 24rpx;
+  color: #b3b3b3;
+}

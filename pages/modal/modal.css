@@ -1,0 +1,213 @@
+/* pages/modal/modal.css */
+
+.modal-box {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 999999;
+}
+
+.modal-body {
+  position: relative;
+  top: 30%;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  background: #fff;
+  overflow: hidden;
+}
+
+.modal-content {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.title_one {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #efefef;
+  text-align: center;
+}
+
+.title_one text {
+  font-size: 28rpx;
+  /* font-weight: bold; */
+  color: #333;
+}
+
+.title_two {
+  width: 100%;
+  overflow: hidden;
+  line-height: 40rpx;
+  min-height: 60rpx;
+  text-align: left;
+  border-bottom: 1rpx solid #efefef;
+}
+
+.title_two text {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.modal-appicon {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.appicon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 20rpx;
+}
+
+.title_three {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: left;
+}
+
+.title_three text {
+  font-size: 22rpx;
+  color: #b8b8b8;
+}
+
+.modal-center {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.modal_button {
+  width: 100%;
+  float: left;
+}
+
+.modal_sure, .modal_cancle {
+  width: 50%;
+  float: left;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  background-color: #fff;
+  font-size: 32rpx;
+  border-top: 1rpx solid #efefef;
+}
+
+.modal_sure {
+  color: #333;
+  border-right: 1rpx solid #efefef;
+}
+
+.modal_cancle {
+  color: goldenrod;
+}
+
+button {
+  border-radius: 0;
+}
+
+button::after {
+  border: none;
+  border-radius: 0;
+}
+
+
+
+.modal-message{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 999999;
+}
+
+.modal-message-body {
+  position: relative;
+  top: 30%;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  background: #fff;
+  overflow: hidden;
+}
+
+.modal-message-content {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.modal-message-contenttitle {
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  /* border-bottom: 1rpx solid #efefef; */
+  text-align: center;
+}
+
+.modal-message-contenttitle text {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.modal-message-des {
+  width: 100%;
+  overflow: hidden;
+  line-height: 40rpx;
+  min-height: 120rpx;
+  text-align: center;
+  /* border-bottom: 1rpx solid #efefef; */
+}
+
+.modal-message-des text {
+  font-size: 32rpx;
+  color: #797979;
+}
+.modal-message-button {
+  width: 100%;
+  float: left;
+}
+
+.modal-message-buttonyes{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #f5f5f5;
+}
+.modal-message-buttonyes text{
+  color: #2cc125;
+  font-size: 36rpx;
+  text-align: center;
+}
+.newmodel{
+  width: 520rpx;
+  height: 608rpx;
+  border-radius: 30rpx;
+  margin: 0 auto;
+  top: 25%;
+}
+.modal-3{
+  position: absolute;
+  bottom: 40rpx;
+}
+.modal-3 button{
+  background-color: #fc5752;
+  border-radius: 10rpx;
+  margin: 0 50rpx;
+  width: auto;
+}
+.modal-3 button text{
+  color: #fff;
+}

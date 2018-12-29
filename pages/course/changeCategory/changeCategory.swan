@@ -1,0 +1,12 @@
+<!--changeCategory.wxml-->
+<!-- <import src="../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class="change_wrap">
+  <text class="grayTip">请选择你要切换的考试类别</text>
+  <view data-hi="{{groupindex}}" bindtap="jump_choice_examination" s-key="changeCategory" s-for="bigclass, groupindex in bigclass" class="course_list">
+      <text class="course_tit">{{bigclass.title}}</text>
+        <view class="course_content">
+      <text s-key="changeCategorySubject" class="subject_list">{{bigsubclass[groupindex].title}}</text>     
+    </view>
+  </view>
+</view>

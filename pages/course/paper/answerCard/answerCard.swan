@@ -1,0 +1,23 @@
+<!--pages/course/paper/answerCard.wxml-->
+<!-- <import src="../../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class="card_tit">
+  <text decode='true'>{{paperTitle}}</text>
+</view>
+<view class='card_wrap'>
+  <block s-key="answerCard" s-for="answerCard, answerindex in answerArr">
+    <block s-if="answerCard.isright == 0">
+      <view data-hi="{{answerindex}}" bindtap='paperIndexClick' class="not_answered">
+        <text>{{answerindex+1}}</text>
+      </view>
+    </block>
+    <block s-else>
+      <view data-hi="{{answerindex}}" bindtap='paperIndexClick' class="{{answerCard.isright == 1 ? '' : 'error'}}">
+        <text>{{answerindex+1}}</text>
+      </view>
+    </block>
+  </block>
+</view>
+<view bindtap='submitPaper' class='car_bottom' hover-class='bg_blue_hover' hidden='{{submitPaperBtnHidden}}'>
+  <text>交卷并查看结果</text>
+</view>

@@ -1,0 +1,31 @@
+<!--pages/learn/updateExamTime/updateExamTimeCheck.wxml-->
+<view class='bind_tishi'>考试时间的修改非常重要，为了您的权益，我们将进行短信验证</view>
+<view class='input_tell'>您的手机号码：{{mobile}}</view>
+<view class='input_code'>
+  <input data-hi="{{groupindex}}" value='{=cell.focus_value=}' bindblur='bindKeyInput' class='code_inputlist' placeholder="短信验证码" maxlength='6' type='number' auto-focus />
+  <view class='line'>|</view>
+  <button bindtap='sendCode' class='submit_btn set_code' hover-class="submit_btn_hover" disabled='{{sendCodeBtnDisabled}}'>{{secondMsg}}</button>
+</view>
+<view class='sureChoice' bindtap='bindKeyInput'>确定修改考试日期</view>
+<!-- <view class='bind_content'>
+  <view class='input_wrap_bg'>
+    <view class='input_wrap_tit input_code_tit'>输入验证码</view>
+    <view class='input_code_subtit'>{{mobile}}</view>
+    <button bindtap='sendCode' class='submit_btn set_code' hover-class="submit_btn_hover" disabled='{{sendCodeBtnDisabled}}'>{{secondMsg}}</button>
+    <view class='code_input'>
+      <block wx:key="getCode" wx:for-index="groupindex" wx:for="{{focus}}" wx:for-item="cell">
+        <block wx:if="{{cell.focus == true}}">
+          <input data-hi="{{groupindex}}" value='{{cell.focus_value}}' bindinput="bindKeyInput" class='code_inputlist' maxlength='1' type='number' auto-focus/>
+        </block>
+        <block wx:else>
+          <input data-hi="{{groupindex}}" value='{{cell.focus_value}}' bindinput="bindKeyInput" class='code_inputlist' maxlength='1' type='number'/>
+        </block>
+      </block>
+    </view>
+  </view>
+</view> -->
+<view class='tipMsg'>
+  <text>温馨提示 \n</text>
+  <text>1、考试时间只能修改一次\n</text>
+  <text>2、考试时间的设定将影响重学和退款保障，请不要随意修改</text>
+</view>

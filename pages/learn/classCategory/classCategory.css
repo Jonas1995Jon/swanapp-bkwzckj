@@ -1,0 +1,79 @@
+/* pages/learn/classCategory/classCategory.css */
+.classCategoryScoll{
+  height: 1214rpx;
+  margin-bottom: 200rpx; 
+}
+.class_category{
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+}
+.class_category_leftNav{
+  width: 149rpx;
+  height: 1214rpx;
+  border-right: 1rpx solid #dcdcdc;
+  position: fixed;
+}
+.class_category_leftNav .class_name{
+  width: 140rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  margin-top:-10rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #000;
+  border-bottom: 1rpx solid #dcdcdc;
+} 
+.class_name_active{
+  position: absolute;
+  width: 6rpx;
+  height: 110rpx;
+  background: #279df7;
+}
+.class_category_rightCon{
+  width: 600rpx;
+  overflow: hidden;
+  margin-left: 170rpx;
+  display: block;
+  margin-bottom: 830rpx;
+}
+.class_name{
+  width: 600rpx;
+  margin-top:20rpx;
+  font-size: 28rpx;
+  color: #000;
+}
+.category_list{
+  width: 600rpx;
+  overflow: hidden;
+  margin-left:-20rpx;
+}
+.category_list_item{
+  width: 270rpx;
+  overflow: hidden;
+  float: left;
+  margin-top:20rpx;
+  margin-left:20rpx;
+  background: #f1f1f1;
+}
+.category_img{
+  width: 260rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+  text-align: center;
+}
+.category_img image{
+  margin-top:30rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.category_name{
+  width: 260rpx;
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  color: #000;
+}

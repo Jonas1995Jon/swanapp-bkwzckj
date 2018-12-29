@@ -1,0 +1,82 @@
+<!--pages/me/answerQuestions/answerQuestions.wxml-->
+<!-- <import src="../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class='answer_nav'>
+  <view bindtap='learnBtnClick' data-index='0' class="{{currentindex == 0 ? 'answer_tab answer_tab_action' : 'answer_tab'}}">
+    <text>全部</text>
+  </view>
+  <view bindtap='learnBtnClick' data-index='1' class="{{currentindex == 1 ? 'answer_tab answer_tab_action' : 'answer_tab'}}">
+    <text>进行中</text>
+  </view>
+  <view bindtap='learnBtnClick' data-index='2' class="{{currentindex == 2 ? 'answer_tab answer_tab_action' : 'answer_tab'}}">
+    <text>已完成</text>
+  </view>
+</view>
+<view class='learningRecord_wrap'>
+  <swiper class='swiper' bindchange="swiperChange" current="{{currentindex}}">
+    <swiper-item>
+      <block s-if="questionList.length > 0">
+        <block s-key="questionList" s-for="questionitem, questionindex in questionList">
+          <view class='all_answer' bindtap='questionDetailTap' data-index='{{questionindex}}'>
+            <view class='all_answer_content'>
+              <view class='all_answer_title'>
+	      <rich-text nodes="{{questionitem.problem_title}}"></rich-text>
+	      </view>
+              <view class='all_answer_state'>{{questionitem.stateTitle}}</view>
+              <view class='all_answer_line'>|</view>
+              <view class='all_answer_time'> 提交时间：{{questionitem.addtime}}</view>
+            </view>
+          </view>
+        </block>
+      </block>
+      <block s-else>
+        <view class="no_question">
+          <image src='../../../image/answerquestion/img_noquestion_bg.png'></image>
+        </view>
+      </block>
+    </swiper-item>
+    <swiper-item>
+      <block s-if="questionIngList.length > 0">
+        <block s-key="questionIngList" s-for="questionIngitem, questionIngindex in questionIngList">
+          <view class='all_answer' bindtap='questionDetailTap' data-index='{{questionIngindex}}'>
+            <view class='all_answer_content'>
+              <view class='all_answer_title'>
+	      <rich-text nodes="{{questionIngitem.problem_title}}"></rich-text>
+	      </view>
+              <view class='all_answer_state'>{{questionIngitem.stateTitle}}</view>
+              <view class='all_answer_line'>|</view>
+              <view class='all_answer_time'> 提交时间：{{questionIngitem.addtime}}</view>
+            </view>
+          </view>
+        </block>
+      </block>
+      <block s-else>
+        <view class="no_question">
+          <image src='../../../image/answerquestion/img_noingquestion_bg.png'></image>
+        </view>
+      </block>
+    </swiper-item>
+    <swiper-item>
+      <block s-if="questionFinishList.length > 0">
+        <block s-key="questionFinishList" s-for="questionFinishitem, questionFinishindex in questionFinishList">
+          <view class='all_answer' bindtap='questionDetailTap' data-index='{{questionFinishindex}}'>
+            <view class='all_answer_content'>
+	    <view class='all_answer_title'>
+	      <rich-text nodes="{{questionFinishitem.problem_title}}"></rich-text>
+	      </view>
+              <view class='all_answer_state'>{{questionFinishitem.stateTitle}}</view>
+              <view class='all_answer_line'>|</view>
+              <view class='all_answer_time'> 提交时间：{{questionFinishitem.addtime}}</view>
+            </view>
+          </view>
+        </block>
+      </block>
+      <block s-else>
+        <view class="no_question">
+          <image src='../../../image/answerquestion/img_nofinishquestion_bg.png'></image>
+        </view>
+      </block>
+    </swiper-item>
+  </swiper>
+</view>
+<view class='add_question' bindtap='addQuestionClick'>+</view>

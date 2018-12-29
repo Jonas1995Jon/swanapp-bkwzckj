@@ -1,0 +1,121 @@
+<!--pages/livelist/livelist.wxml-->
+<!-- <import src="../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class="live_container">
+  <view class="topTab">
+    <view class="{{todayshow == true ? 'topTab_left active' : 'topTab_left'}}" bindtap='todayClick'>
+      今日直播
+    </view>
+    <view class="{{recentshow == true ? 'topTab_right active' : 'topTab_right'}}" bindtap='recentClick'>
+      近期直播
+    </view>
+  </view>
+  <block s-if="todayshow == true">
+    <block s-key="today" s-for="today, todayindex in todayList">
+      <block s-if="month == recent.month">
+        <view bindtap='todayLiveClick' data-index='{{todayindex}}'>
+          <view class="vertical-timeline-content today">
+            <view class="left">
+              <image src='{{today.todayList.teachericon}}'></image>
+            </view>
+            <view class="middle">
+              <view class="middle_top">
+                {{today.todayList.title}}
+              </view>
+              <view class="middle_bottom">
+                <view class="middle_bottom_name">
+                  {{today.todayList.teacher}}
+                </view>
+                <view class="middle_bottom_time">
+                  <image src='../../image/live/time_cicle.png'></image>
+                  {{today.starttime}}-{{today.endtime}}
+                </view>
+              </view>
+            </view>
+            <view class="right">
+              <block s-if="today.state == 0">
+                <view class="right_top">
+                  未开始
+                </view>
+              </block>
+              <block s-if="today.state == 1">
+                <view class="right_top_active">
+                  直播中
+                </view>
+              </block>
+              <block s-if="today.state == 2">
+                <view class="right_top_end">
+                  已结束
+                </view>
+              </block>
+              <view hidden='{{today.state == 0 ? false : true}}'>
+                <view class="right_middle">
+                  倒计时
+                </view>
+                <view class="right_bottom">
+                  {{today.countDownTime}}
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+  </block>
+  <block s-if="recentshow == true">
+    <view class="vertical-timeline">
+      <block s-key="month" s-for="month, monthindex in monthCategory">
+        <view class="vertical-timemonth-block">{{month}}月</view>
+        <block s-key="recent" s-for="recent, recentindex in recentList">
+          <block s-if="month == recent.month">
+            <view class="vertical-timeline-block" bindtap='recentLiveClick' data-index='{{recentindex}}'>
+              <view class="vertical-timeline-icon v-timeline-icon1">
+                <view class="icon">{{recent.day}}日</view>
+              </view>
+              <view class="vertical-timeline-content">
+                <view class="left">
+                  <image src='{{recent.recentList.teachericon}}'></image>
+                </view>
+                <view class="middle">
+                  <view class="middle_top">
+                    {{recent.recentList.title}}
+                  </view>
+                  <view class="middle_bottom">
+                    <view class="middle_bottom_name">
+                      {{recent.recentList.teacher}}
+                    </view>
+                    <view class="middle_bottom_time">
+                      <image src='../../image/live/time_cicle.png'></image>
+                      {{recent.starttime}}-{{recent.endtime}}
+                    </view>
+                  </view>
+                </view>
+                <view class="right">
+                  <view class="{{recent.state == 0 ? 'right_top' : 'right_top_active'}}">
+                    {{recent.state == 0 ? '未开始' : '直播中'}}
+                  </view>
+                  <view class="right_middle">
+                    倒计时
+                  </view>
+                  <view class="right_bottom">
+                    {{recent.countDownTime}}
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </block>
+      </block>
+    </view>
+  </block>
+  <block s-if="todayshow == true && todayList.length < 1 ">
+    <view class="live_none">
+      <image src='../../image/live/video_no_bg.png' mode='widthFix'></image>
+    </view>
+  </block>
+  <block s-if="recentshow == true && recentList.length < 1 ">
+    <view class="live_none">
+      <image src='../../image/live/video_no_bg.png' mode='widthFix'></image>
+    </view>
+  </block>
+</view>

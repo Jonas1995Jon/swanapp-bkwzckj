@@ -1,0 +1,39 @@
+<import src="../../nav/nav.swan" />
+<template is="nav" data="{{{nav}}}"></template>
+<view class='main'>
+  <view class='main_bottom'>
+    <view class='bottom_list'>
+      <view class='desc'>
+        <text style='color:#ff8e35;'>{{brush.shuaticount}}</text>道
+      </view>
+      <view class='title'>
+        <image src='../../../image/learn/brush/icon_doexercise.png'></image>
+      刷题数</view>
+    </view>
+    <view class='bottom_list'>
+      <view class='desc'>
+         <text style='color:#3cde6a;'>{{brush.accuracy}}</text>%
+      </view>
+      <view class='title'>
+      <image src='../../../image/learn/brush/icon_accuracy.png'></image>
+      正确率</view>
+    </view>
+  </view>
+  <view style='width:100%;height:20rpx;background: #f0eff4;'></view>
+  <block s-key="brush" s-for="brush, brushindex in brushlist">
+    <block s-if="brush.show == true">
+    <view class="cells cells_after_title" bindtap="brushClick" data-index="{{brushindex}}" style='display:flex;'>
+      <view class="cell_hd" style='width:120rpx;heigth:160rpx;line-height:160rpx;'>
+        <image src="{{brush.icon}}" style="width:80rpx;height:80rpx;"></image>
+      </view>
+        <view class="linkman">{{brush.title}}</view>
+        <view class="username">{{brush.littletitle}}</view>
+        <view class="cell_ft cell_ft_in_access type"></view>
+      </view>
+    </block>
+  </block>
+</view>
+<view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore__tips">{{loadMoreMsg}}</view>
+</view>

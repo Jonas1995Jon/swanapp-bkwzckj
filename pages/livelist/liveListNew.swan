@@ -1,0 +1,180 @@
+<!--pages/livelist/liveListNew.wxml-->
+<!-- <import src="../navigation/navigation.wxml" />
+<template is="navigation" data="{{navigation}}"></template> -->
+<import src="../nav/nav.swan" />
+<template is="nav" data="{{{nav}}}"></template> 
+<scroll-view scroll-y="true" scroll-top="{=scrollTop=}" bindscroll="scrollclick" style='height:100%' scroll-into-view="jumptoview">
+  <view class="live_container">
+    <view class="topTab">
+      <view class="{{recentshow == true ? 'topTab_left active' : 'topTab_left'}}" bindtap='todayClick'>
+        近期直播
+      </view>
+      <view class="{{vipshow == true ? 'topTab_right active' : 'topTab_right'}}" bindtap='recentClick'>
+        VIP课程
+      </view>
+    </view>
+    <block s-if="recentshow == true">
+      <view class="vertical-timeline">
+        <block s-key="ymRecentCategory" s-for="ym, ymindex in ymRecentCategory">
+          <view class="vertical-timemonth-block">
+            <!--{{ym.year}}年-->{{ym.month}}月</view>
+          <block s-key="recentlist" s-for="recent, recentindex in recent_list">
+            <block s-if="(ym.year+''+ym.month) == (recent.year+''+recent.month)">
+              <view class="vertical-timeline-block" bindtap='recentCellClick' data-index='{{recentindex}}' data-rol="{{recentindex==recent_list.length ? 'jumptoview' : ''}}">
+                <view class="vertical-timeline-icon v-timeline-icon1">
+                  <view class="icon">{{recent.day}}日</view>
+                </view>
+                <view class="vertical-timeline-content">
+                  <view class="left">
+                    <image src='{{recent.teachericon}}'></image>
+                  </view>
+                  <view class="middle">
+                    <view class="middle_top">
+                      {{recent.title}}
+                    </view>
+                    <view class="middle_bottom">
+                      <view class="middle_bottom_name">
+                        {{recent.teacher}}
+                      </view>
+                      <view class="middle_bottom_time">
+                        <image src='../../image/live/time_cicle.png'></image>
+                        {{recent.startTimeHour}}-{{recent.endTimeHour}}
+                      </view>
+                    </view>
+                  </view>
+                  <view class="right">
+                    <block s-if="recent.state == 0">
+                      <view class="right_top">
+                        未开始
+                      </view>
+                    </block>
+                    <block s-if="recent.state == 1">
+                      <view class="right_top_active">
+                        直播中
+                      </view>
+                    </block>
+                    <block s-if="recent.state == 2">
+                      <view class="right_top_end">
+                        已结束
+                      </view>
+                    </block>
+                    <block s-if="recent.state == 3">
+                      <view class="right_top_active" style='margin-top:25rpx;'>
+                        即将开始
+                      </view>
+                    </block>
+                    <block s-if="recent.state != (1 || 2)">
+                      <view>
+                        <view class="right_middle">
+                          倒计时
+                        </view>
+                        <view class="right_bottom">
+                          {{recent.countDownTime}}
+                        </view>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </block>
+        </block>
+      </view>
+    </block>
+    <block s-if="vipshow == true">
+      <view class="vertical-timeline">
+        <block s-key="ymRecentCategory" s-for="ym, ymindex in ymVipCategory">
+          <view class="vertical-timemonth-block">
+            <!--{{ym.year}}年-->{{ym.month}}月</view>
+          <block s-key="viplist" s-for="vip, vipindex in vip_list">
+            <block s-if="(ym.year+''+ym.month) == (vip.year+''+vip.month)">
+              <view class="vertical-timeline-block" bindtap='vipCellClick' data-index='{{vipindex}}' data-rol="{{vipindex==vip_list.length ? 'jumptoview' : ''}}">
+                <view class="vertical-timeline-icon v-timeline-icon1">
+                  <view class="icon">{{vip.day}}日</view>
+                </view>
+                <view class="vertical-timeline-content" style='{{vip_list.length - 1 == vipindex ? "border-bottom:none;" : ""}}'>
+                  <view class="left">
+                    <image src='{{vip.teachericon}}'></image>
+                  </view>
+                  <view class="middle">
+                    <view class="middle_top">
+                      {{vip.title}}
+                    </view>
+                    <view class="middle_bottom">
+                      <view class="middle_bottom_name">
+                        {{vip.teacher}}
+                      </view>
+                      <view class="middle_bottom_time">
+                        <image src='../../image/live/time_cicle.png'></image>
+                        {{vip.startTimeHour}}-{{vip.endTimeHour}}
+                      </view>
+                    </view>
+                  </view>
+                  <view class="right">
+                    <block s-if="vip.state == 0">
+                      <view class="right_top">
+                        未开始
+                      </view>
+                    </block>
+                    <block s-if="vip.state == 1">
+                      <view class="right_top_active">
+                        直播中
+                      </view>
+                    </block>
+                    <block s-if="vip.state == 2">
+                      <view class="right_top_end">
+                        已结束
+                      </view>
+                    </block>
+                    <block s-if="vip.state == 3">
+                      <view class="right_top_active" style='margin-top:25rpx;'>
+                        即将开始
+                      </view>
+                    </block>
+                    <block s-if="vip.state != 2">
+                      <view>
+                        <view class="right_middle">
+                          倒计时
+                        </view>
+                        <view class="right_bottom">
+                          {{vip.countDownTime}}
+                        </view>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </block>
+        </block>
+      </view>
+    </block>
+    <block s-if="recentshow == true && recent_list.length < 1 ">
+      <view class="live_none">
+        <image src='../../image/live/video_no_bg.png' mode='widthFix'></image>
+        <view class='live_none_msg'>
+          <view>近期无直播，查看</view>
+          <view bindtap='vipClick' class='other'>VIP课程</view>
+          <view>、查看</view>
+          <view bindtap='otherClick' class='other'>其他直播</view>
+        </view>
+      </view>
+    </block>
+    <block s-if="vipshow == true && vip_list.length < 1 ">
+      <view class="live_none">
+        <image src='../../image/live/video_no_bg.png' mode='widthFix'></image>
+        <view class='live_none_msg' style='margin-left:10%;'>
+          <view>暂无直播课程，</view>
+          <view>查看</view>
+          <view bindtap='otherClick' class='other'>其他直播</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+<view class="widget-goTop" bindtap="goTop" s-if=" floorstatus ">
+  <view class="gotop-wrap">
+    <view class="icon icon-top"></view>
+    <view>顶部</view>
+  </view>
+</view>

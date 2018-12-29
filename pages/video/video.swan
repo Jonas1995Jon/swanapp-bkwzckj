@@ -1,0 +1,85 @@
+<!-- <import src="../nav/nav.wxml"/>
+<template is="nav" data="{{nav}}"></template> 
+<view style='height:5rpx;width:100%;'></view> -->
+<view class='live_top'>
+	<view class='live_cover'>
+		<video id="home_video" src="{{videoUrl}}" bindplay='startPlay' bindpause="pausePlay" bindended='endPlay' autoplay='false'
+		 objectFit='cover' binderror="listenerVideo" custom-cache='{{false}}' controls='true'>
+      <cover-view bindtap='play' class='cover-view' s-if="isShowCoverView && cover !=''">
+        <cover-image class='cover-view' style='width: 100%; height: 210px; z-index:1;' src="{{cover}}" mode="aspectFill" />
+        <cover-image style='position:absolute; top:160rpx; left:324rpx; width:101rpx; height:101rpx;z-index:10000;' src="/image/video/icon_playbutton.png" />
+      </cover-view>
+    </video>
+	</view>
+</view>
+<!-- <view class='live_nav'>
+  <view bindtap='auditionsBtnClick' data-index='0' class="{{currentindex == 0 ? 'live_tab live_tab_action' : 'live_tab'}}">
+    <text>录播试听</text>
+  </view>
+  <view bindtap='auditionsBtnClick' data-index='1' class="{{currentindex == 1 ? 'live_tab live_tab_action' : 'live_tab'}}">
+    <text>直播试听</text>
+  </view>
+</view> -->
+<view class='live_wrap'>
+	<swiper class='swiper' style='margin-top:0rpx;' bindchange="swiperChange" current="{{currentindex}}">
+		<swiper-item>
+			<view class='video_listwrap'>
+				<block s-key="fst" s-for="fst, fstindex in knowpointList.fst">
+					<!--章列表-->
+					<view class='video_list'>
+						<!--章名字-->
+						<view class='video_tit' bindtap='firstNodeClick' data-index='{{fstindex}}'>
+							<text>{{fst.name}}</text>
+							<image mode='widthFix' src='{{fst.show == true?arrow_down:arrow_up}}'></image>
+						</view>
+						<!--节列表-->
+						<view class='video_content' hidden='{{fst.show}}'>
+							<view class='video_jie_list'>
+								<block s-key="snd" s-for="snd, sndindex in fst.snd">
+									<!--节名字-->
+									<view class='video_jie_tit' bindtap='secondNodeClick' data-fst='{{fstindex}}' data-snd='{{sndindex}}' hidden='{{fst.show}}'>
+										<!-- <view class='point'></view> -->
+										<text>{{snd.name}}</text>
+										<image mode='widthFix' src='{{snd.show == true?arrow_down:arrow_up}}'></image>
+									</view>
+									<block s-key="trd" s-for="trd, trdindex in snd.trd">
+										<!--节列表-->
+										<view class="{{selectFirstNodeIndex == fstindex && selectSecondNodeIndex == sndindex && selectThirdNodeIndex == trdindex?'video_jie_content video_jie_action':'video_jie_content'}}"
+										 bindtap='thirdNodeClick' data-fst='{{fstindex}}' data-snd='{{sndindex}}' data-trd='{{trdindex}}' hidden='{{trd.show}}'>
+											<image mode='widthFix' src='{{selectFirstNodeIndex == fstindex && selectSecondNodeIndex == sndindex && selectThirdNodeIndex == trdindex?playActionIcon:playIcon}}'></image>
+											<text>{{trd.name}}</text>
+										</view>
+									</block>
+								</block>
+							</view>
+						</view>
+					</view>
+				</block>
+			</view>
+		</swiper-item>
+		<!-- <swiper-item>
+			<view class='video_content_wrap'>
+				<view class='video_listwrap'>
+					<block s-key="liveauditionlist" s-for="liveauditionlistItem, liveauditionlistindex in liveauditionlist">
+						<view class='video_list'>
+							<view class='video_tit' bindtap='firstNodeClick' data-index='{{liveauditionlistindex}}'>
+								<text>{{liveauditionlistItem.coursename}}</text>
+								<image mode='widthFix' src='{{liveauditionlistItem.show == true?arrow_down:arrow_up}}'></image>
+							</view>
+						</view>
+						<block s-key="liveaudition" s-for="liveauditionItem, liveauditionindex in liveauditionlistItem.list">
+							<view class='video_list' hidden='{{liveauditionlistItem.show}}'>
+								<view class='video_tit video_qy'>
+									<image mode='widthFix' style='width:30rpx;height:30rpx;margin-right:18rpx;' src='{{liveauditionItem.firstactionid?playActionIcon:playIcon}}'></image>
+									<text id="{{liveauditionItem.id}}" data-type='{{liveauditionItem.type}}' data-bindex='{{liveauditionlistindex}}' data-index='{{liveauditionindex}}'
+									 bindtap='thirdNodeClick' style='color:{{liveauditionItem.firstactionid?"#388ef2":"#b3b3b3"}};'>{{liveauditionItem.title}}</text>
+									<image mode='widthFix' bindtap='buycourseclick' style='width:120rpx;height:38rpx;' src='/image/video/buycourse.png'></image>
+								</view>
+							</view>
+						</block>
+					</block>
+				</view>
+			</view>
+		</swiper-item> -->
+	</swiper>
+</view>

@@ -1,0 +1,44 @@
+<!-- <import src="../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<!-- <view class="video_wrap">
+  <video id="live_room" src="{{videoUrl}}"  bindplay='startPlay' bindpause="pausePlay" bindended='endPlay' objectFit='cover' autoplay='true' binderror="listenerVideo" controls></video>
+</view> -->
+<view style='display:block;postion:absolute;top:120rpx;'>
+<web-view src="{{shareUrl}}"></web-view>
+</view>
+<!-- <view class='liveroom_info'>
+  最下面段注释1在这儿
+  <text class='people_num'>讲师介绍</text>
+</view>
+<view class='talking_wrap'>
+  <view class='talking_in'>
+    <view class='teacher_tit'>
+      <image class='teacher_head' mode='widthFix' src='{{teacher.icon}}'></image>
+      <view>{{teacher.truename}}</view>
+    </view>
+    <view class='teacher_text'>
+      <text decode='true'>{{teacher.jieshao}}</text>
+    </view>
+  </view>
+</view>
+<view bindtap="openLayer" hover-class='bg_blue_hover' class='down_btn'>
+  点击下载APP参与直播互动
+</view>
+
+<view animation="{{shadeimation}}" bindtap='closeLayer' hidden="{{modal}}" class='shade'>
+  <view animation="{{layeranimation}}" catchtap='showLyaer' class='layer_content'>
+    <view bindtap='closeLayer' class='layer_close'>
+        最下面段注释2在这儿
+    </view>
+    <view class="ws_container">
+      <text class="ws_text">长按保存二维码</text>
+      <image bindlongpress="saveWechatImage" class="ws_image" src="../../../image/me/ws_wechat.png"></image>
+      <text class="ws_text">微信扫描保存的二维码\r\n添加帮考网刷题APP客服</text>
+      <button data-hi="bkwbkw003" class="ws_button" bindtap="copyTextClick">
+        <text>bkwbkw003\n(点击复制微信公众号,返回微信添加)</text>
+      </button>
+    </view>
+  </view>
+</view> -->
+<!-- <image mode='widthFix' src='/image/video/eyes.png' class='eyes'></image> -->
+<!-- <image mode='widthFix' src='/image/study/close.png'></image> -->

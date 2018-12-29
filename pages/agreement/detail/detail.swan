@@ -1,0 +1,7 @@
+<!--pages/agreement/details/detail.wxml-->
+<!-- <import src="../../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<import src="../../../utils/wxParse/wxParse.swan" />
+<view style='margin: 0 20rpx;'>
+<template is="wxParse" data="{{{wxParseData:agreement.nodes}}}" />
+</view>

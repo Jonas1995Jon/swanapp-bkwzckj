@@ -1,0 +1,93 @@
+<!--pages/live/live.wxml-->
+<!-- <import src="../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class="video_wrap">
+  <video id="home_live" src="{{videoUrl}}" bindplay='startPlay' bindpause="pausePlay" bindended='endPlay' objectFit='cover' autoplay='false' binderror="listenerVideo" controls></video>
+</view>
+<block s-if="formalCourse.living.title.length > 0 || formalCourse.nextnotice.title.length > 0">
+  <block s-if="formalCourse.living.title.length > 0">
+    <view class='classroom_tit'>
+      <view class='classroom_tit_l'>
+        <view class='classroom_tit_l_top'>
+          <text>正在直播</text>
+          <text class='{{liveAction}}'>{{formalCourse.living.title}}</text>
+        </view>
+        <view class='classroom_tit_l_bottom'>
+          <text>{{formalCourse.living.date}} </text>
+          <text>{{formalCourse.living.starttime}}-{{formalCourse.living.endtime}}</text>
+        </view>
+      </view>
+      <view bindtap='joinClassRoom' hover-class='bg_blue_hover' class='classroom_tit_btn' hidden='{{liveType}}'>
+        进入教室
+      </view>
+    </view>
+  </block>
+  <block s-else>
+    <view class='classroom_tit'>
+      <view class='classroom_tit_l'>
+        <view class='classroom_tit_l_top'>
+          <text>直播预告</text>
+          <text class='{{liveAction}}' style="max-width:560rpx;">{{formalCourse.nextnotice.title}}</text>
+        </view>
+        <view class='classroom_tit_l_bottom'>
+          <text>{{formalCourse.nextnotice.date}} </text>
+          <text>{{formalCourse.nextnotice.starttime}}-{{formalCourse.nextnotice.endtime}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</block>
+<view class='video_content_wrap' style="{{formalCourse.living.title.length > 0 || formalCourse.nextnotice.title.length > 0 ? 'top:577rpx;' : 'top:425rpx;'}}">
+  <block s-key="formalCourseList" s-for="formalCourseList, formalCourseListindex in formalCourse.list">
+    <!--课程类别列表-->
+    <view class='class_list'>
+      <!--课程大标题-->
+      <view hover-class='gray_item_hover' class='class_list_tit' bindtap='firstNodeClick' data-index='{{formalCourseListindex}}'>
+        <text>{{formalCourseList.first}}</text>
+        <image mode='widthFix' src='{{formalCourseList.show == true?arrow_down:arrow_up}}'></image>
+      </view>
+      <block s-key="formalCourseSecond" s-for="formalCourseSecond, formalCourseSecondindex in formalCourseList.second">
+        <!--课程子列表-->
+        <view class='video_course' hidden='{{formalCourseList.show}}' bindtap='secondNodeClick' data-fst='{{formalCourseListindex}}' data-snd='{{formalCourseSecondindex}}'>
+          <view class='video_course_l'>
+            <!-- 存在直播-->
+            <block s-if="formalCourse.living.title.length > 1">
+              <!-- 存在直播且没点击-->
+              <view class="{{(selectFirstNodeIndex != 0 && selectSecondNodeIndex != 0)&&(selectFirstNodeIndex == formalCourseListindex && selectSecondNodeIndex == formalCourseSecondindex)?'video_course_l_tit active':'video_course_l_tit'}}">{{formalCourseSecond.title}}</view>
+              <view class='video_course_info'>
+                <text>{{formalCourseSecond.date}} {{formalCourseSecond.starttime}}-{{formalCourseSecond.endtime}}</text>
+                <text>{{formalCourseSecond.videocode == "" ? '未开始':'已结束'}}</text>
+              </view>
+
+            </block>
+            <!-- 不存在直播-->
+            <block s-else>
+              <view class="{{(selectFirstNodeIndex == formalCourseListindex && selectSecondNodeIndex == formalCourseSecondindex)?'video_course_l_tit active':'video_course_l_tit'}}">{{formalCourseSecond.title}}</view>
+              <view class='video_course_info'>
+                <text>{{formalCourseSecond.date}} {{formalCourseSecond.starttime}}-{{formalCourseSecond.endtime}}</text>
+                <text>{{formalCourseSecond.videocode == "" ? '未开始':'已结束'}}</text>
+              </view>
+            </block>
+          </view>
+          <!-- bindtap='joinToPlay' -->
+          <block s-if="formalCourseSecond.videocode != ''">
+            <!-- 存在直播-->
+            <block s-if="formalCourse.living.title.length > 1">
+              <!-- 存在直播且没点击-->
+              <view hover-class='course_btn_hover' class="{{(selectFirstNodeIndex != 0 && selectSecondNodeIndex != 0)&&(selectFirstNodeIndex == formalCourseListindex && selectSecondNodeIndex == formalCourseSecondindex)?'video_course_btn active':'video_course_btn'}}">
+                进入回看
+              </view>
+            </block>
+            <block s-else>
+                            <view hover-class='course_btn_hover' class="{{(selectFirstNodeIndex == formalCourseListindex && selectSecondNodeIndex == formalCourseSecondindex)?'video_course_btn active':'video_course_btn'}}">
+                进入回看
+              </view>
+            </block>
+
+          </block>
+        </view>
+      </block>
+    </view>
+    <!--课程类别列表-->
+  </block>
+</view>

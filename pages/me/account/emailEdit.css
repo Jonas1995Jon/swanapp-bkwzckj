@@ -1,0 +1,7 @@
+/* pages/me/account/emailEdit.css */
+@import "../bind/bind.css";
+.account_input{
+  font-size: 32rpx;
+  border: 1rpx #efefef solid;
+  padding: 10rpx 20rpx;
+}

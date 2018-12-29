@@ -1,0 +1,113 @@
+{
+  "pages": [
+    "pages/redpacket/redPacket",
+    "pages/learn/learn",
+    "pages/index/index",
+    "pages/me/me",
+    "pages/video/video",
+    "pages/video/videoList/videoList",
+    "pages/live/live",
+    "pages/find/find",
+    "pages/course/changeCategory/changeCategory",
+    "pages/course/changeExamination/changeExamination",
+    "pages/course/changeSubject/changeSubject",
+    "pages/course/paper/paper",
+    "pages/course/paper/studyPage/studyPage",
+    "pages/me/account/account",
+    "pages/me/bind/bind",
+    "pages/me/getCode/getCode",
+    "pages/me/inputPassword/inputPassword",
+    "pages/me/wechatService/wechatService",
+    "pages/course/myCourse/myCourse",
+    "pages/course/myCourse/detail/detail",
+    "pages/course/buyCourse/buyCourse",
+    "pages/course/buyCourse/buyCourseList/buyCourseList",
+    "pages/course/paper/answerCard/answerCard",
+    "pages/course/paper/report/report",
+    "utils/dialog/dialog",
+    "pages/live/liveRoom/liveRoom",
+    "pages/me/resetPassword/resetPassword",
+    "pages/find/learningRecord/learningRecord",
+    "pages/find/learningAnalysis/learningAnalysis",
+    "pages/find/unitExam/unitExam",
+    "pages/course/paper/videoPlayer/videoPlayer",
+    "pages/course/buyCourse/productsList/productsList",
+    "pages/agreement/agreement",
+    "pages/agreement/detail/detail",
+    "pages/livelist/livelist",
+    "pages/course/paper/note/note",
+    "pages/activity/fightgroups/fightgroups",
+    "pages/livelist/liveListNew",
+    "pages/me/answerQuestions/answerQuestions",
+    "pages/me/answerQuestions/addQuestion",
+    "pages/me/answerQuestions/questionDetail",
+    "pages/learn/classCategory/classCategory",
+    "pages/learn/brushNum/brushNum",
+    "pages/course/buyCourse/buyCourseNew",
+    "pages/course/buyCourse/buyCourseDetail/buyCourseDetail",
+    "pages/learn/liveVideoNum/liveVideoNum",
+    "pages/nav/nav",
+    "pages/course/myorder/myorder",
+    "pages/course/myorder/myorderDetail",
+    "pages/me/recharge/recharge",
+    "pages/me/account/accountEdit",
+    "pages/me/account/emailEdit",
+    "pages/learn/updateExamTime/updateExamTime",
+    "pages/learn/updateExamTime/updateExamTimeCheck",
+    "pages/answerquestion/answerQuestion",
+    "pages/find/monthExam/monthExam",
+    "pages/livelist/livePublicList",
+    "pages/live/liveNew",
+    "pages/modal/modal",
+    "pages/auditions/auditions",
+    "pages/me/recharge/confirmrecharge",
+    "pages/me/recharge/coupon",
+    "pages/me/recharge/invalidcoupon"
+    
+  ],
+  "window": {
+    "navigationStyle": "default",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#388ef2",
+    "navigationBarTitleText": "帮考网",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#888",
+    "selectedColor": "#89bdf7",
+    "backgroundColor": "#fff",
+    "borderStyle": "gray",
+    "list": [
+      {
+        "pagePath": "pages/redpacket/redPacket",
+        "text": "首页",
+        "iconPath": "image/homeTabar/tab_icon_home.png",
+        "selectedIconPath": "image/homeTabar/tab_icon_home_pre.png"
+      },
+      {
+        "pagePath": "pages/learn/brushNum/brushNum",
+        "text": "刷题",
+        "iconPath": "image/homeTabar/tab_icon_class.png",
+        "selectedIconPath": "image/homeTabar/tab_icon_class_pre.png"
+      },
+      {
+        "pagePath": "pages/activity/fightgroups/fightgroups",
+        "text": "红包",
+        "iconPath": "image/homeTabar/home_red_packet.png",
+        "selectedIconPath": "image/homeTabar/home_red_packet.png"
+      },
+      {
+        "pagePath": "pages/auditions/auditions",
+        "text": "试听",
+        "iconPath": "image/homeTabar/tab_icon_live_no.png",
+        "selectedIconPath": "image/homeTabar/tab_icon_live.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我",
+        "iconPath": "image/homeTabar/tab_icon_mine.png",
+        "selectedIconPath": "image/homeTabar/tab_icon_mine_pre.png"
+      }
+    ]
+  }
+}

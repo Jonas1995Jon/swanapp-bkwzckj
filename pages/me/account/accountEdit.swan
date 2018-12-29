@@ -1,0 +1,6 @@
+<!--pages/me/account/accountEdit.wxml-->
+<view class="cell_br"></view>
+<view class='account_edit'>
+  <input bindinput="accountInput" class='account_input' type='text' placeholder="{{accountValue.length > 0 ? accountValue : accountMsg}}" />
+</view>
+<view class='accountEditBtn' bindtap='sureBtnClick'>确定</view>

@@ -1,0 +1,20 @@
+<!--pages/me/account/emailEdit.wxml-->
+<view class='bind_content'>
+  <view class='input_wrap_bg'>
+    <view class='input_wrap_tit input_code_tit'>输入验证码</view>
+    <view class='input_code_subtit'>
+      <input bindinput="accountInput" class='account_input' type='text' placeholder="{{accountValue.length > 0 ? accountValue : accountMsg}}" />
+    </view>
+    <button bindtap='checkemail' class='submit_btn set_code' hover-class="submit_btn_hover" disabled='{{sendCodeBtnDisabled}}'>{{secondMsg}}</button>
+    <view class='code_input'>
+      <block s-key="getCode" s-for="cell, groupindex in focus">
+        <block s-if="cell.focus == true">
+          <input data-hi="{{groupindex}}" value='{=cell.focus_value=}' bindinput="bindKeyInput" class='code_inputlist' maxlength='1' type='number' auto-focus />
+        </block>
+        <block s-else>
+          <input data-hi="{{groupindex}}" value='{=cell.focus_value=}' bindinput="bindKeyInput" class='code_inputlist' maxlength='1' type='number' />
+        </block>
+      </block>
+    </view>
+  </view>
+</view>

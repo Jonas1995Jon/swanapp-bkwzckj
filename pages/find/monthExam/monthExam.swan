@@ -1,0 +1,23 @@
+<!--pages/find/monthExam/monthExam.wxml-->
+<view class='examCon'>
+  <view class='examCon_list'>
+    <block s-key="exam" s-for="exam, groupindex in unitList">
+      <view class='examCon_item' data-hi="{{groupindex}}" bindtap="unitListClick">
+        <view class='examCon_coursename' style='{{coursename.length > 9 ? "height:70rpx;" : "40rpx;"}}'>{{coursename}}</view>
+        <view class='examCon_title'>
+          <view>{{exam.title}}</view>
+        </view>
+          <view class='examCon_score'>
+          <block s-if="exam.state == 1 || exam.state == 2">
+            <view class="{{exam.state == 2 ? '' : 'loseactive'}}">{{exam.state == 2 ? '开始考试' : '未开始'}}</view>
+          </block>
+          <block s-else>
+            <view>{{exam.accuracy}}分</view>
+          </block>
+          </view>
+          <view class='examCon_questionnumber'><view>考试时间</view>{{exam.starttime}}至{{exam.endtime}}</view>
+          <view class='examCon_bg'><image src='../../../image/find/unit_listbg.png'></image></view>
+      </view>
+      </block>
+  </view>
+</view>

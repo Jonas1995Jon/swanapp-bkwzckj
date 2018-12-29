@@ -1,0 +1,93 @@
+<!--pages/learn/learn.wxml-->
+<!-- <import src="../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<import src="../nav/nav.swan" />
+<template is="nav" data="{{{nav}}}"></template> 
+<view class="cell-container" bindtouchstart="touchStart" bindtouchend="touchEnd">
+  <view class='cell_top_list'>
+    <view class='list_item' bindtap='brushNumTap'>
+      <view class='list_item_img'>
+        <image src='../../image/learn/category/brush_num.png'></image>
+      </view>
+      <view class='list_item_number'>
+        {{topCountList.shuaticount}}
+      </view>
+    </view>
+    <view class='list_item' bindtap='liveNumTap'>
+      <view class='list_item_img'>
+        <image src='../../image/learn/category/live_time.png'></image>
+      </view>
+      <view class='list_item_number'>
+        {{topCountList.live_timelength}}
+      </view>
+    </view>
+    <view class='list_item' bindtap='videoNumTap'>
+      <view class='list_item_img'>
+        <image src='../../image/learn/category/video_time.png'></image>
+      </view>
+      <view class='list_item_number'>
+        {{topCountList.vod_timelength}}
+      </view>
+    </view>
+  </view>
+  <view class="cell-learn" hidden='{{record.length > 0 ? false : true}}'>
+    <view class="cell-learn-title">视频</view>
+    <view class="cell-learn-box">
+      <block s-key="record" s-for="record, recordindex in record">
+        <block s-if="record.show == true">
+          <view class="cell-learn-box-cell" bindtap="recordClick" data-index="{{recordindex}}" data-id="{{record.id}}">
+            <image src="{{record.icon}}"></image>
+            <text>{{record.title}}</text>
+          </view>
+        </block>
+      </block>
+    </view>
+  </view>
+  <view class="cell-learn" hidden='{{live.length > 0 ? false : true}}'>
+    <view class="cell-learn-title">直播</view>
+    <view class="cell-learn-box">
+      <block s-key="live" s-for="live, liveindex in live">
+        <block s-if="live.show == true">
+          <view class="cell-learn-box-cell" bindtap="liveClick" data-index="{{liveindex}}">
+            <image src="{{live.icon}}"></image>
+            <text>{{live.title}}</text>
+          </view>
+        </block>
+      </block>
+    </view>
+  </view>
+
+  <view class="cell-learn">
+    <view class="cell-learn-title">刷题</view>
+    <view class="cell-learn-box">
+      <block s-key="brush" s-for="brush, brushindex in brush">
+        <block s-if="brush.show == true">
+          <view class="cell-learn-box-cell" bindtap="brushClick" data-index="{{brushindex}}">
+            <image src="{{brush.icon}}"></image>
+            <text>{{brush.title}}</text>
+          </view>
+        </block>
+      </block>
+    </view>
+  </view>
+
+  <view class="cell-learn">
+    <view class="cell-learn-title">服务</view>
+    <view class="cell-learn-box">
+      <block s-key="service" s-for="service, serviceindex in service">
+        <block s-if="service.show == true">
+          <view class="cell-learn-box-cell" bindtap="serviceClick" data-index="{{serviceindex}}">
+            <image src="{{service.icon}}"></image>
+            <text>{{service.title}}</text>
+          </view>
+        </block>
+      </block>
+    </view>
+  </view>
+  <view class="cell_br"></view>
+  <!-- <block wx:if="{{templateList.length > 0}}">
+  <view class="red_packet" bindtap="redPacketClick" style="{{touchStart == 0 ? 'right:20rpx;' : 'right:-60rpx;'}}">  
+    <image src="../../image/fightgroups/share_redpacket.png"></image> 
+  </view>
+  </block> -->
+</view>

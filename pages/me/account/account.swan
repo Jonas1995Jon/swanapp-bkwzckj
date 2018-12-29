@@ -1,0 +1,25 @@
+<view class="cell-container">
+  <view class="account_cell cell_border_top">
+    <view class="account_cell_bd">头像</view>
+    <!-- <view class="account_cell_ct"></view> -->
+    <view class="cell_hd headPortrait">
+      <image src="{{headPortrait}}" style="width:50px;height:50px;border-radius:25px;"></image>
+    </view>
+  </view>
+  <block s-if="account == '' || account == null">
+    <view class="account_cell cell_border_top nickname">
+      <view class="account_cell_bd">昵称</view>
+      <view class="account_cell_ft">{{nickName}}</view>
+    </view>
+  </block>
+  <block s-else>
+    <view class="account_cell cell_border_top nickname" bindtap='accountEditClick' data-index='0' data-value='{{account.nickname}}'>
+      <view class="account_cell_bd">昵称</view>
+      <view class="account_cell_ft cell_ft_in_access">{{account.nickname}}</view>
+    </view>
+  </block>
+  <view class="cell_br"></view>
+  <view class="account_cell cell_border_top logout" bindtap='unBindingUser'>
+    退出登录
+  </view>
+</view>

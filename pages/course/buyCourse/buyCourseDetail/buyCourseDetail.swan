@@ -1,0 +1,100 @@
+<!--pages/course/buyCourse/buyCourseDetail/buyCourseDetail.wxml-->
+<!-- <import src="../../../navigation/navigation.wxml"/> -->
+<import src="../../../../utils/wxParse/wxParse.swan" />
+<!-- <template is="navigation" data="{{navigation}}"></template> -->
+<view class='buycourse_detail'>
+	<view class='buycourse_banner'>
+		<image mode='widthFix' src='{{commoditydetail.cover}}'></image>
+	</view>
+	<view class='buycourse_des'>
+		<view class='buycourse_classdes'>
+			<view class='buycourse_classtype'>{{commoditydetail.classTypeTitle}}</view>
+			<view class='buycourse_oldprice'>￥{{commoditydetail.price}}</view>
+			<view class='buycourse_newprice'>原价 {{commoditydetail.costprice}}</view>
+			<!-- <view class='buycourse_newprice numpeople'>{{commoditydetail.costprice}}人已报名</view> -->
+		</view>
+		<block s-if="commoditydetail.coursecontentArr[0].length > 0">
+			<view class='buycourse_classcontent'>
+				<block s-key="coursecontentArr" s-for="coursecontent, coursecontentindex in commoditydetail.coursecontentArr">
+					<view class='buycourse_classtype buycontent'>
+						<view class='yuandian'></view>
+						<view class='buycourse_content'>{{coursecontent}}</view>
+					</view>
+				</block>
+			</view>
+		</block>
+	</view>
+
+	<view class='buycourse_type'>
+		<view class='buycourse_type_con' bindtap="courseActionSheetTap">
+			<view class='type_left'>科目</view>
+			<view class='type_right'>{{commoditydetail.classTitle}}</view>
+			<view class="type_arrow">
+				<image src='../../../../image/study/arrow_r_big.png'></image>
+			</view>
+		</view>
+		<view class='buycourse_type_con' bindtap="banxingActionSheetTap">
+			<view class='type_left'>班型</view>
+			<view class='type_right'>{{commoditydetail.typeTitle}}</view>
+			<view class="type_arrow">
+				<image src='../../../../image/study/arrow_r_big.png'></image>
+			</view>
+		</view>
+	</view>
+
+	<view class='buycourse_detail'>
+		<block s-if="{{wap_coursedetail.nodes.length > 0}}">
+			<view class='detail_title'>购买课程</view>
+			<template is="wxParse" data="{{{wxParseData:wap_coursedetail.nodes}}}" />
+		</block>
+	</view>
+
+</view>
+<view class='buycourse_buy'>
+	<view class='buy_left' bindtap='calling'>
+		<image src='../../../../image/me/courselist_zixun.png'></image>
+		<text>咨询</text>
+	</view>
+	<view class='buy_center'>
+		¥{{commoditydetail.price}}
+		<text>¥{{commoditydetail.costprice}}  </text>
+	</view>
+	<view bindtap='buyImmediatelyTap' class='buy_right'>立即购买</view>
+</view>
+
+<view class="modal-mask" bindtap="hideMasking" hidden="{{hiddenMasking}}"></view>
+<action-sheet>
+	<view class='choiceCourse' hidden="{{choiceCourseHidden}}" bindchange="actionSheetbindchange1">
+		<!-- <view class='title'>选择科目</view> -->
+		<view class='courseList'>
+			<block s-key="courseItem" s-for="courseItem, courseItemIndex in courselist">
+				<view class='courseItem' bindtap='courseChoiceTap' data-index='{{courseItemIndex}}' data-courseid='{{courseItem.courseid}}'>
+					<view class='courseTitle'>{{courseItem.title}}</view>
+					<image src='{{courseItem.selected == 0 ? "../../../../image/other/buycourse_select_unchecked.png" : "../../../../image/other/buycourse_select_checked.png"}}'></image>
+				</view>
+			</block>
+		</view>
+		<view class='sureChoice' bindtap='sureChoiceTap'>确认</view>
+	</view>
+</action-sheet>
+
+<action-sheet>
+	<view class='choiceCourse' hidden="{{choiceBanxingHidden}}" bindchange="actionSheetbindchange2">
+		<!-- <view class='title'>选择班型</view> -->
+		<view class='courseList'>
+			<block s-key="courseItem" s-for="courseItem, courseItemIndex in courselist">
+
+				<block s-if="courseItem.courseid == selectedCourseid">
+					<block s-key="banxingItem" s-for="banxingItem, banxingItemIndex in courselist[courseItemIndex].banxinglist">
+						<view class='courseItem' bindtap='banxingChoiceTap' data-courseindex='{{courseItemIndex}}' data-banxingindex='{{banxingItemIndex}}'
+						 data-id='{{courseItem.id}}'>
+							<view class='courseTitle'>{{banxingItem.title}}</view>
+							<image src='{{banxingItem.selected == 0 ? "../../../../image/other/buycourse_select_unchecked.png" : "../../../../image/other/buycourse_select_checked.png"}}'></image>
+						</view>
+					</block>
+				</block>
+			</block>
+		</view>
+		<view class='sureChoice' bindtap='sureChoiceBanxingTap'>确认</view>
+	</view>
+</action-sheet>

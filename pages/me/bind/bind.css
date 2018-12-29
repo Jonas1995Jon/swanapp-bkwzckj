@@ -1,0 +1,123 @@
+page{
+  background: #f0f0f0;
+}
+.bind_content{
+  padding: 80rpx 30rpx;
+}
+.bind_phone{
+  font-size: 30rpx;
+  color: #279df7;
+  margin-bottom:30rpx;
+  width:100%;
+  text-align: center;
+}
+.input_place {
+  text-align: center;
+}
+.input_wrap:first-child{
+  padding-top: 50rpx;
+}
+.input_wrap{
+  display: flex;
+  justify-content: flex-start;
+  align-items:center;
+  /* padding:0 30rpx; */
+  position: relative;
+  margin-bottom: 60rpx;
+  border-bottom: 1px solid #b7b7b7;
+  text-align: center;
+}
+.icon_close{
+  position: absolute;
+  right: 10rpx;
+  bottom: 15rpx;
+}
+.submit_btn{
+  position:relative;
+  display:block;
+  margin-top: 20rpx;
+  padding-left:0;
+  padding-right:0;
+  box-sizing:border-box;
+  font-size:36rpx;
+  color: #fff;
+  text-align:center;
+  text-decoration:none;
+  height: 88rpx;
+  line-height:88rpx;
+  border-radius:5px;
+  -webkit-tap-highlight-color:transparent;
+  overflow:hidden;
+  background: #279df7;
+}
+.submit_btn_hover{
+  background: #0b85e1;
+}
+.gray_center{
+  color: #C3C3C3;
+  text-align: center;
+  text-decoration: underline;
+  font-size:30rpx;
+  margin-top: 50rpx;
+}
+.input_text{
+  font-size: 30rpx;
+  color: #ccc;
+}
+.input_wrap_tit{
+  font-size: 50rpx;
+  text-align: center;
+  padding-bottom: 80rpx;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.input_wrap_tit image{
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto;
+}
+.input_wrap_tit text{
+  font-size: 24rpx;
+	color: #b3b3b3;
+  margin-top: 20rpx;
+}
+.input_code_subtit{
+  font-size: 28rpx;
+  text-align: center;
+  padding-bottom: 20rpx;
+  color: #aaaaaa;
+}
+.input_code_tit{
+  padding-bottom: 20rpx;
+}
+.input_nopadding{
+  padding: 0;
+}
+.password_wrap{
+  margin-bottom: 20rpx;
+}
+.wangjimima{
+  font-size: 24rpx;
+  color:#C3C3C3;
+  text-align: right;
+  padding: 10rpx 0;
+}
+.set_code{
+  width: 60%;
+  margin: 0 auto;
+  line-height:2;
+  font-size: 34rpx;
+}
+.code_input{
+  margin-top: 50rpx;
+  display: flex;
+  justify-content:center;
+}
+.code_inputlist{
+  border: 1px solid #dcdcdc;
+  width: 65rpx;
+  height: 75rpx;
+  text-align: center;
+  margin: 0 10rpx;
+}

@@ -1,0 +1,21 @@
+<!--pages/course/buyCourse/buyCourseNew.wxml-->
+<!-- <import src="../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class='buycourse_view'>
+  <block s-key="courseNameArr" s-for="coursename, coursenameindex in courseNameArr">
+    <view class='buycourse_coursename'>{{coursename}}</view>
+    <view class='buycourse_courselist'>
+      <block s-key="commoditylist" s-for="commodity, commodityindex in commoditylist">
+        <block s-if="commodity.coursename == coursename">
+          <view bindtap='buycourseTap' data-id='{{commodity.id}}' class='buycourse_courseitem' style='{{commodityindex%2==0 ? "" : "margin-left:20rpx;"}}'>
+            <view class='courseitem_image'>
+              <image src='{{commodity.cover}}'></image>
+            </view>
+            <view class='courseitem_coursename'>{{commodity.coursename}}</view>
+            <view class='courseitem_price'>{{commodity.priceStr}}</view>
+          </view>
+        </block>
+      </block>
+    </view>
+  </block>
+</view>

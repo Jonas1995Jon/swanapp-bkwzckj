@@ -1,0 +1,9 @@
+<!--pages/video/videoPlayer/videoPlayer.wxml-->
+<!-- <import src="../../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class="container">
+	<view class="video_full">
+		<video id="paper_play" src="{{videoUrl}}" bindplay='startPlay' bindpause="pausePlay" bindended='endPlay' autoplay='true'
+		 objectFit='cover' binderror="listenerVideo" controls></video>
+	</view>
+</view>

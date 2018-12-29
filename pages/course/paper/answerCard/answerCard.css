@@ -1,0 +1,56 @@
+/* pages/course/paper/answerCard.css */
+page{
+  height: 100%;
+  display: flex;
+  flex-direction:column;
+}
+.card_tit{
+  background-color: #fff;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.card_wrap{
+  background: #EDEDED;
+  flex: 1;
+  padding:0 30rpx;
+  padding-top:56rpx;
+  overflow-y: auto;
+}
+.card_wrap view{
+  display:inline-block;
+  width:20%;
+  color: #fff;
+  margin-bottom:40rpx; 
+}
+.card_wrap view text{
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 36rpx;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  background-color: #3cde6a;
+  border:2px solid transparent;
+}
+.car_bottom{
+  padding: 35rpx 0;
+  background-color:#0A98FA;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+}
+.error text{
+  background-color: #e85368 !important;
+}
+
+.not_answered text{
+  color:  #279df7;
+  border-color: #C2C2C2 !important;
+  background-color: #EDEDED !important;
+}

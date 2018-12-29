@@ -1,0 +1,372 @@
+/* pages/course/paper/studyPage.css */
+@import "../../../../utils/wxParse/wxParse.css";
+Page {
+  background: #fff;
+  color: #323c47;
+  font-size: 30rpx;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+swiper {
+  /* height:100%; */
+  /* width: 100%; */
+  /* overflow-x: hidden; */
+  /* overflow-y: auto; */
+}
+swiper swiper-item{
+  overflow-y: auto !important
+}
+
+.paper_container {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.pd_wrap {
+  padding: 15rpx 25rpx;
+}
+
+.study_pagetit {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #e9e9e9;
+  font-size: 28rpx;
+  flex-wrap: wrap;
+}
+
+.study_pagetit_l {
+  flex: 1;
+  padding-right: 10rpx;
+}
+
+.study_pagetit_l image {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10rpx;
+}
+
+.tool {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 20rpx 0;
+  border-bottom: 10rpx solid #f8f8f8;
+}
+
+.tool_in {
+  width: 50%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.tool_in:first-child {
+  border-right: 1px solid #f3f3f3;
+}
+
+.tool_in image {
+  width: 50rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.tool_in text {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10rpx;
+  color: #279df7;
+}
+
+.title {
+  display: block;
+  padding: 15rpx 25rpx 25rpx 25rpx;
+  border-bottom: 10rpx solid #f8f8f8;
+  line-height: 40rpx;
+  font-size: 28rpx;
+}
+
+.title image {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10rpx;
+}
+
+.title text:first-child {
+  color: #279df7;
+  padding-right: 5rpx;
+  display: inline-block;
+}
+
+.tit_content {
+  font-size: 28rpx;
+  display: inline-block;
+}
+
+.answer_wrap {
+  padding-bottom: 10rpx;
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+  border-bottom: 10rpx solid #f8f8f8;
+}
+
+.answer_list {
+  padding: 15rpx 20rpx 15rpx 0;
+  /* border-bottom: 1px solid #f8f8f8; */
+}
+
+.answer_list .radio {
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border: 1px solid #279df7;
+  vertical-align: top;
+  border-radius: 50%;
+  color: #279df7;
+  margin-right: 15rpx;
+  float: left;
+}
+
+.answer_list .checkbox {
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  font-size: 28rpx;
+  text-align: center;
+  border-radius: 6rpx;
+  line-height: 50rpx;
+  border: 1px solid #279df7;
+  vertical-align: top;
+  color: #279df7;
+  margin-right: 15rpx;
+  float: left;
+}
+
+.answer_wrap radio, .answer_wrap checkbox {
+  display: none;
+}
+
+.answer_list_text {
+  display: block;
+  vertical-align: text-top;
+  margin-left: 70rpx;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 50rpx;
+  min-height: 50rpx;
+}
+
+.answer_list_text image {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 10rpx;
+}
+
+.answer_list_text_panduan {
+  display: block;
+  vertical-align: text-top;
+  margin-left: 70rpx;
+  font-size: 28rpx;
+  color: #666;
+  min-height: 55rpx;
+}
+
+.answer_area {
+  padding: 15rpx 25rpx;
+  border-bottom: 1px solid #f8f8f8;
+  font-size: 28rpx;
+  line-height: 50rpx;
+}
+
+.un_bound {
+  padding: 35rpx 25rpx;
+  border-top: 9rpx solid #f8f8f8;
+  background-color: #fff;
+}
+
+.un_bound .un_bound_btn {
+  display: block;
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  padding: 20rpx 0;
+  border-radius: 10rpx;
+}
+
+.un_bound_checkbox{
+  padding: 35rpx 50rpx 35rpx 25rpx;
+  border:none;
+  background-color: #fff;
+}
+
+.answer_area view {
+  font-size: 28rpx;
+}
+
+.your_answer view {
+  display: inline-block;
+}
+
+.your_answer view:first-child {
+  margin-right: 150rpx;
+}
+
+.font_red {
+  color: red;
+}
+
+.answer_area_tit {
+  padding-bottom: 15rpx;
+  color: #666;
+}
+
+.answer_area_note {
+  padding-bottom: 10rpx;
+  color: #666;
+  width: 50%;
+  float: left;
+}
+.answer_area_addnote {
+  padding-bottom: 10rpx;
+  color: #279df7;
+  width: 50%;
+  float: left;
+  text-align: right;
+  font-size: 24rpx;
+}
+
+.answer_area_notecontent{
+  width: 100%;
+  line-height: 40rpx;
+}
+
+.answer_video {
+  width: 50%;
+}
+
+.check_this {
+  background: #279df7;
+  color: #fff !important;
+}
+
+.type_caozuo {
+  font-size: 28rpx;
+  padding: 20rpx 0;
+  color: #666;
+  line-height: 50rpx;
+  text-align: center;
+}
+
+.type_caozuo image, .jiexi_content image, .kaodian_content image {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10rpx;
+}
+
+/*主观题*/
+
+.type_zhuguanwrap {
+  padding-right: 25rpx;
+}
+
+.type_zhuguan_tit {
+  font-size: 24rpx;
+  color: #571753;
+  padding-top: 30rpx;
+  padding-bottom: 5rpx;
+}
+.subjectiveBtn {
+  background: #279df7;
+  font-size: 28rpx;
+  color: #fff;
+  padding: 10rpx 0rpx;
+  margin: 20rpx 0rpx;
+}
+.zhuguan_text {
+  background: #fff;
+  color: #666;
+  padding-top: 10rpx;
+  width: 96%;
+  padding: 10rpx 2%;
+  height: 250rpx;
+  font-size: 28rpx;
+  line-height: 46rpx;
+  border: 1px solid #efefef;
+  border-radius: 5px;
+}
+
+.zhuguan_text_placeholder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.submit {
+  display: block;
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  padding: 20rpx 0;
+  margin-top: 30rpx;
+}
+
+/*组合题*/
+
+.type_zuhe_nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 25rpx;
+}
+
+.type_zuhe_nav .type_zuhe_list {
+  padding: 20rpx 0;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #666;
+  width: 115rpx;
+  box-sizing: border-box;
+  text-align: center;
+  border-bottom: 2px solid transparent;
+}
+
+.type_zuhe_action {
+  color: #279df7 !important;
+  border-bottom: 2px solid !important;
+}
+
+.zuhe_content_wrap {
+  padding-top: 35rpx;
+}
+
+.menu{
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  border-top: 1px solid #f3f3f3;
+}
+.menu_left{
+  flex: 1;
+  margin: 0 auto;
+  text-align: center;
+}
+.menu_left image{
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  top: 10rpx;
+}
+.menu_left text{
+  font-size: 30rpx;
+  color: #388ef2;
+}

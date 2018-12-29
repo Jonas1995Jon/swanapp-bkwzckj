@@ -1,0 +1,148 @@
+<!--pages/activity/fightgroups/fightgroups.wxml-->
+<!-- <import src="../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class='fight_container'>
+	<image class='banner' src='../../../image/fightgroups/fightgroups_banner.jpg'></image>
+	<!-- <view class="banner_title">{{templateList[0].title}}{{templateList[0].price == 0 ? '免费领' : templateList[0].price + '元领'}}</view> -->
+	<view class='fight_view'>
+		<block s-if="fightGroupsSuccess == 0">
+			<view class='fight_list' style='{{numberofpeople%3==0 ? "width:450rpx" : "width:600rpx"}}'>
+				<view s-key="groupCompleteListItem" s-for="groupCompleteListItem, groupCompleteindex in groupCompleteList.list" class='fight_list_item'>
+					<block s-if="groupCompleteindex == 0">
+						<image class='portrait' src='{{groupCompleteListItem.headimgurl == noportrait ? userinfo.avatarUrl : groupCompleteListItem.headimgurl}}'></image>
+						<view class="grouper">团长</view>
+						<view class='name_first'>{{groupCompleteListItem.nickname == '' ? userinfo.nickName : groupCompleteListItem.nickname}}</view>
+					</block>
+					<block s-else>
+						<image class='noportrait' src='{{groupCompleteListItem.headimgurl}}'></image>
+						<view>{{groupCompleteListItem.nickname}}</view>
+					</block>
+				</view>
+			</view>
+
+			<view class="fight_list_content">
+				<view class='list_content_title'>还剩{{residueNumber}}人即可免费领取{{templateList[0].title}}</view>
+				<view class='list_content_time'>{{lingquBtn == false ? '已结束' : countDownTimeTitle}}</view>
+        <button class='list_content_btn' bindtap='showGiftBag' disabled="{{disabled}}">
+          <text>立即领取</text>
+        </button>
+			</view>
+		</block>
+
+		<block s-if="fightGroupsSuccess == 1">
+			<view class="fight_complete">
+				<view class="fight_complete_top">
+					<view class='top_success'>
+						<text>{{receivestate == 1 ? '恭喜您获取成功' : '恭喜您成功获取智能刷题班'}}</text>
+					</view>
+					<view class='top_title'>
+						<!-- ￥{{templateList[0].price}}即可打开价值{{templateList[0].costprice}}元{{templateList[0].title}} -->
+						{{receivestate == 1 ? '考试刷题班已开启' : '立即获取即可去刷题'}}
+					</view>
+				</view>
+
+				<view class="scroll_box">
+					<scroll-view class="scroll-view_x" scroll-x style="width:auto;overflow:hidden;">
+						<view class="item_list" s-key="courseCommodityListItem" s-for="courseCommodityListItem, courseCommodityListIndex in courseCommodityList">
+							<view class='complete_list'>
+								<view class='complete_list_item'>
+									<block s-if="courseCommodityListIndex == 0">
+										<image class='bg' src='../../../image/fightgroups/course_bg1.jpg'></image>
+									</block>
+									<block s-if="courseCommodityListIndex == 1">
+										<image class='bg' src='../../../image/fightgroups/course_bg2.jpg'></image>
+									</block>
+									<block s-if="courseCommodityListIndex == 2">
+										<image class='bg' src='../../../image/fightgroups/course_bg3.jpg'></image>
+									</block>
+									<block s-if="courseCommodityListIndex > 2">
+										<image class='bg' src='../../../image/fightgroups/course_bg3.jpg'></image>
+									</block>
+									<view class='classname'>{{courseCommodityListItem.coursename}}{{courseCommodityListItem.commodityname}}</view>
+									<!-- <view class='coursename'>{{courseCommodityListItem.coursename}}</view> -->
+								</view>
+								<!-- <block wx:if="{{listItem != 10}}"> -->
+								<view class='complete_list_plus'>
+									<image src='{{courseCommodityListIndex == courseCommodityList.length-1 ? "" : "../../../image/fightgroups/course_plus.png"}}'></image>
+								</view>
+								<!-- </block> -->
+							</view>
+
+						</view>
+
+					</scroll-view>
+				</view>
+
+				<view class="fight_complete_content">
+					<button bindtap='getCourseClick' data-receivestate='{{receivestate}}' class='fight_complete_btn'>
+            <text>{{receivestate == 1 ? '立即刷题' : '立即获取'}}</text>
+            <!-- <text>{{receiveBtnTitle}}</text> -->
+          </button>
+				</view>
+			</view>
+		</block>
+		<block s-if="fightGroupsSuccess == 1 && groupCompleteList.list.length > 0">
+			<view class="fight_list_user">
+				<view class="role_title">组团好友</view>
+				<view class='fight_list' style='margin-top:-50rpx; {{numberofpeople%3==0 ? "width:450rpx" : "width:600rpx"}}'>
+					<view s-key="groupCompleteListItem2" s-for="groupCompleteListItem2, groupCompleteindex2 in groupCompleteList.list" class='fight_list_item'>
+						<block s-if="groupCompleteindex2 == 0">
+							<image class='portrait' src='{{groupCompleteListItem2.headimgurl}}'></image>
+							<view class="grouper">团长</view>
+							<view class='name_first'>{{groupCompleteListItem2.nickname}}</view>
+						</block>
+						<block s-else>
+							<image class='portrait' src='{{groupCompleteListItem2.headimgurl}}'></image>
+							<view>{{groupCompleteListItem2.nickname}}</view>
+						</block>
+					</view>
+
+				</view>
+			</view>
+		</block>
+	</view>
+	<view class="fight_list_role" style='{{fightGroupsSuccess == 1 ? "margin-top:50px;" : "margin-top:50px;"}}'>
+		<view class="role_title">活动规则</view>
+		<view class="role_des">
+			<text>
+          {{templateList[0].rules}}
+        </text>
+		</view>
+	</view>
+	<view class="back_home" bindtap="backHomeClick" style="{{touchStart == 0 ? 'right:5%;' : 'right:-60rpx;'}}">
+		<image src="../../../image/fightgroups/back_home.png"></image>
+	</view>
+
+	<view class="modal-bag-box" hidden='{{giftBagHidden}}'>
+		<view class="modal-bag-body">
+			<view class="modal-bag-content">
+				<view class="title_pt_one"><text>你收到了一个智能刷题班</text></view>
+				<view class="title_pt_two"><text>还剩{{peopleNumbers}}人拼团即可领取</text></view>
+				<text></text>
+				<image bindtap="redPacketClick" class='bg' src="../../../image/fightgroups/gift_bag.png"></image>
+				<view class="title_pt_three"><text>{{categoryname}}智能刷题班</text></view>
+				<image bindtap='redpacketCloseClick' class='close' src="../../../image/fightgroups/redpacket_bg_close.png"></image>
+				<!-- <button class="knowBtn" bindtap="hide">我知道了</button> -->
+				<button open-type="share" class='list_bag_content_btn' animation="{{animationMiddleHeaderItem}}">
+          <image src='../../../image/fightgroups/baidu_icon.png'></image>
+          <text>邀请好友一起领取</text>
+        </button>
+			</view>
+		</view>
+	</view>
+
+	<!-- <view class="modal-bag-box" hidden='{{authorizationHidden}}'>
+    <view class="modal-bag-body" style='background:none;'>
+      <view class="modal-bag-content" style='width:100%;margin:0;'>
+        <image bindtap='redpacketCloseClick' class='close' src="../../../image/fightgroups/redpacket_bg_close.png"></image>
+        <button open-type="getUserInfo" class='list_bag_content_btn' style='position:relative;top:50%;width:100%;' lang="zh_CN" bindgetuserinfo="onGetUserInfo">
+          <text>点击获取授权信息，立即加入拼团！</text>
+        </button>
+      </view>
+    </view>
+  </view> -->
+
+	<import src="../../modal/modal.swan" />
+	<template is="modal" data="{{{modal}}}"></template>
+
+</view>

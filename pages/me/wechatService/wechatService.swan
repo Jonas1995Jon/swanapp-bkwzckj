@@ -1,0 +1,12 @@
+<!--pages/me/wechatService/wechatService.wxml-->
+<!-- <import src="../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class="ws_container">
+  <text class="ws_text">长按保存二维码</text>
+  <image bindlongpress="saveWechatImage" class="ws_image" src="../../../image/me/ws_wechat.png"></image>
+  <text class="ws_text">微信扫描保存的二维码\r\n添加帮考网刷题APP客服</text>
+  <button data-hi="bkwbkw003" class="ws_button" bindtap="copyTextClick">
+    <text>bkwbkw003\n(点击复制微信公众号,返回微信添加)</text>
+  </button>
+  <!-- <button open-type="contact">唤醒客服</button> -->
+</view>

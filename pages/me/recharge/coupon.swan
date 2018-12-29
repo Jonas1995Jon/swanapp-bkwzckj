@@ -1,0 +1,28 @@
+<block s-key="couponList" s-for="couponList, couponListindex in couponList">
+  <view class='coupon' style='top:0'>
+    <block s-if="couponList.coupontype == 'allcategorydiscount'">
+      <image class='bjimg' src='../../../image/me/coupon1.png'></image>
+    </block>
+    <block s-else>
+      <image class='bjimg' src='../../../image/me/coupon2.png'></image>
+    </block>
+    <view class='coupon_view'>
+      <view class='coupon_pic_left'>{{couponList.price}}
+        <text>{{couponList.coupontype == 'allcategorydiscount'?'折':'元'}}</text>
+      </view>
+      <view class='coupon_pic_right'>
+        <view class='coupon_pic_title'>{{couponList.title}}</view>
+        <view class='coupon_pic_time'>有效期至{{couponList.validtime}}</view>
+      </view>
+      <view class='coupon_img' hidden='{{couponList.indexcheck}}' bindtap='checkedclick' data-index='{{couponListindex}}'>
+        <image src='../../../image/me/coupon_nochecked.png'></image>
+      </view>
+      <view class='coupon_img' hidden='{{!couponList.indexcheck}}' bindtap='checkedclick' data-index='{{couponListindex}}'>
+        <image src='../../../image/me/coupon_checked.png'></image>
+      </view>
+    </view>
+  </view>
+</block>
+<block s-if="couponclick == null || couponclick == '' || couponclick == undefined">
+<view class='coupon_bottom' bindtap='couponclick'>失效优惠券</view>
+</block>

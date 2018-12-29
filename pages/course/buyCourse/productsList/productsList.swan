@@ -1,0 +1,29 @@
+<!--pages/course/buyCourse/productsList/productsList.wxml-->
+<!-- <import src="../../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view s-key="productsList" s-for="productsItem, productsItemIndex in productsList" class="products_wrap">
+  <view class="cell_br"></view>
+  <view class="cell_br"></view>
+  <view class="products_cell_title {{productsItem.show == true ? 'active' : ''}}active" data-index='{{productsItemIndex}}' bindtap="classTypeClick">
+    {{productsItem.title}}
+  </view>
+  <view class="products_cell" hidden="{{productsItem.show}}">
+    <view class=" products_cell_items ">
+      <view class="products_cell_item ">价　　格：{{productsItem.price}}元</view>
+    </view>
+    <view class="products_cell_items ">
+      <view class="products_cell_item cell_border_top ">有 效 期 ：{{productsItem.validday}}天</view>
+    </view>
+    <view class="products_cell_items ">
+      <view class="products_cell_item cell_border_top ">免费重学：{{productsItem.restudy}}</view>
+    </view>
+    <view class="products_cell_items ">
+      <view class="products_cell_item cell_border_top ">退费保障：{{productsItem.refund}}</view>
+    </view>
+  </view>
+  <view class="products_cell_shadow"></view>
+</view>
+<view class="products_btn" bindtap="sureOrderClick">
+  <view class="products_price">订单金额：¥{{orderPrice}}元</view>
+  <view class="products_surebtn">确认</view>
+</view>

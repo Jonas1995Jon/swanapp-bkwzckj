@@ -1,0 +1,26 @@
+/* pages/me/account/accountEdit.css */
+Page {
+  background: #f0eff4;
+}
+.account_edit{
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+.account_input{
+  font-size: 32rpx;
+  border: 1rpx #efefef solid;
+  padding: 10rpx 20rpx;
+}
+.accountEditBtn{
+  width: 710rpx;
+  margin: 0 auto;
+  margin-top:50rpx;
+  background: #279df7;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+}

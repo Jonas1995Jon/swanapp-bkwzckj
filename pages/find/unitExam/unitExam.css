@@ -1,0 +1,77 @@
+/* pages/find/unitExam/unitExam.css */
+Page {
+  background: #f0eff4;
+  color: #323c47;
+  font-size: 30rpx;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.examCon_list{
+  margin: 0 0 46rpx 60rpx;
+  overflow: hidden;
+  float: left;
+}
+.examCon_item{
+  display: block;
+  width: 284rpx; 
+  height: 384rpx; 
+  float: left;
+  text-align: center;
+  margin: 46rpx 60rpx 0 0;
+}
+ .examCon_bg{
+  position: relative;
+  top:-336rpx; 
+  z-index: -1;
+  width: 350;
+  overflow: hidden;
+}
+.examCon_bg image{
+  width: 284rpx;
+  height: 384rpx;
+} 
+.examCon_coursename{
+  width: 284rpx;
+  margin: 0 auto;
+  margin-top:174rpx;
+  font-size: 30rpx;
+  color: #333333;
+  display: block;
+  word-break:break-all;
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-bottom: 44rpx;
+}
+.examCon_title{
+  width: 100%;
+  margin-bottom: 44rpx;
+}
+.examCon_score{
+  width: 100%;
+}
+.examCon_title view{
+  width: 284rpx;
+  margin: 0 auto;
+  font-size: 36rpx;
+  color: #388ef2;
+  height: 34rpx;
+  line-height: 34rpx;
+}
+.examCon_score view{
+  width: 284rpx;
+  margin: 0 auto;
+  height: 24rpx;
+  line-height: 24rpx;
+  font-size: 24rpx;
+  color: #b3b3b3;
+}
+/* .examCon_questionnumber{
+  width: 100%;
+  height: 80rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #888;
+   margin-top: 20rpx; 
+} */

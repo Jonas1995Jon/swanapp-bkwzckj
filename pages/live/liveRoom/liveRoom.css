@@ -1,0 +1,133 @@
+/* pages/video/liveRoom.css */
+@import "../../course/paper/report/report.css";
+page {
+  width: 100%;
+  height: 100%;
+  background: #110f1c;
+  /* position: relative; */
+}
+
+.talking_wrap {
+  width: 100%;
+  position: absolute;
+  top: 502rpx;
+  left: 0;
+  bottom: 80rpx;
+  overflow: auto;
+}
+
+.talking_in {
+  padding: 0 25rpx;
+}
+
+.video_wrap {
+  width: 100%;
+  position: relative;
+  height: 422rpx;
+}
+
+.video_wrap video {
+  width: 100%;
+  height: 100%;
+}
+
+.liveroom_info {
+  padding: 0 25rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 1px solid #b3b7c1;
+}
+
+.eyes {
+  width: 36rpx;
+}
+
+.liveroom_info {
+  color: #6b6b6b;
+}
+
+.people_num {
+  padding-left: 15rpx;
+  font-size: 26rpx;
+}
+
+.live_teacher {
+  text-align: center;
+  font-size: 32rpx;
+  color: #279df7;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.live_teacher text {
+  display: inline-block;
+  border-bottom: 2px solid #279df7;
+}
+
+.teacher_tit {
+  text-align: center;
+  padding-top: 10rpx;
+  font-size: 36rpx;
+  color: #279df7;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.teacher_head {
+  width: 100rpx;
+  border-radius: 50%;
+}
+
+.teacher_text {
+  padding: 25rpx 0;
+}
+
+.teacher_text text {
+  font-size: 30rpx;
+  line-height: 1.5;
+}
+.down_btn{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #0a98fa;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+}
+.ws_container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*justify-content: space-between;*/
+}
+.ws_text{
+  padding: 20rpx 0 20rpx 0;
+  text-align: center;
+  font-size: 14px;
+  color: #d9d9d9;
+}
+.ws_image{
+  width: 120px;
+  height:120px;
+}
+.ws_button{
+  width: 90%;
+  color: #fff;
+  background-color: #279df7;
+  font-size: 14px;
+  line-height: 30px;
+  margin-bottom:20px; 
+}
+.layer_content{
+  margin-bottom: 100rpx;
+  padding-top: 10rpx;
+}
+.shade{
+  justify-content:flex-end;
+}

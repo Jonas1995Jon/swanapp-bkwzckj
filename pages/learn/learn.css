@@ -1,0 +1,98 @@
+/* pages/learn/learn.css */
+Page {
+  background: #f0eff4;
+  color: #323c47;
+  font-size: 30rpx;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.cell-learn{
+  width: 750rpx;
+}
+.cell-learn-title{
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top:20rpx;
+  padding-left: 20rpx;
+  color: #5e5e60;
+  font-size: 30rpx;
+  background: #fff;
+}
+.cell-learn-box{
+  width: 750rpx;
+  overflow: hidden;
+}
+.cell-learn-box-cell{
+  float: left;
+  width: 248rpx;
+  height: 248rpx;
+  background-color: #ffffff;
+  border-right: 1rpx solid #efefef;
+  border-top: 1rpx solid #efefef;
+  border-bottom: 1rpx solid #efefef;
+}
+.cell-learn-box-cell image{
+  width: 55rpx;
+  height: 55rpx;
+  margin-left: 100rpx;
+  margin-top: 60rpx;
+  
+}
+.cell-learn-box-cell text{
+  width: 240rpx;
+  margin-top: 10rpx;
+  display: block;
+  text-align: center;
+  color: #181818;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow:ellipsis; 
+  white-space:nowrap;
+}
+
+.red_packet{
+  z-index: 100;
+  width: 120rpx;  
+  height: 135rpx;  
+  position: fixed;  
+  bottom: 150rpx;    
+}
+
+.red_packet image {  
+  width: 120rpx;  
+  height: 135rpx;    
+  opacity: 1;
+} 
+.cell_top_list{
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  background: #545c65;
+  display: flex;
+  margin-top: -1rpx;
+}
+.list_item{
+  width: 33.3333%;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+.list_item_img{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.list_item_img image{
+  text-align: center;
+  width: 120rpx;
+  height: 120rpx;
+}
+.list_item_number{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: #838794;
+  font-size: 24rpx;
+}

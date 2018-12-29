@@ -1,0 +1,12 @@
+<!--pages/course/paper/note/note.wxml-->
+<!-- <import src="../../../navigation/navigation.wxml"/>
+<template is="navigation" data="{{navigation}}"></template> -->
+<view class="note">
+  <form bindsubmit="bindNoteFormSubmit">
+    <textarea value="{=params.notecontent=}" name="textarea" maxlength='500' class='note_text' placeholder-style='note_text_placeholder' placeholder="请在此处输入您笔记的内容..." />
+    <textarea value="{=branchqueIndex=}" name="subjectiveText" hidden='true'></textarea>
+    <!-- <view bindtap="subjectiveBtnSubmit" hidden='{{answerArr[paperindex].checkboxBtnShow == true ? true : false}}' class='submit bg_blue' hover-class='bg_blue_hover'> -->
+    <button class='noteBtn' form-type="submit"> 提交 </button>
+    <!-- </view> -->
+  </form>
+</view>

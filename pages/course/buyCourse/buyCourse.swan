@@ -1,0 +1,73 @@
+<!--pages/course/buyCourse/buyCourse.wxml-->
+<view class='buyCourse'>
+	<view class="buyCourse_wrap" style='height:80rpx;line-height:80rpx;'>
+		<view class="buyCourse_cell_order">订单编号：{{orderid}}</view>
+	</view>
+	<block s-if="orderstate == 1">
+		<block s-key="courseitem" s-for="courseitem, courseitemindex in courselist">
+			<view class="buyCourse_wrap cell_border_top">
+				<image class='buyCourse_img' src='{{courseitem.commodity_cover}}'></image>
+				<view class='buyCourse_detail_view'>
+					<view class="buyCourse_cell_title">{{courseitem.coursename}}</view>
+					<view class="buyCourse_cell_type1">{{courseitem.commodity_title}}</view>
+					<view class="buyCourse_cell_detail">
+						<view class="buyCourse_cell_type">{{courseitem.createtime}}</view>
+						<view class="buyCourse_cell_price">¥{{courseitem.commodity_costprice}}元</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</block>
+	<block s-else>
+		<block s-key="courselist" s-for="courselistitem, courselistitemindex in courselist">
+			<view class="buyCourse_wrap cell_border_top">
+				<image class='buyCourse_img' src='{{courselistitem.commodity_cover}}'></image>
+				<view class='buyCourse_detail_view'>
+					<view class="buyCourse_cell_title">{{courselistitem.coursename}}</view>
+					<view class="buyCourse_cell_type1">{{courselistitem.commodity_title}}</view>
+					<view class="buyCourse_cell_detail">
+						<view class="buyCourse_cell_type">{{courselistitem.createtime}}</view>
+						<view class="buyCourse_cell_price">¥{{courselistitem.commodity_costprice}}元</view>
+					</view>
+				</view>
+
+			</view>
+		</block>
+	</block>
+	</block>
+	<view class='cell_br'></view>
+	<view class='balance' bindtap='actionSheetbindchange'>
+		<view class='balance_left'>
+			<image src='../../../image/me/yhq.png'></image>
+			<view>优惠券</view>
+		</view>
+		<view class='balance_right'>
+			<view class="cell_ft cell_ft_in_access" style='right:0rpx;'></view>
+			<view>{{coupon.list.length == 0 ? "暂无可用优惠券" : ""}}</view>
+		</view>
+	</view>
+	<view class='balance'>
+		<view class='balance_left'>
+			<image src='../../../image/me/bkb.png'></image>
+			<view>帮考币：{{bkgoldA}}</view>
+		</view>
+		<view class='balance_right'>
+			<switch checked='{{balance.bkgold > 0 && switchChecked2 == 0 ? true : false}}' bindchange="switchChange2" color="#279df7"
+			/>
+		</view>
+	</view>
+	<view class='balance' style="margin-bottom: 150rpx;">
+		<view class='balance_left'>
+			<image src='../../../image/me/ye.png'></image>
+			<view>余\t额：{{balanceA}}</view>
+		</view>
+		<view class='balance_right'>
+			<switch checked='{{balance.balance > 0 && switchChecked1 == 0 ? true : false}}' bindchange="switchChange1" color="#279df7"
+			/>
+		</view>
+	</view>
+</view>
+<view class="buyCourse_submit">
+	<view class="buyCourse_button_price"><text>应付金额：</text>¥{{price}}元</view>
+	<view bindtap='createpayorder' class="buyCourse_button_sure">确认支付</view>
+</view>
