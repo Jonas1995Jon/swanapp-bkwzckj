@@ -49,10 +49,11 @@ Page({
       //   icon: '../../image/me/me_switch.png',
       //   title: '切换科目'
       // },
+      // {
+      //   icon: '../../image/me/me_contact.png',
+      //   title: '客服微信'
+      // },
       {
-        icon: '../../image/me/me_contact.png',
-        title: '客服微信'
-      }, {
         icon: '../../image/me/me_tell.png',
         title: '联系客服'
       }],
@@ -347,12 +348,12 @@ Page({
       //     url: '../course/changeSubject/changeSubject'
       //   })
       //   break;
-      case 0:
+      // case 0:
         // wx.navigateTo({
         //   url: 'wechatService/wechatService'
         // })
-        break;
-      case 1:
+        // break;
+      case 0:
         that.calling();
         break;
       default:
