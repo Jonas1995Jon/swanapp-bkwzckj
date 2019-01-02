@@ -63,7 +63,8 @@ Page({
   onLoad: function (options) {
     swan.setNavigationBarTitle({
       title: "视频"
-    });
+    });    
+    this.checkSystemOS();
     this.getvideomodulelistbycid();
     this.setSwitchClassCategory(swan.getStorageSync('navIndex') > 0 ? swan.getStorageSync('navIndex') : 0);
     request.request_checkcourse();
@@ -72,7 +73,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {},
+  onReady: function () { },
 
   /**
    * 生命周期函数--监听页面显示
@@ -105,27 +106,27 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {},
+  onHide: function () { },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {},
+  onUnload: function () { },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {},
+  onPullDownRefresh: function () { },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {},
+  onReachBottom: function () { },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {},
+  onShareAppMessage: function () { },
   recordClick: function (event) {
     var index = event.currentTarget.dataset.index;
     var id = event.currentTarget.dataset.id;
@@ -197,22 +198,7 @@ Page({
           }
         }
       } else {
-        swan.showModal({
-          title: '温馨提示',
-          content: '您尚未购买此课程，请先购买！',
-          confirmText: "立即购买",
-          cancelText: "残忍拒绝",
-          success: function (res) {
-            if (res.confirm) {
-              var url = '../../course/buyCourse/buyCourseDetail/buyCourseDetail';
-              swan.navigateTo({
-                url: url
-              });
-            } else {
-              return;
-            }
-          }
-        });
+        common.hintInfo(this.data.mobileOS);
       }
     }
   },
@@ -491,5 +477,13 @@ Page({
     }
     videoUrl = videoUrl.replace("http://", "https://");
     return videoUrl;
-  }
+  },
+  checkSystemOS: function () {
+    var that = this;
+    swan.getSystemInfo({
+      success: function (res) {
+        that.setData({ "mobileOS": res.platform });
+      }
+    });
+  },
 });

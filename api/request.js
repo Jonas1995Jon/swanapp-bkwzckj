@@ -1,7 +1,7 @@
 /**
  * 公共请求类
  */
-import api from 'api.js';
+import api from './api.js';
 import common from '../utils/common.js';
 import app from '../app.js';
 // var CusBase64 = require('../utils/base64.js');

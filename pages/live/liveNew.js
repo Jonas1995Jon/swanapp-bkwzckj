@@ -30,6 +30,7 @@ Page({
     swan.setNavigationBarTitle({
       title: options.title
     });
+    this.checkSystemOS();
     var liveindex = options.liveindex;
     this.setData({ liveindex: liveindex });
     bk_userinfo = swan.getStorageSync('bk_userinfo');
@@ -256,20 +257,7 @@ Page({
           this.checkIsBuy(videotype, channelnumber, chatroomid, index);
         } else if (data.errcode == 40003) {
           //请先购买课程
-          swan.showModal({
-            title: '温馨提示',
-            content: data.errmsg,
-            confirmText: "立即购买",
-            cancelText: "残忍拒绝",
-            success: function (res) {
-              if (res.confirm) {
-                swan.navigateTo({
-                  url: '../course/buyCourse/buyCourseDetail/buyCourseDetail'
-                });
-                return;
-              } else {}
-            }
-          });
+          common.hintInfo(this.data.mobileOS);
         } else if (data.errcode == 40052) {
           //未找到会话信息，请重新登录
           request_thirdauth(0);
@@ -391,6 +379,14 @@ Page({
     dateObj = dateObj.replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '').replace(/(-)/g, '/');
     dateObj = dateObj.slice(0, dateObj.indexOf("."));
     return new Date(dateObj);
+  },
+  checkSystemOS: function () {
+    var that = this;
+    swan.getSystemInfo({
+      success: function (res) {
+        that.setData({ "mobileOS": res.platform });
+      }
+    });
   },
   //获取考试类别
   getCourseByCategory: function (id) {

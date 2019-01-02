@@ -7,7 +7,7 @@
   <view class='cell_top_list'>
     <view class='list_item' bindtap='brushNumTap'>
       <view class='list_item_img'>
-        <image src='../../image/learn/category/brush_num.png'></image>
+        <!-- <image src='../../image/learn/category/brush_num.png'></image> -->
       </view>
       <view class='list_item_number'>
         {{topCountList.shuaticount}}
@@ -15,7 +15,7 @@
     </view>
     <view class='list_item' bindtap='liveNumTap'>
       <view class='list_item_img'>
-        <image src='../../image/learn/category/live_time.png'></image>
+        <!-- <image src='../../image/learn/category/live_time.png'></image> -->
       </view>
       <view class='list_item_number'>
         {{topCountList.live_timelength}}
@@ -23,7 +23,7 @@
     </view>
     <view class='list_item' bindtap='videoNumTap'>
       <view class='list_item_img'>
-        <image src='../../image/learn/category/video_time.png'></image>
+        <!-- <image src='../../image/learn/category/video_time.png'></image> -->
       </view>
       <view class='list_item_number'>
         {{topCountList.vod_timelength}}

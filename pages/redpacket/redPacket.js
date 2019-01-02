@@ -86,11 +86,11 @@ Page({
     } else {
       this.setSwitchClassCategory(swan.getStorageSync('navIndex') > 0 ? swan.getStorageSync('navIndex') : 0);
     }
+    this.checkSystemOS();
     this.getTemplateByCategoryid();
     // this.lunbo();
     this.checkcourse_v9();
     this.bkwappindexadlist();
-    this.checkSystemOS();
   },
 
   /**
@@ -344,22 +344,7 @@ Page({
           });
         }
       } else {
-        swan.showModal({
-          title: '温馨提示',
-          content: '您尚未购买此课程，请先购买！',
-          confirmText: "立即购买",
-          cancelText: "残忍拒绝",
-          success: function (res) {
-            if (res.confirm) {
-              var url = '../course/buyCourse/buyCourseDetail/buyCourseDetail';
-              swan.navigateTo({
-                url: url
-              });
-            } else {
-              return;
-            }
-          }
-        });
+        common.hintInfo(this.data.mobileOS);
       }
     }
     if (checkcourseVO.m5 == 1 || checkcourseVO.m6 == 1 || checkcourseVO.m6 == 3) {
@@ -429,22 +414,7 @@ Page({
         });
       }
     } else {
-      swan.showModal({
-        title: '温馨提示',
-        content: '您尚未购买此课程，请先购买！',
-        confirmText: "立即购买",
-        cancelText: "残忍拒绝",
-        success: function (res) {
-          if (res.confirm) {
-            var url = '../course/buyCourse/buyCourseDetail/buyCourseDetail';
-            swan.navigateTo({
-              url: url
-            });
-          } else {
-            return;
-          }
-        }
-      });
+      common.hintInfo(this.data.mobileOS);
     }
   },
   liveClick: function (event) {
@@ -489,22 +459,7 @@ Page({
       case 3:
         var checkcourseVO = swan.getStorageSync('checkcourseVO');
         if (checkcourseVO.banxing_tiku == 0) {
-          swan.showModal({
-            title: '温馨提示',
-            content: '您尚未购买此课程，请先购买！',
-            confirmText: "立即购买",
-            cancelText: "残忍拒绝",
-            success: function (res) {
-              if (res.confirm) {
-                var url = '../course/buyCourse/buyCourseDetail/buyCourseDetail';
-                swan.navigateTo({
-                  url: url
-                });
-              } else {
-                return;
-              }
-            }
-          });
+          common.hintInfo(this.data.mobileOS);
         } else {
           // wx.switchTab({
           //   url: '../answerquestion/answerQuestion'
@@ -971,7 +926,7 @@ Page({
         var categoryid = swan.getStorageSync('categoryid');
         var courseid = swan.getStorageSync('courseid');
         var live_module = JSON.stringify(this.data.live_module);
-        var url = '../livelist/livePublicList?courseid=' + courseid + '&categoryid=' + categoryid + '&live_module=' + live_module;
+        var url = '../livelist/livePublicList?courseid=' + courseid + '&categoryid=' + categoryid + '&live_module=' + encodeURIComponent(live_module);
         swan.navigateTo({
           url: url
         });
@@ -1185,22 +1140,18 @@ Page({
           });
         }
       } else {
-        swan.showModal({
-          title: '温馨提示',
-          content: '您尚未购买此课程，请先购买！',
-          confirmText: "立即购买",
-          cancelText: "残忍拒绝",
-          success: function (res) {
-            if (res.confirm) {
-              var url = '../course/buyCourse/buyCourseDetail/buyCourseDetail';
-              swan.navigateTo({
-                url: url
-              });
-            } else {
+        if (this.data.mobileOS == 'ios') {
+          swan.showModal({
+            title: '温馨提示',
+            content: '请先使用帮考网APP或前往官网购买该课程!',
+            showCancel: false,
+            success: function (res) {
               return;
             }
-          }
-        });
+          });
+        } else {
+          common.hintInfo(this.data.mobileOS);
+        }
       }
     }
   },
@@ -1214,17 +1165,7 @@ Page({
     var that = this;
     swan.getSystemInfo({
       success: function (res) {
-        console.log(res);
-        that.setData({
-          systemInfo: res
-        });
-        if (res.platform == "devtools") {
-          that.setData({ "mobileOS": "devtools" });
-        } else if (res.platform == "ios") {
-          that.setData({ "mobileOS": "ios" });
-        } else if (res.platform == "android") {
-          that.setData({ "mobileOS": "android" });
-        }
+        that.setData({ "mobileOS": res.platform });
       }
     });
   },
@@ -1240,11 +1181,4 @@ Page({
       }
     });
   }
-  // modalSureClick: function () {
-  //   var modal = this.data.modal;
-  //   modal.authorizationHidden = true;
-  //   this.setData({
-  //     modal: modal
-  //   })
-  // }
 });

@@ -1,5 +1,5 @@
 //app.js
-import common from 'utils/common.js';
+import common from './utils/common.js';
 var submitPaperBtnHidden = false; //交卷按钮是否隐藏
 var aldstat = require("./utils/ald-stat.js");
 const mtjwxsdk = require('./utils/mtj-wx-sdk.js');

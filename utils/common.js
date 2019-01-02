@@ -31,6 +31,36 @@ const showModalMethod = params => {
     }
   });
 };
+// 未购买课程提示
+function hintInfo(mobileOS) {
+  if (mobileOS == 'ios') {
+    swan.showModal({
+      title: '温馨提示',
+      content: '请先使用帮考网APP或前往官网购买该课程!',
+      showCancel: false,
+      success: function (res) {
+        return;
+      }
+    });
+  } else {
+    swan.showModal({
+      title: '温馨提示',
+      content: '您尚未购买此课程，请先购买!',
+      confirmText: "立即购买",
+      cancelText: "残忍拒绝",
+      success: function (res) {
+        if (res.confirm) {
+          var url = '../course/buyCourse/buyCourseDetail/buyCourseDetail';
+          swan.navigateTo({
+            url: url
+          });
+        } else {
+          return;
+        }
+      }
+    });
+  }
+};
 /**
  * 时间格式化
  */
@@ -317,6 +347,7 @@ function checkSession() {
 module.exports = {
   showToast,
   showModal,
+  hintInfo: hintInfo,
   random: random,
   validatemobile: validatemobile,
   // singature: singature,

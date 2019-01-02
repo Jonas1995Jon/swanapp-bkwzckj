@@ -47,6 +47,7 @@ Page({
     this.setData({
       live_module_all: JSON.parse(options.live_module)
     });
+    this.checkSystemOS();
     //是否二维码进入
     if (categoryid != undefined && courseid != undefined) {
       this.setData({ isScanCodeJoin: 1 });
@@ -1073,20 +1074,7 @@ Page({
           this.checkIsBuy(videotype, channelnumber, chatroomid, index, clicktype);
         } else if (data.errcode == 40003) {
           //请先购买课程
-          swan.showModal({
-            title: '温馨提示',
-            content: data.errmsg,
-            confirmText: "立即购买",
-            cancelText: "残忍拒绝",
-            success: function (res) {
-              if (res.confirm) {
-                swan.navigateTo({
-                  url: '../course/buyCourse/buyCourseDetail/buyCourseDetail'
-                });
-                return;
-              } else {}
-            }
-          });
+          common.hintInfo(this.data.mobileOS);
         } else if (data.errcode == 40052) {
           //未找到会话信息，请重新登录
           request_thirdauth(0);
@@ -1194,6 +1182,14 @@ Page({
             duration: 1500
           });
         }
+      }
+    });
+  },
+  checkSystemOS: function () {
+    var that = this;
+    swan.getSystemInfo({
+      success: function (res) {
+        that.setData({ "mobileOS": res.platform });
       }
     });
   }
