@@ -344,7 +344,7 @@ Page({
           });
         }
       } else {
-        common.hintInfo(this.data.mobileOS);
+        common.hintInfo();
       }
     }
     if (checkcourseVO.m5 == 1 || checkcourseVO.m6 == 1 || checkcourseVO.m6 == 3) {
@@ -414,7 +414,7 @@ Page({
         });
       }
     } else {
-      common.hintInfo(this.data.mobileOS);
+      common.hintInfo();
     }
   },
   liveClick: function (event) {
@@ -459,7 +459,7 @@ Page({
       case 3:
         var checkcourseVO = swan.getStorageSync('checkcourseVO');
         if (checkcourseVO.banxing_tiku == 0) {
-          common.hintInfo(this.data.mobileOS);
+          common.hintInfo();
         } else {
           // wx.switchTab({
           //   url: '../answerquestion/answerQuestion'
@@ -1140,18 +1140,7 @@ Page({
           });
         }
       } else {
-        if (this.data.mobileOS == 'ios') {
-          swan.showModal({
-            title: '温馨提示',
-            content: '请先使用帮考网APP或前往官网购买该课程!',
-            showCancel: false,
-            success: function (res) {
-              return;
-            }
-          });
-        } else {
-          common.hintInfo(this.data.mobileOS);
-        }
+        common.hintInfo();
       }
     }
   },

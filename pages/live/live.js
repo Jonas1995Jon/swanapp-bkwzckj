@@ -116,7 +116,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    if (this.data.videoContext.action != undefined) {
+    if (this.data.videoContext != undefined) {
       this.data.videoContext.pause();
     }
     this.logsTimerStopHandler();

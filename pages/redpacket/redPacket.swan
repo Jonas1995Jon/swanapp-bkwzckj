@@ -9,12 +9,10 @@
 	 duration="{{duration}}">
 		<block s-for="lunboitem, index in lunbolist" s-key="lunbo">
 			<swiper-item class="swiper_item">
-				<block s-if="{{mobileOS == 'ios'}}">
+				<!-- <block s-if="{{mobileOS == 'ios'}}">
 					<image src="{{lunboitem.imglink}}" class="slide-image" />
-				</block>
-				<block s-else>
+				</block> -->
 					<image src="{{lunboitem.imglink}}" bindtap='buycourse' class="slide-image" />
-				</block>
 			</swiper-item>
 		</block>
 	</swiper>

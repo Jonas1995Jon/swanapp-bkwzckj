@@ -32,34 +32,44 @@ const showModalMethod = params => {
   });
 };
 // 未购买课程提示
-function hintInfo(mobileOS) {
-  if (mobileOS == 'ios') {
-    swan.showModal({
-      title: '温馨提示',
-      content: '请先使用帮考网APP或前往官网购买该课程!',
-      showCancel: false,
-      success: function (res) {
+function hintInfo() {
+  // if (mobileOS == 'ios') {
+  //   swan.showModal({
+  //     title: '温馨提示',
+  //     content: '请先前往帮考网官网购买该课程!',
+  //     showCancel: false,
+  //     success: function (res) {
+  //       return;
+  //     }
+  //   });
+  // } else {
+  swan.showModal({
+    title: '温馨提示',
+    content: '您尚未购买此课程，请先购买!',
+    confirmText: "立即购买",
+    cancelText: "残忍拒绝",
+    success: function (res) {
+      if (res.confirm) {
+        var url = '/pages/course/buyCourse/buyCourseDetail/buyCourseDetail';
+        swan.navigateTo({
+          url: url
+        });
+      } else {
         return;
       }
-    });
-  } else {
-    swan.showModal({
-      title: '温馨提示',
-      content: '您尚未购买此课程，请先购买!',
-      confirmText: "立即购买",
-      cancelText: "残忍拒绝",
-      success: function (res) {
-        if (res.confirm) {
-          var url = '../course/buyCourse/buyCourseDetail/buyCourseDetail';
-          swan.navigateTo({
-            url: url
-          });
-        } else {
-          return;
-        }
-      }
-    });
-  }
+    }
+  });
+  // }
+};
+function showModalHint() {
+  swan.showModal({
+    title: '提示',
+    content: '非常抱歉，该小程序暂不支持IOS在线支付',
+    showCancel: false,
+    success: res => {
+      return;
+    }
+  });
 };
 /**
  * 时间格式化
@@ -190,12 +200,12 @@ function randomString(length) {
   */
 function encodeUTF8(s) {
   var i,
-      r = [],
-      c,
-      x;
-  for (i = 0; i < s.length; i++) if ((c = s.charCodeAt(i)) < 0x80) r.push(c);else if (c < 0x800) r.push(0xC0 + (c >> 6 & 0x1F), 0x80 + (c & 0x3F));else {
+    r = [],
+    c,
+    x;
+  for (i = 0; i < s.length; i++) if ((c = s.charCodeAt(i)) < 0x80) r.push(c); else if (c < 0x800) r.push(0xC0 + (c >> 6 & 0x1F), 0x80 + (c & 0x3F)); else {
     if ((x = c ^ 0xD800) >> 10 == 0) //对四字节UTF-16转换为Unicode
-      c = (x << 10) + (s.charCodeAt(++i) ^ 0xDC00) + 0x10000, r.push(0xF0 + (c >> 18 & 0x7), 0x80 + (c >> 12 & 0x3F));else r.push(0xE0 + (c >> 12 & 0xF));
+      c = (x << 10) + (s.charCodeAt(++i) ^ 0xDC00) + 0x10000, r.push(0xF0 + (c >> 18 & 0x7), 0x80 + (c >> 12 & 0x3F)); else r.push(0xE0 + (c >> 12 & 0xF));
     r.push(0x80 + (c >> 6 & 0x3F), 0x80 + (c & 0x3F));
   };
   return r;
@@ -206,26 +216,26 @@ function sha1(s) {
   var data = new Uint8Array(encodeUTF8(s));
   var i, j, t;
   var l = (data.length + 8 >>> 6 << 4) + 16,
-      s = new Uint8Array(l << 2);
+    s = new Uint8Array(l << 2);
   s.set(new Uint8Array(data.buffer)), s = new Uint32Array(s.buffer);
   for (t = new DataView(s.buffer), i = 0; i < l; i++) s[i] = t.getUint32(i << 2);
   s[data.length >> 2] |= 0x80 << 24 - (data.length & 3) * 8;
   s[l - 1] = data.length << 3;
   var w = [],
-      f = [function () {
-    return m[1] & m[2] | ~m[1] & m[3];
-  }, function () {
-    return m[1] ^ m[2] ^ m[3];
-  }, function () {
-    return m[1] & m[2] | m[1] & m[3] | m[2] & m[3];
-  }, function () {
-    return m[1] ^ m[2] ^ m[3];
-  }],
-      rol = function (n, c) {
-    return n << c | n >>> 32 - c;
-  },
-      k = [1518500249, 1859775393, -1894007588, -899497514],
-      m = [1732584193, -271733879, null, null, -1009589776];
+    f = [function () {
+      return m[1] & m[2] | ~m[1] & m[3];
+    }, function () {
+      return m[1] ^ m[2] ^ m[3];
+    }, function () {
+      return m[1] & m[2] | m[1] & m[3] | m[2] & m[3];
+    }, function () {
+      return m[1] ^ m[2] ^ m[3];
+    }],
+    rol = function (n, c) {
+      return n << c | n >>> 32 - c;
+    },
+    k = [1518500249, 1859775393, -1894007588, -899497514],
+    m = [1732584193, -271733879, null, null, -1009589776];
   m[2] = ~m[0], m[3] = ~m[1];
   for (i = 0; i < s.length; i += 16) {
     var o = m.slice(0);
@@ -348,6 +358,7 @@ module.exports = {
   showToast,
   showModal,
   hintInfo: hintInfo,
+  showModalHint: showModalHint,
   random: random,
   validatemobile: validatemobile,
   // singature: singature,

@@ -198,7 +198,7 @@ Page({
           }
         }
       } else {
-        common.hintInfo(this.data.mobileOS);
+        common.hintInfo();
       }
     }
   },

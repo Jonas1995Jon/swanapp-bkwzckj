@@ -42,7 +42,7 @@ Page({
     var courselist = JSON.parse(options.courselist);
     this.setData({ classType: classType });
     this.setData({ commodityid: commodityid });
-    // this.setData({ coursePackage: coursePackage });
+    this.checkSystemOS();
     if (courselist.length > 0) {
       for (var i = 0; i < courselist.length; i++) {
         courselist[i].price = parseFloat(courselist[i].price).toFixed(2);
@@ -112,6 +112,14 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () { },
+  checkSystemOS: function () {
+    var that = this;
+    swan.getSystemInfo({
+      success: function (res) {
+        that.setData({ "mobileOS": res.platform });
+      }
+    });
+  },
   //获取考试类别
   buycourse: function (event) {
     var bk_userinfo = swan.getStorageSync('bk_userinfo');
@@ -150,6 +158,10 @@ Page({
   },
   //生成订单
   createpayorder: function () {
+    if (this.data.mobileOS == 'ios') {
+      common.showModalHint();
+      return;
+    }
     if (parseFloat(this.data.price) != parseFloat(this.data.totalprice) && this.data.checkorder == 0) {
       this.checkorder();
     } else {

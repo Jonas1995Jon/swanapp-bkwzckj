@@ -64,7 +64,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {},
+  onReady: function () { },
 
   /**
    * 生命周期函数--监听页面显示
@@ -107,17 +107,17 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {},
+  onPullDownRefresh: function () { },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {},
+  onReachBottom: function () { },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {},
+  onShareAppMessage: function () { },
   //获取考试类别
   getExamCategory: function (categoryid, courseid) {
     api.getExamCategory({
@@ -371,7 +371,7 @@ Page({
       }
     });
   },
-  makeLiveData: function () {},
+  makeLiveData: function () { },
   makeData: function (listType, data) {
     var todayData = {};
     var publicData = {};
@@ -527,7 +527,7 @@ Page({
           success: function (res) {
             if (res.confirm) {
               return;
-            } else {}
+            } else { }
           }
         });
       } else {
@@ -570,7 +570,7 @@ Page({
           success: function (res) {
             if (res.confirm) {
               return;
-            } else {}
+            } else { }
           }
         });
       } else {
@@ -603,7 +603,7 @@ Page({
             if (res.confirm) {
 
               return;
-            } else {}
+            } else { }
           }
         });
       } else {
@@ -624,7 +624,7 @@ Page({
             if (res.confirm) {
 
               return;
-            } else {}
+            } else { }
           }
         });
       } else {
@@ -691,7 +691,7 @@ Page({
     if (interval) {
       clearInterval(interval);
       interval = null;
-    } else {}
+    } else { }
   },
   parseTime: function (time) {
     var dd = parseInt(time / 60 / 60 / 24);
@@ -1074,7 +1074,7 @@ Page({
           this.checkIsBuy(videotype, channelnumber, chatroomid, index, clicktype);
         } else if (data.errcode == 40003) {
           //请先购买课程
-          common.hintInfo(this.data.mobileOS);
+          common.hintInfo();
         } else if (data.errcode == 40052) {
           //未找到会话信息，请重新登录
           request_thirdauth(0);
@@ -1085,7 +1085,7 @@ Page({
             content: data.errmsg,
             confirmText: "确定",
             showCancel: false,
-            success: function (res) {}
+            success: function (res) { }
           });
         }
       }

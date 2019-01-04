@@ -168,7 +168,7 @@ Page({
    */
   onHide: function () {
     var that = this;
-    if (that.data.videoContext.action != undefined) {
+    if (that.data.videoContext != undefined) {
       that.data.videoContext.pause();
     }
     that.logsTimerStopHandler();

@@ -42,8 +42,8 @@
   <view class="cells_title"></view>
   <view class="cells cells_after_title">
     <block s-key="course" s-for="cell, groupindex in course">
-      <view data-hi="{{groupindex}}" bindtap="courseClick" class="cell cell_access" hover-class="cell_active" hidden="{{mobileOS == 'ios' && (groupindex == 0 || groupindex == 1 || groupindex == 3) ? true : false}}">
-      <!-- <view data-hi="{{groupindex}}" bindtap="courseClick" class="cell cell_access" hover-class="cell_active"> -->
+      <!-- <view data-hi="{{groupindex}}" bindtap="courseClick" class="cell cell_access" hover-class="cell_active" hidden="{{mobileOS == 'ios' && (groupindex == 0 || groupindex == 1 || groupindex == 3) ? true : false}}"> -->
+      <view data-hi="{{groupindex}}" bindtap="courseClick" class="cell cell_access" hover-class="cell_active">
         <view class="cell_hd">
           <image src="{{cell.icon}}"></image>
         </view>

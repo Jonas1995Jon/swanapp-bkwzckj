@@ -153,7 +153,7 @@ Page({
               var arc_data2 = new Array();
               var arc_l_rotate = new Array();
               var arc_r_rotate = new Array();
-              for (var i = 0; i < data.val.length; i++) {
+              for (let i = 0; i < data.val.length; i++) {
                 var animation1 = swan.createAnimation({
                   transformOrigin: "50% 50%",
                   duration: 600,

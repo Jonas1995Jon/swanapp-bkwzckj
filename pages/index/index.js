@@ -57,10 +57,10 @@ Page({
     sessionid = app.globalData.default_sessionid;
     uid = app.globalData.default_uid;
 
-    this.getCourseByCategory(app.globalData.categoryid);
+    this.getCourseByCategory(swan.getStorageSync('categoryid'));
     var courselist = JSON.parse(swan.getStorageSync('bk_courselist'));
     for (var i = 0; i < courselist.length; i++) {
-      if (app.globalData.courseid == courselist[i].id) {
+      if (swan.getStorageSync('categoryid') == courselist[i].id) {
         swan.setNavigationBarTitle({
           title: courselist[i].title
         });
@@ -593,9 +593,9 @@ Page({
           var courselist = JSON.stringify(courselist);
           swan.setStorageSync('bk_courselist', courselist);
           if (courselist != undefined && courselist.length > 0) {
-            swan.setStorageSync('centerBtnClickIndex', 0);
-            swan.setStorageSync('courseid', data.courselist[0].id);
-            swan.setStorageSync('coursename', data.courselist[0].title);
+            // swan.setStorageSync('centerBtnClickIndex', 0);
+            // swan.setStorageSync('courseid', data.courselist[0].id);
+            // swan.setStorageSync('coursename', data.courselist[0].title);
             this.setSwitchClassCategory(swan.getStorageSync('navIndex') > 0 ? swan.getStorageSync('navIndex') : 0);
           } else {
             var url = '../me/me';

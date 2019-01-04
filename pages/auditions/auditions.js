@@ -49,7 +49,8 @@ Page({
     fistImplement: 0,
     isGetList: 0,
     navIndex: '-1',
-    isShowCoverView: true
+    isShowCoverView: true,
+    mobileOS: ''
   },
   /**
    * 生命周期函数--监听页面加载
@@ -93,6 +94,7 @@ Page({
       courseid = options.courseid;
       swan.setStorageSync('courseid', courseid); //已经选择
     }
+    this.checkSystemOS();
     // this.getList();
     this.setSwitchClassCategory(swan.getStorageSync('navIndex') > 0 ? swan.getStorageSync('navIndex') : 0);
     this.getfreetryvideolist(categoryid, 1);
@@ -103,7 +105,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {},
+  onReady: function () { },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -141,7 +143,7 @@ Page({
    */
   onHide: function () {
     var that = this;
-    if (that.data.videoContext.action != undefined) {
+    if (that.data.videoContext != undefined) {
       that.data.videoContext.pause();
     }
     that.logsTimerStopHandler();
@@ -159,12 +161,12 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {},
+  onPullDownRefresh: function () { },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {},
+  onReachBottom: function () { },
 
   /**
    * 用户点击右上角分享
@@ -428,7 +430,7 @@ Page({
             content: '此课程暂无视频讲解',
             showCancel: false
           });
-          
+
         } else {
           swan.showToast({
             title: data.errmsg,
@@ -623,7 +625,7 @@ Page({
           appbuild: getApp().globalData.appbuild,
           mobiletype: model
           //防止错误上传日志
-        };if (that.data.kpid == undefined) {
+        }; if (that.data.kpid == undefined) {
           return;
         }
         request.request_collectLog(data);
@@ -1134,6 +1136,14 @@ Page({
             });
           }
         }
+      }
+    });
+  },
+  checkSystemOS: function () {
+    var that = this;
+    swan.getSystemInfo({
+      success: function (res) {
+        that.setData({ "mobileOS": res.platform });
       }
     });
   }

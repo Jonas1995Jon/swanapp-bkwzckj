@@ -38,6 +38,9 @@
 									<image mode='widthFix' style='width:30rpx;height:30rpx;margin-right:18rpx;' src='{{auditionItem.firstactionid?playActionIcon:playIcon}}'></image>
 									<text id="{{auditionItem.id}}" data-type='{{auditionItem.type}}' data-bindex='{{auditionlistindex}}' data-index='{{auditionindex}}'
 									 bindtap='thirdNodeClick' style='color:{{auditionItem.firstactionid?"#388ef2":"#b3b3b3"}};'>{{auditionItem.title}}</text>
+									<!-- <block s-if="{{mobileOS != 'ios'}}">
+										<image mode='widthFix' bindtap='buycourseclick' style='width:120rpx;height:38rpx;' src='/image/video/buycourse.png'></image>
+									</block> -->
 									<image mode='widthFix' bindtap='buycourseclick' style='width:120rpx;height:38rpx;' src='/image/video/buycourse.png'></image>
 								</view>
 							</view>
@@ -64,7 +67,9 @@
 									<image mode='widthFix' style='width:30rpx;height:30rpx;margin-right:18rpx;' src='{{liveauditionItem.firstactionid?playActionIcon:playIcon}}'></image>
 									<text id="{{liveauditionItem.id}}" data-type='{{liveauditionItem.type}}' data-bindex='{{liveauditionlistindex}}' data-index='{{liveauditionindex}}'
 									 bindtap='thirdNodeClick' style='color:{{liveauditionItem.firstactionid?"#388ef2":"#b3b3b3"}};'>{{liveauditionItem.title}}</text>
-									<image mode='widthFix' bindtap='buycourseclick' style='width:120rpx;height:38rpx;' src='/image/video/buycourse.png'></image>
+									<block s-if="{{mobileOS != 'ios'}}">
+										<image mode='widthFix' bindtap='buycourseclick' style='width:120rpx;height:38rpx;' src='/image/video/buycourse.png'></image>
+									</block>
 								</view>
 							</view>
 						</block>
