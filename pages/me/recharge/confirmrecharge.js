@@ -74,7 +74,18 @@ Page({
     if (this.data.mobileOS == 'ios') {
       common.showModalHint();
     } else {
-      this.accountrecharge();
+      swan.showModal({
+        title: '提示',
+        content: '该小程序支付模块还未完善，现阶段仅用于测试，是否继续？',
+        confirmText: '继续',
+        success: res => {
+          if (res.confirm) {
+            this.accountrecharge();
+          } else {
+            return;
+          }
+        }
+      });
     }
   },
 
@@ -139,7 +150,6 @@ Page({
   baiduPay: function () {
     swan.requestPolymerPayment({
       orderInfo: this.data.baiduPayParams.data,
-      bannedChannels: '',
       success: res => {
         this.setData({ hiddenModal: true });
         swan.showToast({

@@ -162,44 +162,57 @@ Page({
       common.showModalHint();
       return;
     }
-    if (parseFloat(this.data.price) != parseFloat(this.data.totalprice) && this.data.checkorder == 0) {
-      this.checkorder();
-    } else {
-      var that = this;
-      var bk_userinfo = swan.getStorageSync('bk_userinfo');
-      var sessionid = bk_userinfo.sessionid;
-      var uid = bk_userinfo.uid;
-      api.createpayorder({
-        methods: 'POST',
-        data: {
-          sessionid: sessionid,
-          uid: uid,
-          orderguid: this.data.orderguid,
-          orderid: this.data.orderid,
-          orderprice: this.data.price,
-          // orderprice: 0.01,
-          gateway: app.globalData.gateway,
-          market: app.globalData.market
-        },
-        success: res => {
-          swan.hideToast();
-          var data = res.data;
-          if (data.errcode == 0) {
-            var out_trade_no = data.out_trade_no;
-            this.setData({ out_trade_no: out_trade_no });
-            //生成同一订单成功后调用微信支付
-            // this.weixinpay();
-            this.requestPolymerPayment();
+    swan.showModal({
+      title: '提示',
+      content: '该小程序支付模块还未完善，现阶段仅用于测试，是否继续？',
+      confirmText: '继续',
+      success: res => {
+        if (res.confirm) {
+
+          if (parseFloat(this.data.price) != parseFloat(this.data.totalprice) && this.data.checkorder == 0) {
+            this.checkorder();
           } else {
-            swan.showToast({
-              title: data.errmsg,
-              icon: 'success',
-              duration: 1500
+            var that = this;
+            var bk_userinfo = swan.getStorageSync('bk_userinfo');
+            var sessionid = bk_userinfo.sessionid;
+            var uid = bk_userinfo.uid;
+            api.createpayorder({
+              methods: 'POST',
+              data: {
+                sessionid: sessionid,
+                uid: uid,
+                orderguid: this.data.orderguid,
+                orderid: this.data.orderid,
+                orderprice: this.data.price,
+                // orderprice: 0.01,
+                gateway: app.globalData.gateway,
+                market: app.globalData.market
+              },
+              success: res => {
+                swan.hideToast();
+                var data = res.data;
+                if (data.errcode == 0) {
+                  var out_trade_no = data.out_trade_no;
+                  this.setData({ out_trade_no: out_trade_no });
+                  //生成同一订单成功后调用微信支付
+                  // this.weixinpay();
+                  this.requestPolymerPayment();
+                } else {
+                  swan.showToast({
+                    title: data.errmsg,
+                    icon: 'success',
+                    duration: 1500
+                  });
+                }
+              }
             });
           }
+
+        } else {
+          return;
         }
-      });
-    }
+      }
+    });
   },
   // 从后台获取百度支付参数
   requestPolymerPayment() {
@@ -228,7 +241,6 @@ Page({
   baiduPay: function () {
     swan.requestPolymerPayment({
       orderInfo: this.data.baiduPayParams.data,
-      bannedChannels: '',
       success: res => {
         this.setData({ hiddenModal: true });
         swan.showToast({
