@@ -18,7 +18,7 @@
 </template>
 
 <template name="wxParseImg">
-  <image class="{{item.classStr}} wxParse-{{item.tag}}" data-from="{{item.from}}" data-src="{{item.attr.src}}" data-idx="{{item.imgIndex}}" src="{{item.attr.src}}" mode="widthFix" bindload="wxParseImgLoad" bindtap="wxParseImgTap" style="width:100%; height:auto;" />
+  <image class="{{item.classStr}} wxParse-{{item.tag}}" data-from="{{item.from}}" data-src="{{item.attr.src}}" data-idx="{{item.imgIndex}}" src="{{item.attr.src}}" mode="widthFix" bindload="wxParseImgLoad" style="width:100%; height:auto;" />
 </template>
 
 <template name="WxEmojiView">
