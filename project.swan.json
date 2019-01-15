@@ -1,1 +1,106 @@
-{"description":"项目配置文件。","setting":{"urlCheck":true,"es6":true,"postcss":true,"minified":true,"newFeature":true},"compileType":"miniprogram","libVersion":"2.10.26","appid":"14294208","projectname":"swanapp-bkwzckj","condition":{"search":{"current":-1,"list":[{"name":"test","pathName":"","title":"","cacheKey":""}]},"conversation":{"current":0,"list":[{"name":"test","query":"","boxQI":"","service":{}}]},"miniprogram":{"current":-1,"list":[{"name":"test","pathName":"COMPONENT/music","query":"a=哈哈","scene":1044,"shareInfo":{},"referrerInfo":{}}]}},"appInfo":{"app_name":"注册会计师","app_key":"7uwmCeVMi9j7g81ZUs2rkjUOGxN9Q4I7","app_photo":"https://b.bdstatic.com/searchbox/mappconsole/image/20180926/1537969074-69598.png","domains":{"request":["https://api.cnbkw.com","https://api2.cnbkw.com","https://api3.cnbkw.com","https://studylog.cnbkw.com","https://apialy2.cnbkw.com","https://log.aldwx.com","https://hmma.baidu.com","https://api2.bkw.cn"],"socket":["wss://"],"uploadFile":["https://apialy.cnbkw.com","https://apialy2.cnbkw.com","https://picture.cnbkw.com","https://api3.cnbkw.com"],"downloadFile":["https://imgcdn.cnbkw.com","https://tu.cnbkw.com","https://apialy.cnbkw.com","https://apialy2.cnbkw.com","https://attachment.cnbkw.com","https://picture.cnbkw.com","https://alyvideo.cnbkw.com"]},"isExistsPackage":false,"webview_domains":["https://www.cnbkw.com","https://www.bangkao.com"],"webAction":["swan/navigateTo","swan/navigateBack","swan/switchTab","swan/reLaunch","swan/redirectTo","swan/postMessage","swan/previewImage","swan/getLocation"],"isTp":false,"needWeb":false,"tpAppId":null},"appkey":"7uwmCeVMi9j7g81ZUs2rkjUOGxN9Q4I7","name":"swanapp-bkwzckj"}
+{
+    "description": "项目配置文件。",
+    "setting": {
+        "urlCheck": true,
+        "es6": true,
+        "postcss": true,
+        "minified": true,
+        "newFeature": true
+    },
+    "compileType": "miniprogram",
+    "libVersion": "2.5.15",
+    "appid": "14294208",
+    "projectname": "swanapp-bkwzckj",
+    "condition": {
+        "search": {
+            "current": -1,
+            "list": [
+                {
+                    "name": "test",
+                    "pathName": "",
+                    "title": "",
+                    "cacheKey": ""
+                }
+            ]
+        },
+        "conversation": {
+            "current": 0,
+            "list": [
+                {
+                    "name": "test",
+                    "query": "",
+                    "boxQI": "",
+                    "service": {}
+                }
+            ]
+        },
+        "miniprogram": {
+            "current": -1,
+            "list": [
+                {
+                    "name": "test",
+                    "pathName": "COMPONENT/music",
+                    "query": "a=哈哈",
+                    "scene": 1044,
+                    "shareInfo": {},
+                    "referrerInfo": {}
+                }
+            ]
+        }
+    },
+    "appInfo": {
+        "app_name": "帮考网注册会计师",
+        "app_key": "7uwmCeVMi9j7g81ZUs2rkjUOGxN9Q4I7",
+        "app_photo": "https://b.bdstatic.com/searchbox/mappconsole/image/20180926/1537969074-69598.png",
+        "domains": {
+            "request": [
+                "https://api.cnbkw.com",
+                "https://api2.cnbkw.com",
+                "https://api3.cnbkw.com",
+                "https://studylog.cnbkw.com",
+                "https://apialy2.cnbkw.com",
+                "https://log.aldwx.com",
+                "https://hmma.baidu.com",
+                "https://api2.bkw.cn"
+            ],
+            "socket": [
+                "wss://"
+            ],
+            "uploadFile": [
+                "https://apialy.cnbkw.com",
+                "https://apialy2.cnbkw.com",
+                "https://picture.cnbkw.com",
+                "https://api3.cnbkw.com"
+            ],
+            "downloadFile": [
+                "https://imgcdn.cnbkw.com",
+                "https://tu.cnbkw.com",
+                "https://apialy.cnbkw.com",
+                "https://apialy2.cnbkw.com",
+                "https://attachment.cnbkw.com",
+                "https://picture.cnbkw.com",
+                "https://alyvideo.cnbkw.com"
+            ]
+        },
+        "isExistsPackage": false,
+        "webview_domains": [
+            "https://www.cnbkw.com",
+            "https://www.bangkao.com"
+        ],
+        "webAction": [
+            "swan/navigateTo",
+            "swan/navigateBack",
+            "swan/switchTab",
+            "swan/reLaunch",
+            "swan/redirectTo",
+            "swan/postMessage",
+            "swan/previewImage",
+            "swan/getLocation"
+        ],
+        "isTp": false,
+        "needWeb": false,
+        "tpAppId": null
+    },
+    "appkey": "7uwmCeVMi9j7g81ZUs2rkjUOGxN9Q4I7",
+    "name": "swanapp-bkwzckj"
+}
